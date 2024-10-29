@@ -228,6 +228,7 @@ input:checked + .slider:before {
     width: 450px;
     vertical-align: top;
     margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .project-card.visible {
