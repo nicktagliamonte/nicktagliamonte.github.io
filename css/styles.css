@@ -7,6 +7,11 @@ body {
     padding: 0;
 }
 
+body.dark-mode {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
 main {
     margin-top: 120px; /* Adjust this value based on the total height of your navigation bar and projects header */
 }
@@ -25,6 +30,11 @@ header {
     align-items: center;
 }
 
+.dark-mode header {
+    background-color: #4B6F4B;
+    color: #D0D0D0;
+}
+
 .header-left h1 {
     font-size: 24px;
     margin: 30px 0 1px 15px; /* Simplified margin declaration */
@@ -37,9 +47,69 @@ header {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.dark-mode .header-left h1 a {
+    color: #e0e0e0; /* Header link color */
+}
+
 .header-left h1 a:hover {
     background-color: #ffffff;
     color: #505050;
+}
+
+.dark-mode .header-left h1 a:hover {
+    background-color: #1f1f1f; /* Header link hover */
+    color: #e0e0e0; /* Header link hover text */
+}
+
+.dark-mode-toggle {
+    position: absolute; /* Use absolute positioning */
+    top: 0px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    display: flex;
+    align-items: center; /* Vertically center the icon and toggle */
+}
+
+.sun-icon {
+    margin-right: 8px; /* Space between the icon and the toggle */
+}
+
+/* Add styles for the toggle switch */
+.toggle {
+    display: flex;
+    align-items: center;
+}
+
+.toggle input {
+    display: none; /* Hide the checkbox */
+}
+
+.slider {
+    width: 34px;
+    height: 17px;
+    background-color: #ccc;
+    border-radius: 34px;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #A4C8A8; /* Change this color for the toggle background */
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px); /* Adjust based on slider size */
 }
 
 .social-link {
@@ -51,6 +121,10 @@ header {
 .social-link:hover {
     background-color: #DAE7DA; /* Change background color on hover */
     border-radius: 4px; /* Optional: add rounded corners */
+}
+
+.dark-mode .social-link:hover {
+    background-color: #4B6F4B; /* Social link hover */
 }
 
 
@@ -69,9 +143,18 @@ header {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.dark-mode .navigation li a {
+    color: #e0e0e0;
+}
+
 .navigation li a:hover {
     background-color: #ffffff;
     color: #505050;
+}
+
+.dark-mode .navigation li a:hover {
+    background-color: #1f1f1f; /* Navigation hover */
+    color: #e0e0e0; /* Navigation hover text */
 }
 
 /* Projects Header Styles */
@@ -89,10 +172,19 @@ header {
     border-bottom: 2px solid #A1A1A1;
 }
 
+.dark-mode .projects-header {
+    background-color: #2a2a2a; /* Projects header background */
+    color: #e0e0e0;
+}
+
 .projects-header h1 {
     margin: 0; /* Removes default margin */
     font-size: 32px; /* Adjust size as needed */
     color: #6B6B6B; /* Ensure consistent color with the theme */
+}
+
+.dark-mode .projects-header h1 {
+    color: #D0D0D0; /* Projects header text */
 }
 
 .projects-header a {
@@ -102,8 +194,16 @@ header {
     transition: color 0.3s; /* Smooth transition for color change */
 }
 
+.dark-mode .projects-header a {
+    color: #e0e0e0;
+}
+
 .projects-header a:hover {
     color: #DAE7DA; /* Change color on hover */
+}
+
+.dark-mode .projects-header a:hover {
+    color: #d0d0d0;
 }
 
 /* Finished Projects Section */
@@ -129,6 +229,11 @@ header {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.dark-mode .project-card {
+    background-color: #3a3a3a; /* Card background */
+    color: #e0e0e0; /* Card text color */
+}
+
 .three-column-container {
     display: flex;
     margin-top: 20px; /* Adjust as needed */
@@ -148,9 +253,17 @@ header {
     transition: background-color, transform 0.3s ease;
 }
 
+.dark-mode .project-card:hover {
+    background-color: #4B6F4B; /* Card hover */
+}
+
 .project-card:hover .language-tag {
     background-color: #f9f9f9; /* Change background on hover */
     transition: background-color 0.3s ease;
+}
+
+.dark-mode .project-card:hover .language-tag {
+    background-color: #3a3a3a;
 }
 
 .project-card h3 {
@@ -159,6 +272,10 @@ header {
 
 .project-card p {
     color: #505050; /* Text color */
+}
+
+.dark-mode .project-card p {
+    color: #e0e0e0;
 }
 
 .language-tag {
@@ -173,6 +290,11 @@ header {
     text-align: center;    /* Center the text */
 }
 
+.dark-mode .language-tag {
+    background-color: #4B6F4B; /* Language tag background */
+    color: #D1D1D1; /* Language tag text */
+}
+
 /* Greeting Styles */
 #greeting {
     text-align: center;
@@ -183,6 +305,12 @@ header {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-top: 4px solid #DAE7DA;
+}
+
+.dark-mode #greeting {
+    background-color: #3a3a3a; /* Greeting section background */
+    color: #e0e0e0; /* Greeting text color */
+    border-top: 4px solid #4B6F4B;
 }
 
 /* About Section Styles */
@@ -202,6 +330,10 @@ header {
     box-shadow: none;
 }
 
+.dark-mode .left-content {
+    background-color: #2a2a2a;
+}
+
 .right-content {
     flex: 1;
     background-color: #f9f9f9;
@@ -212,9 +344,18 @@ header {
     border-top: 4px solid #DAE7DA;
 }
 
+.dark-mode .right-content {
+    background-color: #3a3a3a;
+    border-top: 4px solid #4B6F4B;
+}
+
 /* Heading Styles */
 h2, h3 {
     color: #6B6B6B;
+}
+
+.dark-mode h2, .dark-mode h3 {
+    color: #D0D0D0;
 }
 
 h3 {
@@ -232,13 +373,26 @@ h3 {
     margin: 0 auto 20px; /* Centralized margin */
 }
 
+.dark-mode #about-me, .dark-mode #personal-interests {
+    background-color: #3a3a3a; /* About and personal sections background */
+    color: #e0e0e0; /* About and personal sections text */
+}
+
 #about-me {
     border-top: 4px solid #DAE7DA;
     margin-top: 80px;
 }
 
+.dark-mode #about-me {
+    border-top: 4px solid #4B6F4B;
+}
+
 #personal-interests {
     border-top: 4px solid #A7C7A7;
+}
+
+.dark-mode #personal-interests {
+    border-top: 4px solid #3C5F3C;
 }
 
 /* Skill Bar Styles */
@@ -247,6 +401,10 @@ h3 {
     color: #505050;
     display: block;
     margin-bottom: 5px;
+}
+
+.dark-mode .skill-bar label {
+    color: #e0e0e0;
 }
 
 .skill-bar {
@@ -265,10 +423,18 @@ h3 {
     display: inline-block; /* Keeps it in line with the flag */
 }
 
+.dark-mode .progress-bar {
+    background-color: #4b4b4b;
+}
+
 .progress {
     background-color: #505050;
     height: 100%;
     border-radius: 5px;
+}
+
+.dark-mode .progress {
+    background-color: #e0e0e0;
 }
 
 .flag {
@@ -280,6 +446,11 @@ h3 {
     display: inline-block; /* Ensures flag is inline */
     margin-left: 10px; /* Adds space between the flag and the bar */
     vertical-align: middle; /* Aligns the flag vertically with the bar */
+}
+
+.dark-mode .flag {
+    background-color: #e0e0e0;
+    color: #3a3a3a;
 }
 
 /* Profile Picture Styles */
@@ -300,12 +471,21 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode section {
+    background-color: #000000;
+}
+
 /* Footer Styles */
 footer {
     text-align: center;
     background-color: #DAE7DA;
     color: #6B6B6B;
     position: relative;
+}
+
+.dark-mode footer {
+    background-color: #4B6F4B; /* Footer background */
+    color: #D0D0D0; /* Footer text color */
 }
 
 /* Media Queries for Responsive Design */
