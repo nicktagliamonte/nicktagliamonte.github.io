@@ -491,6 +491,30 @@ h3 {
     border-top: 4px solid #4B6F4B;
 }
 
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #DAE7DA; 
+    color: #505050;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #3a5a3a; /* Slightly darker shade on hover */
+    color: #f0f0f0;
+}
+
+.dark-mode .download-button {
+    background-color: #3a5a3a; 
+    color: #f0f0f0;
+}
+
+.dark-mode .download-button:hover {
+    background-color: black;
+}
+
 /* Section Styles */
 section {
     background-color: #fff;
