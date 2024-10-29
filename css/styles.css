@@ -215,12 +215,10 @@ input:checked + .slider:before {
     box-shadow: none;
 }
 
-/* Project Card Styles */
 .project-card {
     display: inline-block;
     opacity: 0;
-    transition: opacity 0.9s ease;
-    background-color: #f9f9f9; /* Card background */
+    background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 35px;
@@ -228,17 +226,22 @@ input:checked + .slider:before {
     width: 450px;
     vertical-align: top;
     margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.9s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 
 .project-card.visible {
-    opacity: 1; /* Show the card when it has the class */
-    transition: opacity 0.9s ease;
+    opacity: 1;
 }
 
+.project-card:hover {
+    transform: translateY(-5px); /* Hover effect */
+    background-color: #DAE7DA;
+}
+
+/* Dark Mode Styling */
 .dark-mode .project-card {
-    background-color: #3a3a3a; /* Card background */
-    color: #e0e0e0; /* Card text color */
+    background-color: #3a3a3a;
+    color: #e0e0e0;
 }
 
 .three-column-container {
