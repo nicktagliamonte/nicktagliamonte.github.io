@@ -42,6 +42,10 @@ header {
     color: #505050;
 }
 
+.greeting a:hover {
+    background-color: #DAE7DA;
+}
+
 /* Navigation Styles */
 .navigation ul {
     list-style-type: none;
