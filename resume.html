@@ -1,49 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three-Column Card Layout</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Container for the three tables */
-.table-container {
-    display: flex;                            /* Align tables in a row */
-    gap: 15px;                                /* Space between tables */
-    justify-content: center;                  /* Center-align the container */
-}
-
-/* Each table acts as a single column */
-.card-table {
-    border-spacing: 0 15px;                   /* Space between rows in each table */
-    border-collapse: separate;                /* Keeps row spacing intact */
-}
-
-/* Project Card Styles */
-.project-card {
-    background-color: #f9f9f9;                /* Card background */
-    border-radius: 8px;                       /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow */
-    padding: 15px;                            /* Inner padding */
-    width: 200px;                             /* Fixed width for each card */
-    text-align: left;                         /* Left-align content */
-}
-
-    </style>
+    <title>Resume - Nick Tagliamonte</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <div class="table-container">
-        <table class="card-table">
-            <tr><td class="project-card">Project Title 1<br>Short description of the project.</td></tr>
-            <tr><td class="project-card">Project Title 2<br>This project description is longer, so this card will be taller.</td></tr>
-            <tr><td class="project-card">Project Title 3<br>Another brief description.</td></tr>
-        </table>
 
-        <table class="card-table">
-            <tr><td class="project-card">Project Title 4<br>Brief description here.</td></tr>
-            <tr><td class="project-card">Project Title 5<br>Here’s a longer description to make this card taller.</td></tr>
-            <tr><td class="project-card">Project Title 6<br>Short desc.</td></tr>
-        </table>
-    </div>
+<body>
+    <!-- Header Section -->
+    <header role="banner">
+        <div class="header-left">
+            <h1 role="heading" aria-level="1" class="home-link">
+                <a href="index.html">Nick Tagliamonte</a>
+            </h1>
+        </div>
+        <div class="dark-mode-toggle">
+            <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+            <label class="toggle">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <nav class="navigation" role="navigation" aria-label="Main Navigation">
+            <ul>
+                <li><a href="about.html" role="link">About</a></li>
+                <li><a href="projects.html" role="link">Projects</a></li>
+                <li><a href="resume.html" role="link">Resume</a></li>
+                <li><a href="contact.html" role="link">Contact</a></li>
+                <li><a href="personal.html" role="link">Personal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main role="main">
+        <section id="resume" role="complementary">
+            <h2 role="heading" aria-level="2">My Resume</h2>
+            
+            <p><strong>Nick Tagliamonte</strong><br>
+            Phone: 215-869-7300<br>
+            Email: tug35742@temple.edu | ntagliamonte28@gmail.com<br>
+            <a href="https://www.linkedin.com/in/nick-tagliamonte-b44129241/" target="_blank" class="social-link" role="link" style="text-decoration: none; color: inherit;">LinkedIn</a><br>
+            <a href="https://github.com/nicktagliamonte" target="_blank" class="social-link" role="link" style="text-decoration: none; color: inherit;">Github</a></p>
+            
+            <hr>
+    
+            <p><strong>Objective</strong><br>
+            Motivated computer science student with a background in IT support and software development. Seeking an internship to apply technical skills in a practical setting while contributing to innovative projects. Long-term goals include pursuing graduate studies and a career in academia.</p>
+            
+            <hr>
+    
+            <p><strong>Education</strong></p>
+            <p><strong>Bachelor of Science in Computer Science</strong><br>
+            Minor in Mathematics<br>
+            Temple University, Philadelphia, PA<br>
+            Anticipated Graduation: May 2026</p>
+    
+            <p><strong>Associate of Science in Computer Science</strong><br>
+            Bucks County Community College, Newtown, PA<br>
+            Graduation: May 2024, GPA: 4.0</p>
+    
+            <p><strong>Associate of Science in Mathematics</strong><br>
+            Bucks County Community College, Newtown, PA<br>
+            Graduation: December 2024, GPA: 4.0</p>
+    
+            <hr>
+    
+            <p><strong>Skills</strong></p>
+            <ul>
+                <li>Programming Languages: Python, Java</li>
+                <li>Cloud Platforms: Azure, AWS</li>
+                <li>Technical Support Tools: Kaseya, Microsoft Intune</li>
+                <li>Other: Active Directory, Microsoft Office 365</li>
+            </ul>
+            
+            <hr>
+    
+            <p><strong>Projects</strong></p>
+            <p><strong>Website Development</strong><br>
+            Developed a personal website featuring a portfolio, resume, and project showcase using HTML, CSS, and JavaScript. Implemented responsive design for mobile compatibility and included dark mode functionality.</p>
+    
+            <p><strong>Onboarding Tool Development</strong><br>
+            Created a Java application to streamline the onboarding process for new employees at ISS Solutions.</p>
+    
+            <hr>
+    
+            <p><strong>Experience</strong></p>
+            <p><strong>IT Service Desk Regional Lead</strong><br>
+            Victrex<br>
+            Dec 2023 - Sept 2024</p>
+            <ul>
+                <li>Serve as the primary contact for IT-related issues and requests, ensuring efficient resolution of incidents.</li>
+                <li>Log all service desk calls and deliver first-contact resolution through effective triaging.</li>
+                <li>Manage IT consumables and device availability, overseeing a budget of approximately £60k per annum.</li>
+                <li>Collaborate with global IT teams on service improvement initiatives and support local cybersecurity efforts.</li>
+            </ul>
+    
+            <p><strong>Global IT Helpdesk Analyst</strong><br>
+            Victrex<br>
+            Jul 2022 - Jan 2024</p>
+            <ul>
+                <li>Provided first-tier support for IT incidents, maintaining a first-call resolution rate of over 70%.</li>
+                <li>Developed and maintained a knowledge base of support articles for team use.</li>
+                <li>Supported remote desktop environments and managed Azure Active Directory.</li>
+            </ul>
+    
+            <p><strong>Help Desk Analyst</strong><br>
+            ISS Solutions<br>
+            Jul 2020 - Jul 2022</p>
+            <ul>
+                <li>Managed user inquiries and resolved issues for a helpdesk serving 4,000 customers.</li>
+                <li>Nominated for the HDI Help Desk Analyst of the Year award for exceptional performance.</li>
+                <li>Implemented a Java application to automate routine tasks and improve workflow efficiency.</li>
+            </ul>
+    
+            <hr>
+    
+            <p><strong>Certifications</strong></p>
+            <ul>
+                <li>CompTIA A+</li>
+                <li>CompTIA Network+</li>
+                <li>AWS Cloud Practitioner</li>
+            </ul>
+    
+            <hr>
+    
+            <p><strong>Extracurricular Activities</strong></p>
+            <ul>
+                <li>Member, TUDev Club</li>
+                <li>Member, Temple Association for Computing Machinery</li>
+            </ul>
+    
+            <hr>
+    
+            <p><strong>Awards</strong></p>
+            <ul>
+                <li>Nominated for HDI Service Desk Analyst of the Year, 2022</li>
+            </ul>
+        </section>
+    </main>
+    
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+        <p>&copy; 2024 Nick Tagliamonte</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
