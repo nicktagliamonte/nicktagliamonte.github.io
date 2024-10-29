@@ -42,9 +42,17 @@ header {
     color: #505050;
 }
 
-.greeting a:hover {
-    background-color: #DAE7DA;
+.social-link {
+    position: relative;
+    padding: 5px 10px; /* Add some padding for better hover effect */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
+
+.social-link:hover {
+    background-color: #DAE7DA; /* Change background color on hover */
+    border-radius: 4px; /* Optional: add rounded corners */
+}
+
 
 /* Navigation Styles */
 .navigation ul {
