@@ -1,0 +1,320 @@
+/* Base Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f0f0f0;
+    color: #505050;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: 120px; /* Adjust this value based on the total height of your navigation bar and projects header */
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #DAE7DA;
+    color: #6B6B6B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left h1 {
+    font-size: 24px;
+    margin: 30px 0 1px 15px; /* Simplified margin declaration */
+}
+
+.header-left h1 a {
+    text-decoration: none;
+    color: #505050;
+    padding: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header-left h1 a:hover {
+    background-color: #ffffff;
+    color: #505050;
+}
+
+/* Navigation Styles */
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 25px 0 0; /* Simplified margin declaration */
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: #505050;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation li a:hover {
+    background-color: #ffffff;
+    color: #505050;
+}
+
+/* Projects Header Styles */
+.projects-header {
+    position: fixed;
+    top: 58px; /* Adjust this value based on the height of your navigation bar */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Slightly lower than the navigation bar */
+    display: flex;
+    background-color: #f0f0f0;
+    justify-content: space-between; /* Aligns items to left and right */
+    align-items: center; /* Vertically centers items */
+    padding: 20px;
+    border-bottom: 2px solid #A1A1A1;
+}
+
+.projects-header h1 {
+    margin: 0; /* Removes default margin */
+    font-size: 32px; /* Adjust size as needed */
+    color: #6B6B6B; /* Ensure consistent color with the theme */
+}
+
+.projects-header a {
+    margin-left: 10px; /* Adds space between the links */
+    text-decoration: none; /* No underline */
+    color: #505050; /* Link color */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.projects-header a:hover {
+    color: #DAE7DA; /* Change color on hover */
+}
+
+/* Finished Projects Section */
+#finished-projects, #under-development, #planned-projects {
+    padding: 20px;
+    margin: 0px auto; /* Center the section */
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* Project Card Styles */
+.project-card {
+    display: inline-block;
+    background-color: #f9f9f9; /* Card background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    margin: 5px;
+    width: 450px;
+    vertical-align: top;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.three-column-container {
+    display: flex;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+/* Each column styling */
+.column-1, .column-2, .column-3 {
+    flex: 1; /* Each column takes up equal space */
+    display: flex;
+    flex-direction: column;
+    gap: -5px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Hover effect */
+    background-color: #DAE7DA; /* Use the exact color */
+    transition: background-color, transform 0.3s ease;
+}
+
+.project-card:hover .language-tag {
+    background-color: #f9f9f9; /* Change background on hover */
+    transition: background-color 0.3s ease;
+}
+
+.project-card h3 {
+    margin: 0 0 10px; /* Margin for the title */
+}
+
+.project-card p {
+    color: #505050; /* Text color */
+}
+
+.language-tag {
+    display: inline-block; /* Allows padding and border radius to apply correctly */
+    padding: 5px 15px;    /* Adjust padding for size */
+    margin: 5px;          /* Space between tags */
+    background-color: #DAE7DA; /* Default background color */
+    color: #484848;
+    border-radius: 25px;  /* Create rounded edges */
+    border: 1px solid #ccc; /* Optional border */
+    font-size: 14px;      /* Font size */
+    text-align: center;    /* Center the text */
+}
+
+/* Greeting Styles */
+#greeting {
+    text-align: center;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #DAE7DA;
+}
+
+/* About Section Styles */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.left-content {
+    flex: 3;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.right-content {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px; /* Corrected to include size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 80px;
+    border-top: 4px solid #DAE7DA;
+}
+
+/* Heading Styles */
+h2, h3 {
+    color: #6B6B6B;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* About Me and Personal Interests Styles */
+#about-me, #personal-interests {
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto 20px; /* Centralized margin */
+}
+
+#about-me {
+    border-top: 4px solid #DAE7DA;
+    margin-top: 80px;
+}
+
+#personal-interests {
+    border-top: 4px solid #A7C7A7;
+}
+
+/* Skill Bar Styles */
+.skill-bar label {
+    font-size: 14px;
+    color: #505050;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    margin-bottom: 15px;
+    text-align: left;
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 8px;
+    width: calc(100% - 50px); /* Adjust width to account for flag space */
+    margin-right: 10px; /* Space between the bar and flag */
+    display: inline-block; /* Keeps it in line with the flag */
+}
+
+.progress {
+    background-color: #505050;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.flag {
+    background-color: #505050;
+    color: #f9f9f9;
+    border-radius: 5px;
+    padding: 3px 5px;
+    font-size: 12px;
+    display: inline-block; /* Ensures flag is inline */
+    margin-left: 10px; /* Adds space between the flag and the bar */
+    vertical-align: middle; /* Aligns the flag vertically with the bar */
+}
+
+/* Profile Picture Styles */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styles */
+section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    background-color: #DAE7DA;
+    color: #6B6B6B;
+    position: relative;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .header-left h1 {
+        font-size: 20px;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+    }
+
+    .navigation li {
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 15px;
+    }
+}

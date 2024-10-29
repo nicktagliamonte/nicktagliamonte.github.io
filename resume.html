@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Column Card Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Container for the three tables */
+.table-container {
+    display: flex;                            /* Align tables in a row */
+    gap: 15px;                                /* Space between tables */
+    justify-content: center;                  /* Center-align the container */
+}
+
+/* Each table acts as a single column */
+.card-table {
+    border-spacing: 0 15px;                   /* Space between rows in each table */
+    border-collapse: separate;                /* Keeps row spacing intact */
+}
+
+/* Project Card Styles */
+.project-card {
+    background-color: #f9f9f9;                /* Card background */
+    border-radius: 8px;                       /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow */
+    padding: 15px;                            /* Inner padding */
+    width: 200px;                             /* Fixed width for each card */
+    text-align: left;                         /* Left-align content */
+}
+
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table class="card-table">
+            <tr><td class="project-card">Project Title 1<br>Short description of the project.</td></tr>
+            <tr><td class="project-card">Project Title 2<br>This project description is longer, so this card will be taller.</td></tr>
+            <tr><td class="project-card">Project Title 3<br>Another brief description.</td></tr>
+        </table>
+
+        <table class="card-table">
+            <tr><td class="project-card">Project Title 4<br>Brief description here.</td></tr>
+            <tr><td class="project-card">Project Title 5<br>Here’s a longer description to make this card taller.</td></tr>
+            <tr><td class="project-card">Project Title 6<br>Short desc.</td></tr>
+        </table>
+
+        <table class="card-table">
+            <tr><td class="project-card">Project Title 7<br>A longer description for a taller card.</td></tr>
+            <tr><td class="project-card">Project Title 8<br>Short desc.</td></tr>
+            <tr><td class="project-card">Project Title 9<br>This card has a moderate amount of text.</td></tr>
+        </table>
+    </div>
+</body>
+</html>
