@@ -127,7 +127,7 @@ header {
     flex: 1; /* Each column takes up equal space */
     display: flex;
     flex-direction: column;
-    gap: -5px;
+    max-width: 540px;
 }
 
 .project-card:hover {
