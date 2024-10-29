@@ -218,6 +218,8 @@ input:checked + .slider:before {
 /* Project Card Styles */
 .project-card {
     display: inline-block;
+    opacity: 0;
+    transition: opacity 0.9s ease;
     background-color: #f9f9f9; /* Card background */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -226,7 +228,11 @@ input:checked + .slider:before {
     width: 450px;
     vertical-align: top;
     margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card.visible {
+    opacity: 1; /* Show the card when it has the class */
+    transition: opacity 0.9s ease;
 }
 
 .dark-mode .project-card {
