@@ -593,6 +593,29 @@ h3 {
     background-color: black;
 }
 
+/* Style for the main section */
+#personal {
+    display: flex;
+    gap: 20px; /* Optional spacing between the columns */
+    padding: 20px;
+}
+
+/* Style for the left and right columns */
+#photos,
+#books {
+    width: 50%;
+}
+
+/* Optional: General styling to ensure the layout is responsive */
+@media (max-width: 768px) {
+    #personal {
+        flex-direction: column;
+    }
+    #photos, #books {
+        width: 100%;
+    }
+}
+
 /* Section Styles */
 section {
     background-color: #fff;
