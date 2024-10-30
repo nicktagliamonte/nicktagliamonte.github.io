@@ -110,7 +110,7 @@ function sendMail() {
     }
 
     // Construct mailto link
-    const mailtoLink = `mailto:recipient@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)}`;
+    const mailtoLink = `mailto:ntagliamonte28@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)}`;
 
     // Open the user's default mail client
     window.location.href = mailtoLink;
