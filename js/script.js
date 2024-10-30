@@ -112,14 +112,14 @@ function validateForm() {
 function sendEmail() {
     const form = document.getElementById('contactForm');
     const data = {
+        subject: form['subject'].value,
         first_name: form['first-name'].value,
         last_name: form['last-name'].value,
         email: form['email'].value,
-        subject: form['subject'].value, // This is the subject field
-        message: form['message'].value
+        message: form['message'].value        
     };
 
-    emailjs.send('service_v32y2lc', 'template_h7ht0we', data)
+    emailjs.send("service_v32y2lc","template_h7ht0we", data)
         .then((response) => {
             console.log("Email sent successfully", response.status, response.text);
             alert("Message sent successfully!"); // Alert user on success
