@@ -95,3 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(card); // Observe each project card
     });
 });
+
+function validateForm() {
+    const form = document.getElementById("contactForm");
+    return form.checkValidity();
+}

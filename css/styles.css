@@ -515,6 +515,84 @@ h3 {
     background-color: black;
 }
 
+#contact {
+    text-align: center;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 10px;
+    padding-bottom: 25px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #DAE7DA;
+}
+
+.dark-mode #contact {
+    background-color: #3a3a3a; 
+    color: #e0e0e0; 
+    border-top: 4px solid #4B6F4B;
+}
+
+#contactForm {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px; /* Space between inputs */
+    margin-bottom: 15px; /* Space below each row */
+}
+
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode textarea {
+    background-color: #333333; /* Darker background for input areas */
+    color: #ffffff; /* Light text color */
+    border: 1px solid #555555; /* Subtle border color */
+}
+
+.dark-mode input[type="text"]::placeholder,
+.dark-mode input[type="email"]::placeholder,
+.dark-mode textarea::placeholder {
+    color: #aaaaaa; /* Lighter color for placeholder text */
+}
+
+.form-row input {
+    width: 100%;
+}
+
+#contactForm textarea {
+    width: 99%;
+    margin-bottom: 15px;
+}
+
+#contactForm button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #DAE7DA;
+    color: #505050;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contactForm button:hover {
+    background-color: #3a5a3a;
+    color: #f0f0f0;
+}
+
+.dark-mode #contactForm button {
+    background-color: #3a5a3a; 
+    color: #f0f0f0;
+}
+
+.dark-mode #contactForm button:hover {
+    background-color: black;
+}
+
 /* Section Styles */
 section {
     background-color: #fff;
