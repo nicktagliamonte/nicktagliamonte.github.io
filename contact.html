@@ -38,7 +38,7 @@
     <main role="main">
         <section id="contact" role="complementary">
             <h2 role="heading" aria-level="2">Contact Me</h2>
-            <form id="contactForm" onsubmit="event.preventDefault(); sendEmail();">
+            <form id="contactForm" onsubmit="return sendMail();">
                 <div class="form-row">
                     <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
                     <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
@@ -57,17 +57,8 @@
     <footer role="contentinfo">
         <p>&copy; 2024 Nick Tagliamonte</p>
     </footer>
-
-    <!-- Load EmailJS library first -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     
     <script src="js/script.js"></script>
-    
-    <script>
-        (function() {
-            emailjs.init("U8TYD_F8vFsY5iGii"); // Replace with your actual user ID
-        })();
-    </script>
 </body>
 
 </html>
