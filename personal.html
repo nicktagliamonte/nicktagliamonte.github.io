@@ -34,19 +34,33 @@
         </nav>
     </header>
 
-    <!-- Main Content Section -->
     <main role="main">
         <section id="personal">
             <div id="photos">
-                <!-- Placeholder for photos content -->
+                <h2 role="heading" aria-level="2">Photos</h2>
+                <hr class="separator">
+                <div id="photos-container">
+                    <!-- Photos loaded by javascript -->
+                </div>
             </div>
             
-            <!-- Right side - Placeholder for future content -->
             <div id="books">
+                <h2 role="heading" aria-level="2">Books</h2>
                 <!-- Placeholder for additional content -->
             </div>
         </section>
-    </main>    
+    </main>
+
+    <div id="slideshow-modal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img class="slideshow-image" src="" alt="Slideshow Image">
+            <div class="photo-navigation">
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer Section -->
     <footer role="contentinfo">

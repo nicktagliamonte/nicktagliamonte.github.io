@@ -598,22 +598,149 @@ h3 {
     display: flex;
     gap: 20px; /* Optional spacing between the columns */
     padding: 20px;
+    background-color: transparent;
+    box-shadow: none;
 }
 
-/* Style for the left and right columns */
-#photos,
-#books {
-    width: 50%;
+#personal {
+    display: flex;
+    gap: 20px; /* Space between left and right halves */
+    padding: 20px; /* Adjusts top padding for content */
 }
 
-/* Optional: General styling to ensure the layout is responsive */
-@media (max-width: 768px) {
-    #personal {
-        flex-direction: column;
-    }
-    #photos, #books {
-        width: 100%;
-    }
+#photos, #books {
+    flex: 1; /* Each half takes up 50% width */
+    max-width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #DAE7DA;
+}
+
+.dark-mode #photos, .dark-mode #books {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    border-top: 4px solid #4B6F4B;
+}
+
+#photos {
+    text-align: center; /* Center-aligns the header and hr */
+}
+
+.separator {
+    border: none; /* No border */
+    height: 1px; /* Line thickness */
+    background-color: #ddd; /* Line color */
+    margin: 10px auto; /* Center with automatic margins */
+    width: 80%; /* Set a specific width, adjust as necessary */
+}
+
+#photos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Fill available space */
+    gap: 10px; /* 10px spacing around images */
+    max-width: 100%; /* Ensure the section doesn't overflow */
+    overflow: hidden; /* Prevent images from spilling out */
+    padding: 10px; /* Optional padding for better layout */
+    padding-top: 20px; /* Padding above the photo grid */
+}
+
+#photos-container img {
+    width: 100%; /* Ensure images fill their grid cells */
+    height: auto; /* Fixed height for uniformity */
+    aspect-ratio: 4 / 3;
+    object-fit: cover; /* Maintain aspect ratio while fitting within the set height */
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+/* Modal styles */
+#slideshow-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+}
+
+.modal-content {
+    position: absolute; /* Change to absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 55%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to offset from center */
+    width: 90%; /* Adjust width as needed */
+    max-width: 600px; /* Optional max width */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the modal */
+}
+
+.slideshow-image {
+    max-width: 85%; /* Ensure image doesn't exceed 90% of modal width */
+    max-height: 90%; /* Ensure image doesn't exceed 90% of modal height */
+    object-fit: contain; /* Maintain aspect ratio */
+    display: block; /* Block-level element for centering */
+    margin: 0 auto; /* Center the image */
+}
+
+/* Change cursor to pointer for photos */
+.photo-thumbnail {
+    cursor: pointer; /* Pointer cursor for photos */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #DAE7DA;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dark-mode .close {
+    color: #4B6F4B;
+}
+
+/* Navigation buttons */
+.photo-navigation {
+    position: absolute; /* Position the navigation buttons absolutely */
+    top: 50%; /* Center them vertically */
+    left: 0; /* Align to the left edge */
+    right: 0; /* Align to the right edge */
+    transform: translateY(-50%); /* Vertically center using transform */
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: space-between; /* Space out buttons to edges */
+    width: 100%; /* Make sure it takes the full width of the modal */
+}
+
+.prev, .next {
+    background: #DAE7DA; /* No background */
+    border: none; /* No border */
+    color: #333; /* Button text color */
+    font-size: 24px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 10px; /* Remove extra padding */
+    border-radius: 5px;
+    margin: 0 30px; /* Increase margin to separate buttons from each other */
+    opacity: 0.8; /* Make buttons slightly transparent */
+    transition: background-color 0.3s;
+}
+
+.dark-mode .prev, .dark-mode .next {
+    background: #4B6F4B;
+    color: #e0e0e0;
+}
+
+.prev:hover, .next:hover {
+    background: #4B6F4B;
+}
+
+.dark-mode .prev:hover, .dark-mode .next:hover {
+    background: black;
 }
 
 /* Section Styles */
