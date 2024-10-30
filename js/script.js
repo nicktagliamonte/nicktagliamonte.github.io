@@ -96,36 +96,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function validateForm() {
-    const form = document.getElementById('contactForm');
-    const inputs = form.querySelectorAll('input, textarea');
+function sendMail() {
+    const firstName = document.getElementById('first-name').value.trim();
+    const lastName = document.getElementById('last-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-    for (let input of inputs) {
-        if (!input.value.trim()) {
-            alert("All fields must be filled out."); // Alert user if validation fails
-            return false; // Form is invalid if any field is empty
-        }
+    // Validate form fields
+    if (!firstName || !lastName || !email || !subject || !message) {
+        alert("All fields must be filled out.");
+        return false; // Prevent form submission
     }
-    return true; // All fields are filled
-}
 
-function sendEmail() {
-    const form = document.getElementById('contactForm');
-    const data = {
-        subject: form['subject'].value,
-        first_name: form['first-name'].value,
-        last_name: form['last-name'].value,
-        email: form['email'].value,
-        message: form['message'].value        
-    };
+    // Construct mailto link
+    const mailtoLink = `mailto:recipient@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)}`;
 
-    emailjs.send("service_v32y2lc","template_h7ht0we", data)
-        .then((response) => {
-            console.log("Email sent successfully", response.status, response.text);
-            alert("Message sent successfully!"); // Alert user on success
-            form.reset(); // Reset the form
-        }, (error) => {
-            console.error("Failed to send email", error);
-            alert("Failed to send message. Please try again."); // Alert user on error
-        });
+    // Open the user's default mail client
+    window.location.href = mailtoLink;
+
+    return false; // Prevent form submission
 }
