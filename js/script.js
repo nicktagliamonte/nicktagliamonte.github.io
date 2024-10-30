@@ -97,6 +97,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function validateForm() {
-    const form = document.getElementById("contactForm");
-    return form.checkValidity();
+    const form = document.getElementById('contactForm');
+    const inputs = form.querySelectorAll('input, textarea');
+
+    for (let input of inputs) {
+        if (!input.value.trim()) {
+            alert("All fields must be filled out."); // Alert user if validation fails
+            return false; // Form is invalid if any field is empty
+        }
+    }
+    return true; // All fields are filled
+}
+
+function sendEmail() {
+    const form = document.getElementById('contactForm');
+    const data = {
+        first_name: form['first-name'].value,
+        last_name: form['last-name'].value,
+        email: form['email'].value,
+        subject: form['subject'].value, // This is the subject field
+        message: form['message'].value
+    };
+
+    emailjs.send('service_v32y2lc', 'template_h7ht0we', data)
+        .then((response) => {
+            console.log("Email sent successfully", response.status, response.text);
+            alert("Message sent successfully!"); // Alert user on success
+            form.reset(); // Reset the form
+        }, (error) => {
+            console.error("Failed to send email", error);
+            alert("Failed to send message. Please try again."); // Alert user on error
+        });
 }
