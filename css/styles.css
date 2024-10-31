@@ -785,6 +785,7 @@ footer {
     background-color: #DAE7DA;
     color: #6B6B6B;
     position: relative;
+    width: 100%;
 }
 
 .dark-mode footer {
@@ -796,13 +797,17 @@ footer {
 @media (max-width: 768px) {
     /* Adjust the content positioning to be below the nav bar */
     body {
-        padding-top: 125px; /* Adjust this to match the nav bar's height */
+        padding-top: 100px;
     }
 
-    /* If your nav bar has any specific positioning styles on desktop */
-    .navbar {
-        position: fixed; /* Keep it fixed so it remains at the top */
-        width: 100%; /* Ensure it spans the width of the screen */
-        z-index: 1000; /* Keep it on top of the content */
+    /* Stack navigation items vertically */
+    .navigation ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation ul li {
+        margin: 5px 0; /* Add spacing between items */
     }
 }
