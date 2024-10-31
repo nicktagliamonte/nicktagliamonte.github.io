@@ -206,7 +206,6 @@ input:checked + .slider:before {
     color: #d0d0d0;
 }
 
-/* Finished Projects Section */
 #finished-projects, #under-development, #planned-projects {
     padding: 20px;
     margin: 0px auto; /* Center the section */
@@ -813,5 +812,18 @@ footer {
 
     .projects-header {
         display: none; /* Completely remove the header from the layout */
+    }
+
+    .project-card {
+        max-width: calc(100% - 20px); /* Make it just a few pixels smaller than the screen width */
+        width: 100%; /* Make it take full width within the max-width constraint */
+    }
+
+    .three-column-container {
+        flex-direction: column; /* Stack columns vertically on small screens */
+    }
+
+    .column-1, .column-2, .column-3 {
+        max-width: none; /* Remove any fixed width for columns */
     }
 }
