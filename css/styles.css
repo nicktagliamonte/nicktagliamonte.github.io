@@ -592,19 +592,12 @@ h3 {
     background-color: black;
 }
 
-/* Style for the main section */
 #personal {
     display: flex;
     gap: 20px; /* Optional spacing between the columns */
     padding: 20px;
     background-color: transparent;
     box-shadow: none;
-}
-
-#personal {
-    display: flex;
-    gap: 20px; /* Space between left and right halves */
-    padding: 20px; /* Adjusts top padding for content */
 }
 
 #photos, #books {
@@ -815,7 +808,7 @@ footer {
     }
 
     .project-card {
-        max-width: calc(100% - 20px); /* Make it just a few pixels smaller than the screen width */
+        max-width: calc(95% - 20px); /* Make it just a few pixels smaller than the screen width */
         width: 100%; /* Make it take full width within the max-width constraint */
     }
 
@@ -825,5 +818,15 @@ footer {
 
     .column-1, .column-2, .column-3 {
         max-width: none; /* Remove any fixed width for columns */
+    }
+
+    #personal {
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    #photos, #books {
+        max-width: 100%; /* Ensure each section takes full width */
+        width: 100%; /* Make sections fill the available width */
+        margin-bottom: 20px;
     }
 }
