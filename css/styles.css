@@ -792,25 +792,17 @@ footer {
     color: #D0D0D0; /* Footer text color */
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 600px) {
-    .about-container {
-        flex-direction: column;
+/* Add a media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    /* Adjust the content positioning to be below the nav bar */
+    body {
+        padding-top: 125px; /* Adjust this to match the nav bar's height */
     }
 
-    .header-left h1 {
-        font-size: 20px;
-    }
-
-    .navigation ul {
-        flex-direction: column;
-    }
-
-    .navigation li {
-        margin: 5px 0;
-    }
-
-    section {
-        padding: 15px;
+    /* If your nav bar has any specific positioning styles on desktop */
+    .navbar {
+        position: fixed; /* Keep it fixed so it remains at the top */
+        width: 100%; /* Ensure it spans the width of the screen */
+        z-index: 1000; /* Keep it on top of the content */
     }
 }

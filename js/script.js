@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '1q84.jpg', 'Acceptance.jpg', 'Anathem.jpg', 'Annihilation.jpg', 'Antimemetics.jpg', 'Authority.jpg', 
         'Axiomatic.jpg', 'BBoD.jpg', 'Diaspora.jpg', 'Disquiet.jpg', 'Infinite Jest.jpg', 'Kafka.jpg', 
         'Nausea.jpg', 'Notes From Underground.jpg', 'Permutation City.jpg', 'Prime Intellect.jpg', 
-        'Quarintine.jpg', 'Schilds Ladder.jpg', 'Strange Code.jpg', 'The Man Who Folded Himself.jpg', 
+        'Quarantine.jpg', 'Schilds Ladder.jpg', 'Strange Code.jpg', 'The Man Who Folded Himself.jpg', 
         'The Stranger.jpg', 'Three Stigmata.jpg', 'Ubik.jpg'
     ];
 
