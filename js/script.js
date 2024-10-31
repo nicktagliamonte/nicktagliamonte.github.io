@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Amsterdam Central Canal.JPG', 'Amsterdam from Restaurant.JPG', 'Amsterdam Train Station.jpg', 
         'Auditorium.jpg', 'Bolzano.jpg', 'Cathedral.JPG', 'Dougie.png', 'Drug Church.jpg', 
         'Duck.jpg', 'Jefferson Memorial.jpg', 'Milan.jpg', 'Milanese.jpg', 'Mountain View.JPG', 
-        'PCT End.png', 'PCT Start.png', 'Profile.JPG', 'Rijksmuseum.jpg', 'Scout on Beach.PNG', 
+        'PCT End.png', 'Pct Start.png', 'Profile.JPG', 'Rijksmuseum.jpg', 'Scout on Beach.PNG', 
         'Tre Cime.jpg', 'Wedding.jpg'
     ];
 
