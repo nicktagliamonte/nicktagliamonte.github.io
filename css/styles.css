@@ -810,4 +810,18 @@ footer {
     .navigation ul li {
         margin: 5px 0; /* Add spacing between items */
     }
+
+    .projects-header {
+        position: fixed;
+        top: 0; /* Fixed position at the top */
+        left: 0;
+        right: 0;
+        padding-top: 100px; /* 100px padding above the header content */
+        background-color: white; /* Optional: set a background color */
+        z-index: 1000; /* Ensure it appears above other content */
+    }
+
+    .projects-main {
+        margin-top: 200px; /* 100px for the header padding + 100px for additional spacing */
+    }
 }
