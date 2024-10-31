@@ -616,16 +616,13 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-top: 4px solid #DAE7DA;
+    text-align: center;
 }
 
 .dark-mode #photos, .dark-mode #books {
     background-color: #3a3a3a;
     color: #e0e0e0;
     border-top: 4px solid #4B6F4B;
-}
-
-#photos {
-    text-align: center; /* Center-aligns the header and hr */
 }
 
 .separator {
@@ -689,6 +686,12 @@ h3 {
 /* Change cursor to pointer for photos */
 .photo-thumbnail {
     cursor: pointer; /* Pointer cursor for photos */
+    opacity: 0; /* Make photos invisible by default */
+    transition: opacity 0.5s ease; /* Smooth transition for visibility */
+}
+
+.photo-thumbnail.visible {
+    opacity: 1; /* Visible when the class is added */
 }
 
 .close {
@@ -741,6 +744,28 @@ h3 {
 
 .dark-mode .prev:hover, .dark-mode .next:hover {
     background: black;
+}
+
+#books-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Fill available space */
+    gap: 10px; /* 10px spacing around images */
+    max-width: 100%; /* Ensure the section doesn't overflow */
+    overflow: hidden; /* Prevent images from spilling out */
+    padding: 10px; /* Optional padding for better layout */
+    padding-top: 20px; /* Padding above the photo grid */
+}
+
+.book-thumbnail {
+    width: 100%; /* Make sure images fit the grid */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    opacity: 0; /* Make photos invisible by default */
+    transition: opacity 0.5s ease; /* Smooth transition for visibility */
+}
+
+.book-thumbnail.visible {
+    opacity: 1; /* Visible when the class is added */
 }
 
 /* Section Styles */

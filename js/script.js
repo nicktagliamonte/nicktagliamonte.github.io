@@ -145,6 +145,24 @@ document.addEventListener('DOMContentLoaded', () => {
         img.style.cursor = 'pointer'; // Change cursor to pointer on hover
         img.addEventListener('click', () => openSlideshow(index)); // Open slideshow on click
         photosContainer.appendChild(img);
+
+        // Observe the image for visibility
+        const options = {
+            root: null, // Use the viewport as the root
+            rootMargin: '0px',
+            threshold: 0.9 // Trigger when 90% of the card is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Show the card
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, options);
+
+        observer.observe(img); // Observe the current image
     });
 
     function openSlideshow(index) {
@@ -172,5 +190,45 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target === slideshowModal) {
             slideshowModal.style.display = 'none';
         }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const booksContainer = document.getElementById('books-container');
+
+    const imageFilenames = [
+        '1q84.jpg', 'Acceptance.jpg', 'Anathem.jpg', 'Annihilation.jpg', 'Antimemetics.jpg', 'Authority.jpg', 'Axiomatic.jpg', 'BBoD.jpg', 'Diaspora.jpg', 'Disquiet.jpg',
+        'Infinite Jest.jpg', 'Kafka.jpg', 'Nausea.jpg', 'Notes From Underground.jpg', 'Permutation City.jpg', 'Prime Intellect.jpg', 'Quarantine.jpg', 'Schilds Ladder.jpg',
+        'Strange Code.jpg', 'The Man Who Folded Himself.jpg', 'The Stranger.jpg', 'Three Stigmata.jpg', 'Ubik.jpg'
+    ];
+
+    let currentIndex = 0;
+
+    // Loop through filenames, creating img elements for each
+    imageFilenames.forEach((filename, index) => {
+        const img = document.createElement('img');
+        img.src = `books/${filename}`; // Path to each image
+        img.alt = filename; // Optional: improves accessibility
+        img.classList.add('book-thumbnail'); // Add a class for styling
+        img.style.cursor = 'pointer'; // Change cursor to pointer on hover
+        booksContainer.appendChild(img);
+
+        // Observe the image for visibility
+        const options = {
+            root: null, // Use the viewport as the root
+            rootMargin: '0px',
+            threshold: 0.9 // Trigger when 90% of the card is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Show the card
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, options);
+
+        observer.observe(img); // Observe the current image
     });
 });
