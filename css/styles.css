@@ -1,86 +1,83 @@
-/* Base Styles */
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New",Courier,monospace;
     background-color: #f0f0f0;
     color: #505050;
     margin: 0;
-    padding: 0;
+    padding: 0
 }
 
 body.dark-mode {
     background-color: #2a2a2a;
-    color: #e0e0e0;
+    color: #e0e0e0
 }
 
 main {
-    margin-top: 120px; /* Adjust this value based on the total height of your navigation bar and projects header */
+    margin-top: 120px
 }
 
-/* Header Styles */
+.dark-mode-toggle,header {
+    top: 0;
+    display: flex;
+    align-items: center
+}
+
 header {
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: #DAE7DA;
-    color: #6B6B6B;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #dae7da;
+    color: #6b6b6b;
+    justify-content: space-between
 }
 
-.dark-mode header {
-    background-color: #4B6F4B;
-    color: #D0D0D0;
+.dark-mode footer,.dark-mode header {
+    background-color: #4b6f4b;
+    color: #d0d0d0
 }
 
 .header-left h1 {
     font-size: 24px;
-    margin: 30px 0 1px 15px; /* Simplified margin declaration */
+    margin: 30px 0 1px 15px
 }
 
 .header-left h1 a {
     text-decoration: none;
     color: #505050;
     padding: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color .3s,color .3s
 }
 
 .dark-mode .header-left h1 a {
-    color: #e0e0e0; /* Header link color */
+    color: #e0e0e0
 }
 
 .header-left h1 a:hover {
-    background-color: #ffffff;
-    color: #505050;
+    background-color: #fff;
+    color: #505050
 }
 
-.dark-mode .header-left h1 a:hover {
-    background-color: #1f1f1f; /* Header link hover */
-    color: #e0e0e0; /* Header link hover text */
+.dark-mode .header-left h1 a:hover,.dark-mode .navigation li a:hover {
+    background-color: #1f1f1f;
+    color: #e0e0e0
 }
 
 .dark-mode-toggle {
-    position: absolute; /* Use absolute positioning */
-    top: 0px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    display: flex;
-    align-items: center; /* Vertically center the icon and toggle */
+    position: absolute;
+    right: 10px
 }
 
 .sun-icon {
-    margin-right: 8px; /* Space between the icon and the toggle */
+    margin-right: 8px
 }
 
-/* Add styles for the toggle switch */
 .toggle {
     display: flex;
-    align-items: center;
+    align-items: center
 }
 
 .toggle input {
-    display: none; /* Hide the checkbox */
+    display: none
 }
 
 .slider {
@@ -89,7 +86,7 @@ header {
     background-color: #ccc;
     border-radius: 34px;
     position: relative;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .slider:before {
@@ -99,327 +96,287 @@ header {
     width: 13px;
     left: 2px;
     bottom: 2px;
-    background-color: white;
+    background-color: #fff;
     border-radius: 50%;
-    transition: .4s;
+    transition: .4s
 }
 
-input:checked + .slider {
-    background-color: #A4C8A8; /* Change this color for the toggle background */
+input:checked+.slider {
+    background-color: #a4c8a8
 }
 
-input:checked + .slider:before {
-    transform: translateX(16px); /* Adjust based on slider size */
+input:checked+.slider:before {
+    transform: translateX(16px)
 }
 
 .social-link {
     position: relative;
-    padding: 5px 10px; /* Add some padding for better hover effect */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    padding: 5px 10px;
+    transition: background-color .3s ease
 }
 
 .social-link:hover {
-    background-color: #DAE7DA; /* Change background color on hover */
-    border-radius: 4px; /* Optional: add rounded corners */
+    background-color: #dae7da;
+    border-radius: 4px
 }
 
-.dark-mode .social-link:hover {
-    background-color: #4B6F4B; /* Social link hover */
+.dark-mode .project-card:hover,.dark-mode .social-link:hover {
+    background-color: #4b6f4b
 }
 
-
-/* Navigation Styles */
 .navigation ul {
     list-style-type: none;
     padding: 0;
     display: flex;
-    margin: 25px 0 0; /* Simplified margin declaration */
+    margin: 25px 0 0
 }
 
 .navigation li a {
     text-decoration: none;
     color: #505050;
     padding: 10px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color .3s,color .3s
 }
 
-.dark-mode .navigation li a {
-    color: #e0e0e0;
+.dark-mode .navigation li a,.dark-mode .project-card p,.dark-mode .projects-header a,.dark-mode .skill-bar label {
+    color: #e0e0e0
 }
 
 .navigation li a:hover {
-    background-color: #ffffff;
-    color: #505050;
+    background-color: #fff;
+    color: #505050
 }
 
-.dark-mode .navigation li a:hover {
-    background-color: #1f1f1f; /* Navigation hover */
-    color: #e0e0e0; /* Navigation hover text */
-}
-
-/* Projects Header Styles */
 .projects-header {
     position: fixed;
-    top: 58px; /* Adjust this value based on the height of your navigation bar */
+    top: 58px;
     left: 0;
     right: 0;
-    z-index: 1000; /* Slightly lower than the navigation bar */
+    z-index: 1000;
     display: flex;
     background-color: #f0f0f0;
-    justify-content: space-between; /* Aligns items to left and right */
-    align-items: center; /* Vertically centers items */
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    border-bottom: 2px solid #A1A1A1;
+    border-bottom: 2px solid #a1a1a1
 }
 
 .dark-mode .projects-header {
-    background-color: #2a2a2a; /* Projects header background */
-    color: #e0e0e0;
+    background-color: #2a2a2a;
+    color: #e0e0e0
 }
 
 .projects-header h1 {
-    margin: 0; /* Removes default margin */
-    font-size: 32px; /* Adjust size as needed */
-    color: #6B6B6B; /* Ensure consistent color with the theme */
+    margin: 0;
+    font-size: 32px;
+    color: #6b6b6b
 }
 
-.dark-mode .projects-header h1 {
-    color: #D0D0D0; /* Projects header text */
+.dark-mode .projects-header a:hover,.dark-mode .projects-header h1 {
+    color: #d0d0d0
 }
 
 .projects-header a {
-    margin-left: 10px; /* Adds space between the links */
-    text-decoration: none; /* No underline */
-    color: #505050; /* Link color */
-    transition: color 0.3s; /* Smooth transition for color change */
+    margin-left: 10px;
+    text-decoration: none;
+    color: #505050;
+    transition: color .3s
 }
 
-.dark-mode .projects-header a {
-    color: #e0e0e0;
+.projects-header a:hover,body.dark-mode address a {
+    color: #dae7da
 }
 
-.projects-header a:hover {
-    color: #DAE7DA; /* Change color on hover */
-}
-
-.dark-mode .projects-header a:hover {
-    color: #d0d0d0;
-}
-
-#finished-projects, #under-development, #planned-projects {
+#finished-projects,#planned-projects,#under-development {
     padding: 20px;
-    margin: 0px auto; /* Center the section */
+    margin: 0 auto;
     background-color: transparent;
     border-color: transparent;
-    box-shadow: none;
+    box-shadow: none
+}
+
+#greeting,.project-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1)
 }
 
 .project-card {
     display: inline-block;
     opacity: 0;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 35px;
-    margin: 5px;
     width: 450px;
     vertical-align: top;
-    margin-top: 20px;
-    transition: opacity 0.9s ease, transform 0.3s ease, background-color 0.3s ease;
+    margin: 20px 5px 5px;
+    transition: opacity .9s ease,transform .3s ease,background-color .3s ease
 }
 
 .project-card.visible {
-    opacity: 1;
+    opacity: 1
 }
 
-.project-card:hover {
-    transform: translateY(-5px); /* Hover effect */
-    background-color: #DAE7DA;
-}
-
-/* Dark Mode Styling */
 .dark-mode .project-card {
     background-color: #3a3a3a;
-    color: #e0e0e0;
+    color: #e0e0e0
 }
 
 .three-column-container {
     display: flex;
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 20px
 }
 
-/* Each column styling */
-.column-1, .column-2, .column-3 {
-    flex: 1; /* Each column takes up equal space */
+.column-1,.column-2,.column-3 {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    max-width: 540px;
+    max-width: 540px
 }
 
 .project-card:hover {
-    transform: translateY(-5px); /* Hover effect */
-    background-color: #DAE7DA; /* Use the exact color */
-    transition: background-color, transform 0.3s ease;
-}
-
-.dark-mode .project-card:hover {
-    background-color: #4B6F4B; /* Card hover */
+    transform: translateY(-5px);
+    background-color: #dae7da;
+    transition: background-color,transform .3s ease
 }
 
 .project-card:hover .language-tag {
-    background-color: #f9f9f9; /* Change background on hover */
-    transition: background-color 0.3s ease;
+    background-color: #f9f9f9;
+    transition: background-color .3s ease
 }
 
 .dark-mode .project-card:hover .language-tag {
-    background-color: #3a3a3a;
+    background-color: #3a3a3a
 }
 
 .project-card h3 {
-    margin: 0 0 10px; /* Margin for the title */
+    margin: 0 0 10px
 }
 
 .project-card p {
-    color: #505050; /* Text color */
-}
-
-.dark-mode .project-card p {
-    color: #e0e0e0;
+    color: #505050
 }
 
 .language-tag {
-    display: inline-block; /* Allows padding and border radius to apply correctly */
-    padding: 5px 15px;    /* Adjust padding for size */
-    margin: 5px;          /* Space between tags */
-    background-color: #DAE7DA; /* Default background color */
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 5px;
+    background-color: #dae7da;
     color: #484848;
-    border-radius: 25px;  /* Create rounded edges */
-    border: 1px solid #ccc; /* Optional border */
-    font-size: 14px;      /* Font size */
-    text-align: center;    /* Center the text */
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    text-align: center
 }
 
 .dark-mode .language-tag {
-    background-color: #4B6F4B; /* Language tag background */
-    color: #D1D1D1; /* Language tag text */
+    background-color: #4b6f4b;
+    color: #d1d1d1
 }
 
-/* Greeting Styles */
 #greeting {
     text-align: center;
     max-width: 700px;
     margin: 20px auto;
     padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #DAE7DA;
+    border-top: 4px solid #dae7da
 }
 
 .dark-mode #greeting {
-    background-color: #3a3a3a; /* Greeting section background */
-    color: #e0e0e0; /* Greeting text color */
-    border-top: 4px solid #4B6F4B;
+    border-top: 4px solid #4b6f4b
 }
 
-/* About Section Styles */
 .about-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px
 }
 
 .left-content {
     flex: 3;
     background-color: transparent;
-    border: none;
+    border: 0;
     padding: 0;
-    box-shadow: none;
+    box-shadow: none
 }
 
 .dark-mode .left-content {
-    background-color: #2a2a2a;
+    background-color: #2a2a2a
+}
+
+#about-me,#personal-interests,.right-content {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1)
 }
 
 .right-content {
     flex: 1;
     background-color: #f9f9f9;
     padding: 25px;
-    border-radius: 8px; /* Corrected to include size */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: 80px;
-    border-top: 4px solid #DAE7DA;
+    border-top: 4px solid #dae7da
 }
 
 .dark-mode .right-content {
     background-color: #3a3a3a;
-    border-top: 4px solid #4B6F4B;
+    border-top: 4px solid #4b6f4b
 }
 
-/* Heading Styles */
-h2, h3 {
-    color: #6B6B6B;
+h2,h3 {
+    color: #6b6b6b
 }
 
-.dark-mode h2, .dark-mode h3 {
-    color: #D0D0D0;
+.dark-mode h2,.dark-mode h3 {
+    color: #d0d0d0
 }
 
 h3 {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 10px
 }
 
-/* About Me and Personal Interests Styles */
-#about-me, #personal-interests {
+#about-me,#personal-interests {
     padding: 20px 30px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 700px;
-    margin: 0 auto 20px; /* Centralized margin */
+    margin: 0 auto 20px
 }
 
-.dark-mode #about-me, .dark-mode #personal-interests {
-    background-color: #3a3a3a; /* About and personal sections background */
-    color: #e0e0e0; /* About and personal sections text */
+.dark-mode #about-me,.dark-mode #greeting,.dark-mode #personal-interests {
+    background-color: #3a3a3a;
+    color: #e0e0e0
 }
 
 #about-me {
-    border-top: 4px solid #DAE7DA;
-    margin-top: 80px;
+    border-top: 4px solid #dae7da;
+    margin-top: 80px
 }
 
 .dark-mode #about-me {
-    border-top: 4px solid #4B6F4B;
+    border-top: 4px solid #4b6f4b
 }
 
 #personal-interests {
-    border-top: 4px solid #A7C7A7;
+    border-top: 4px solid #a7c7a7
 }
 
 .dark-mode #personal-interests {
-    border-top: 4px solid #2D4F2D;
+    border-top: 4px solid #2d4f2d
 }
 
-/* Skill Bar Styles */
 .skill-bar label {
     font-size: 14px;
     color: #505050;
     display: block;
-    margin-bottom: 5px;
-}
-
-.dark-mode .skill-bar label {
-    color: #e0e0e0;
+    margin-bottom: 5px
 }
 
 .skill-bar {
     margin-bottom: 15px;
     text-align: left;
-    white-space: nowrap; /* Prevents wrapping */
+    white-space: nowrap
 }
 
 .progress-bar {
@@ -427,42 +384,41 @@ h3 {
     border-radius: 5px;
     overflow: hidden;
     height: 8px;
-    width: calc(100% - 50px); /* Adjust width to account for flag space */
-    margin-right: 10px; /* Space between the bar and flag */
-    display: inline-block; /* Keeps it in line with the flag */
+    width: calc(100% - 50px);
+    margin-right: 10px;
+    display: inline-block
 }
 
 .dark-mode .progress-bar {
-    background-color: #4b4b4b;
+    background-color: #4b4b4b
+}
+
+.flag,.progress {
+    background-color: #505050;
+    border-radius: 5px
 }
 
 .progress {
-    background-color: #505050;
-    height: 100%;
-    border-radius: 5px;
+    height: 100%
 }
 
-.dark-mode .progress {
-    background-color: #e0e0e0;
+.dark-mode .flag,.dark-mode .progress {
+    background-color: #e0e0e0
 }
 
 .flag {
-    background-color: #505050;
     color: #f9f9f9;
-    border-radius: 5px;
     padding: 3px 5px;
     font-size: 12px;
-    display: inline-block; /* Ensures flag is inline */
-    margin-left: 10px; /* Adds space between the flag and the bar */
-    vertical-align: middle; /* Aligns the flag vertically with the bar */
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle
 }
 
 .dark-mode .flag {
-    background-color: #e0e0e0;
-    color: #3a3a3a;
+    color: #3a3a3a
 }
 
-/* Profile Picture Styles */
 .profile-pic {
     width: 150px;
     height: 150px;
@@ -470,192 +426,148 @@ h3 {
     object-fit: cover;
     display: block;
     margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,.2)
 }
 
-#resume {
+#contact,#resume {
     text-align: left;
     max-width: 700px;
     margin: 20px auto;
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #DAE7DA;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    border-top: 4px solid #dae7da
 }
 
-.dark-mode #resume {
+.dark-mode #books,.dark-mode #contact,.dark-mode #photos,.dark-mode #resume {
     background-color: #3a3a3a;
     color: #e0e0e0;
-    border-top: 4px solid #4B6F4B;
+    border-top: 4px solid #4b6f4b
 }
 
-/* Regular mode link color for <address> section */
 address a {
-    color: #4B6F4B; /* Dark green for regular mode */
-}
-
-/* Dark mode link color for <address> section */
-body.dark-mode address a {
-    color: #DAE7DA; /* Light grey for dark mode */
+    color: #4b6f4b
 }
 
 .download-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #DAE7DA; 
+    background-color: #dae7da;
     color: #505050;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color .3s ease
 }
 
-.download-button:hover {
-    background-color: #3a5a3a; /* Slightly darker shade on hover */
-    color: #f0f0f0;
+#contactForm button:hover,.dark-mode #contactForm button,.dark-mode .download-button,.download-button:hover {
+    background-color: #3a5a3a;
+    color: #f0f0f0
 }
 
-.dark-mode .download-button {
-    background-color: #3a5a3a; 
-    color: #f0f0f0;
-}
-
-.dark-mode .download-button:hover {
-    background-color: black;
+.dark-mode #contactForm button:hover,.dark-mode .download-button:hover,.dark-mode section {
+    background-color: #000
 }
 
 #contact {
     text-align: center;
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 10px;
-    padding-bottom: 25px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #DAE7DA;
-}
-
-.dark-mode #contact {
-    background-color: #3a3a3a; 
-    color: #e0e0e0; 
-    border-top: 4px solid #4B6F4B;
+    padding: 10px 10px 25px
 }
 
 #contactForm {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .form-row {
     display: flex;
-    gap: 15px; /* Space between inputs */
-    margin-bottom: 15px; /* Space below each row */
+    gap: 15px;
+    margin-bottom: 15px
 }
 
-.dark-mode input[type="text"],
-.dark-mode input[type="email"],
-.dark-mode textarea {
-    background-color: #333333; /* Darker background for input areas */
-    color: #ffffff; /* Light text color */
-    border: 1px solid #555555; /* Subtle border color */
+.dark-mode input[type=email],.dark-mode input[type=text],.dark-mode textarea {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555
 }
 
-.dark-mode input[type="text"]::placeholder,
-.dark-mode input[type="email"]::placeholder,
-.dark-mode textarea::placeholder {
-    color: #aaaaaa; /* Lighter color for placeholder text */
+.dark-mode input[type=email]::placeholder,.dark-mode input[type=text]::placeholder,.dark-mode textarea::placeholder {
+    color: #aaa
 }
 
 .form-row input {
-    width: 100%;
+    width: 100%
 }
 
 #contactForm textarea {
     width: 99%;
-    margin-bottom: 15px;
+    margin-bottom: 15px
+}
+
+#contactForm button,footer {
+    background-color: #dae7da;
+    width: 100%
 }
 
 #contactForm button {
     display: block;
-    width: 100%;
     padding: 10px;
-    background-color: #DAE7DA;
     color: #505050;
-    border: none;
+    border: 0;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#contactForm button:hover {
-    background-color: #3a5a3a;
-    color: #f0f0f0;
-}
-
-.dark-mode #contactForm button {
-    background-color: #3a5a3a; 
-    color: #f0f0f0;
-}
-
-.dark-mode #contactForm button:hover {
-    background-color: black;
+    transition: background-color .3s ease
 }
 
 #personal {
     display: flex;
-    gap: 20px; /* Optional spacing between the columns */
+    gap: 20px;
     padding: 20px;
     background-color: transparent;
-    box-shadow: none;
+    box-shadow: none
 }
 
-#photos, #books {
-    flex: 1; /* Each half takes up 50% width */
+#books,#photos,section {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1)
+}
+
+#books,#photos {
+    flex: 1;
     max-width: 100%;
     padding: 20px;
     background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #DAE7DA;
-    text-align: center;
-}
-
-.dark-mode #photos, .dark-mode #books {
-    background-color: #3a3a3a;
-    color: #e0e0e0;
-    border-top: 4px solid #4B6F4B;
+    border-top: 4px solid #dae7da;
+    text-align: center
 }
 
 .separator {
-    border: none; /* No border */
-    height: 1px; /* Line thickness */
-    background-color: #ddd; /* Line color */
-    margin: 10px auto; /* Center with automatic margins */
-    width: 80%; /* Set a specific width, adjust as necessary */
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px auto;
+    width: 80%
 }
 
 #photos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Fill available space */
-    gap: 10px; /* 10px spacing around images */
-    max-width: 100%; /* Ensure the section doesn't overflow */
-    overflow: hidden; /* Prevent images from spilling out */
-    padding: 10px; /* Optional padding for better layout */
-    padding-top: 20px; /* Padding above the photo grid */
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 20px 10px 10px
 }
 
 #photos-container img {
-    width: 100%; /* Ensure images fill their grid cells */
-    height: auto; /* Fixed height for uniformity */
-    aspect-ratio: 4 / 3;
-    object-fit: cover; /* Maintain aspect ratio while fitting within the set height */
-    border-radius: 5px; /* Optional rounded corners */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 5px
 }
 
-/* Modal styles */
 #slideshow-modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -663,180 +575,155 @@ body.dark-mode address a {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+    background-color: rgba(0,0,0,.8)
 }
 
 .modal-content {
-    position: absolute; /* Change to absolute positioning */
-    top: 50%; /* Center vertically */
-    left: 55%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust to offset from center */
-    width: 90%; /* Adjust width as needed */
-    max-width: 600px; /* Optional max width */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Padding inside the modal */
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 20px
 }
 
 .slideshow-image {
-    max-width: 85%; /* Ensure image doesn't exceed 90% of modal width */
-    max-height: 90%; /* Ensure image doesn't exceed 90% of modal height */
-    object-fit: contain; /* Maintain aspect ratio */
-    display: block; /* Block-level element for centering */
-    margin: 0 auto; /* Center the image */
+    max-width: 85%;
+    max-height: 90%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto
 }
 
-/* Change cursor to pointer for photos */
 .photo-thumbnail {
-    cursor: pointer; /* Pointer cursor for photos */
-    opacity: 0; /* Make photos invisible by default */
-    transition: opacity 0.5s ease; /* Smooth transition for visibility */
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .5s ease
 }
 
 .photo-thumbnail.visible {
-    opacity: 1; /* Visible when the class is added */
+    opacity: 1
 }
 
 .close {
     position: absolute;
     top: 10px;
     right: 25px;
-    color: #DAE7DA;
+    color: #dae7da;
     font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
+    font-weight: 700;
+    cursor: pointer
 }
 
 .dark-mode .close {
-    color: #4B6F4B;
+    color: #4b6f4b
 }
 
-/* Navigation buttons */
 .photo-navigation {
-    position: absolute; /* Position the navigation buttons absolutely */
-    top: 50%; /* Center them vertically */
-    left: 0; /* Align to the left edge */
-    right: 0; /* Align to the right edge */
-    transform: translateY(-50%); /* Vertically center using transform */
-    display: flex; /* Use flexbox for button alignment */
-    justify-content: space-between; /* Space out buttons to edges */
-    width: 100%; /* Make sure it takes the full width of the modal */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%
 }
 
-.prev, .next {
-    background: #DAE7DA; /* No background */
-    border: none; /* No border */
-    color: #333; /* Button text color */
-    font-size: 24px; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    padding: 10px 10px; /* Remove extra padding */
+.next,.prev {
+    background: #dae7da;
+    border: 0;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
     border-radius: 5px;
-    margin: 0 30px; /* Increase margin to separate buttons from each other */
-    opacity: 0.8; /* Make buttons slightly transparent */
-    transition: background-color 0.3s;
+    margin: 0 30px;
+    opacity: .8;
+    transition: background-color .3s
 }
 
-.dark-mode .prev, .dark-mode .next {
-    background: #4B6F4B;
-    color: #e0e0e0;
+.dark-mode .next,.dark-mode .prev {
+    background: #4b6f4b;
+    color: #e0e0e0
 }
 
-.prev:hover, .next:hover {
-    background: #4B6F4B;
+.next:hover,.prev:hover {
+    background: #4b6f4b
 }
 
-.dark-mode .prev:hover, .dark-mode .next:hover {
-    background: black;
+.dark-mode .next:hover,.dark-mode .prev:hover {
+    background: #000
 }
 
 #books-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Fill available space */
-    gap: 10px; /* 10px spacing around images */
-    max-width: 100%; /* Ensure the section doesn't overflow */
-    overflow: hidden; /* Prevent images from spilling out */
-    padding: 10px; /* Optional padding for better layout */
-    padding-top: 20px; /* Padding above the photo grid */
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 20px 10px 10px
 }
 
 .book-thumbnail {
-    width: 100%; /* Make sure images fit the grid */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
     cursor: pointer;
-    opacity: 0; /* Make photos invisible by default */
-    transition: opacity 0.5s ease; /* Smooth transition for visibility */
+    opacity: 0;
+    transition: opacity .5s ease
 }
 
 .book-thumbnail.visible {
-    opacity: 1; /* Visible when the class is added */
+    opacity: 1
 }
 
-/* Section Styles */
 section {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff
 }
 
-.dark-mode section {
-    background-color: #000000;
-}
-
-/* Footer Styles */
 footer {
     text-align: center;
-    background-color: #DAE7DA;
-    color: #6B6B6B;
-    position: relative;
-    width: 100%;
+    color: #6b6b6b;
+    position: relative
 }
 
-.dark-mode footer {
-    background-color: #4B6F4B; /* Footer background */
-    color: #D0D0D0; /* Footer text color */
-}
-
-/* Add a media query for screens smaller than 768px */
-@media (max-width: 768px) {
-    /* Adjust the content positioning to be below the nav bar */
+@media (max-width:768px) {
     body {
-        padding-top: 100px;
+        padding-top: 100px
     }
 
-    /* Stack navigation items vertically */
     .navigation ul {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center
     }
 
     .navigation ul li {
-        margin: 5px 0; /* Add spacing between items */
+        margin: 5px 0
     }
 
     .projects-header {
-        display: none; /* Completely remove the header from the layout */
+        display: none
     }
 
     .project-card {
-        max-width: calc(95% - 20px); /* Make it just a few pixels smaller than the screen width */
-        width: 100%; /* Make it take full width within the max-width constraint */
+        max-width: calc(95% - 20px);
+        width: 100%
     }
 
-    .three-column-container {
-        flex-direction: column; /* Stack columns vertically on small screens */
+    #personal,.three-column-container {
+        flex-direction: column
     }
 
-    .column-1, .column-2, .column-3 {
-        max-width: none; /* Remove any fixed width for columns */
+    .column-1,.column-2,.column-3 {
+        max-width: none
     }
 
-    #personal {
-        flex-direction: column; /* Stack sections vertically */
-    }
-
-    #photos, #books {
-        max-width: 100%; /* Ensure each section takes full width */
-        width: 100%; /* Make sections fill the available width */
-        margin-bottom: 20px;
+    #books,#photos {
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 20px
     }
 }
