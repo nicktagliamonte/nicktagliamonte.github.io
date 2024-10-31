@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta name="description" content="Portfolio of Nick Tagliamonte showcasing personal photos and books I enjoy.">
+    <meta name="keywords" content="Nick Tagliamonte, portfolio, personal photos, book recommendations, photography">
+    <meta name="author" content="Nick Tagliamonte">
+    <title>My Portfolio - Nick Tagliamonte</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -47,10 +50,10 @@
             
             <div id="books">
                 <h2 role="heading" aria-level="2">Books</h2>
-                <p>Books I've read and liked recently, in no particular order.  It's not...ALL dense unaproachable sci fi.</p>
+                <p>Books I've read and liked recently, in no particular order. It's not...ALL dense unapproachable sci-fi.</p>
                 <hr class="separator">
                 <div id="books-container">
-
+                    <!-- Books loaded by javascript -->
                 </div>
             </div>
         </section>
@@ -73,6 +76,21 @@
     </footer>
 
     <script src="js/script.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nick Tagliamonte",
+      "url": "https://nicktagliamonte.github.io",
+      "sameAs": [
+        "https://www.linkedin.com/in/nick-tagliamonte-b44129241/",
+        "https://github.com/nicktagliamonte"
+      ],
+      "jobTitle": "Developer",
+      "description": "Personal portfolio showcasing photos and books."
+    }
+    </script>
 </body>
 
 </html>

@@ -490,6 +490,16 @@ h3 {
     border-top: 4px solid #4B6F4B;
 }
 
+/* Regular mode link color for <address> section */
+address a {
+    color: #4B6F4B; /* Dark green for regular mode */
+}
+
+/* Dark mode link color for <address> section */
+body.dark-mode address a {
+    color: #DAE7DA; /* Light grey for dark mode */
+}
+
 .download-button {
     display: inline-block;
     padding: 10px 20px;
