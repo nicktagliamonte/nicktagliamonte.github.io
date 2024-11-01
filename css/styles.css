@@ -784,15 +784,15 @@ footer {
         width: 100%
     }
 
-    #personal,
-    .three-column-container {
-        max-width: calc(95% - 20px);
-    }
-
     .column-1,
     .column-2,
     .column-3 {
         max-width: calc(95% - 20px);
+        padding: 10px;
+    }
+
+    .personal {
+        flex-direction: column;
     }
 
     #books,
