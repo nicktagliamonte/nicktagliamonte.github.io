@@ -370,8 +370,16 @@ body.dark-mode address a {
     cursor: crosshair;
 }
 
+.project-card:hover .language-tag.selected {
+    background-color: #4b6f4b;
+}
+
 .dark-mode .project-card:hover .language-tag {
     background-color: #3a3a3a
+}
+
+.dark-mode .project-card:hover .language-tag.selected {
+    background-color: #dae7da;
 }
 
 .project-card h3 {
@@ -382,7 +390,7 @@ body.dark-mode address a {
     color: #505050
 }
 
-.language-tag {
+.language-tag, #clear-filters {
     display: inline-block;
     padding: 5px 15px;
     margin: 5px;
@@ -394,9 +402,31 @@ body.dark-mode address a {
     text-align: center
 }
 
-.dark-mode .language-tag {
+#clear-filters:hover {
+    background-color: #fefefe;
+    transition: background-color .3s ease;
+    cursor: crosshair;
+}
+
+.dark-mode #clear-filters:hover {
+    background-color: #3a3a3a
+}
+
+.language-tag.selected {
+    background-color: #4b6f4b; /* Highlight color for selected tag */
+    color: white; /* Change text color for contrast */
+    border-color: #4b6f4b; /* Same color for the border */
+}
+
+.dark-mode .language-tag, .dark-mode #clear-filters {
     background-color: #4b6f4b;
     color: #d1d1d1
+}
+
+.dark-mode .language-tag.selected {
+    background-color: #dae7da; /* Highlight color for selected tag */
+    color: #484848; /* Change text color for contrast */
+    border-color: #dae7da; /* Same color for the border */
 }
 
 #greeting {

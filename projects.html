@@ -68,6 +68,7 @@
     <div class="projects-header">
         <h1>Projects</h1>
         <div>
+            <button id="clear-filters">Clear Filters</button>
             <a href="#top">Finished</a>
             <a href="#under-development">Under Development</a>
             <a href="#planned-projects">Planned</a>
@@ -81,21 +82,19 @@
             <h2>Finished Projects</h2>
             <div class="three-column-container">
                 <div class="column-1">
-                    <a href="https://github.com/nicktagliamonte/Portfolio-Website/tree/main" target="_blank"
-                        style="text-decoration: none; color: inherit;">
-                        <div class="project-card">
-                            <h3>Portfolio Website</h3>
-                            <p>
-                                This website -- a first foray into web development and exercise in self-teaching HTML
-                                and CSS.<br>
-                                Potential updates: a blog section, improved links, aesthetic changes to improve
-                                readability.
-                            </p>
-                            <span class="language-tag">HTML</span>
-                            <span class="language-tag">CSS</span>
-                            <span class="language-tag">JavaScript</span>
-                        </div>
-                    </a>
+                    <div class="project-card" onclick="window.open('https://github.com/nicktagliamonte/Portfolio-Website/tree/main', '_blank')" style="cursor: crosshair;">
+                        <h3>Portfolio Website</h3>
+                        <p>
+                            This website -- a first foray into web development and exercise in self-teaching HTML
+                            and CSS.<br>
+                            Potential updates: filter option on the projects page -- click on a language tag to see other projects with that same tag.
+                            Needed improvements and cleanup: spice up the resume a little, split the js into separate files (it could not be less organized than it
+                            currently is).
+                        </p>
+                        <span class="language-tag" data-language="HTML">HTML</span>
+                        <span class="language-tag" data-language="CSS">CSS</span>
+                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
+                    </div>                    
                 </div>
                 <div class="column-2">
 
@@ -124,7 +123,7 @@
                             This card is a link to the GitHub page for the project. On completion, there will be a
                             "demo" button. Approx 5% complete.
                         </p>
-                        <span class="language-tag">Java</span>
+                        <span class="language-tag" data-language="Java">Java</span>
                     </div>
                 </div>
                 <div class="column-2">
@@ -139,11 +138,11 @@
                             This card is a link to the GitHub page for the project. On completion, there will be a
                             "demo" button. Approx 1% complete.
                         </p>
-                        <span class="language-tag">HTML</span>
-                        <span class="language-tag">CSS</span>
-                        <span class="language-tag">JavaScript</span>
-                        <span class="language-tag">Node.js</span>
-                        <span class="language-tag">MongoDB</span>
+                        <span class="language-tag" data-language="HTML">HTML</span>
+                        <span class="language-tag" data-language="CSS">CSS</span>
+                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
+                        <span class="language-tag" data-language="Node.js">Node.js</span>
+                        <span class="language-tag" data-language="MongoDB">MongoDB</span>
                     </div>
                 </div>
                 <div class="column-3">
@@ -165,7 +164,7 @@
                             trees, and graphs in Java.
                             This project will focus on the efficiency and usability of each data structure.
                         </p>
-                        <span class="language-tag">Java</span>
+                        <span class="language-tag" data-language="Java">Java</span>
                         <span class="language-tag">JUnit</span>
                     </div>
                     <div class="project-card">
@@ -175,11 +174,11 @@
                             equipment, and preferred workout
                             days, and generates a personalized exercise regimen.
                         </p>
-                        <span class="language-tag">HTML</span>
-                        <span class="language-tag">CSS</span>
-                        <span class="language-tag">JavaScript</span>
-                        <span class="language-tag">Python (Flask)</span>
-                        <span class="language-tag">SQLite</span>
+                        <span class="language-tag" data-language="HTML">HTML</span>
+                        <span class="language-tag" data-language="CSS">CSS</span>
+                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
+                        <span class="language-tag" data-language="Python (Flask)">Python (Flask)</span>
+                        <span class="language-tag" data-language="SQLite">SQLite</span>
                     </div>
                     <div class="project-card">
                         <h3>DIY Leetcode</h3>
@@ -191,11 +190,11 @@
                         <p>
                             Make what you know, and I know leetcode...
                         </p>
-                        <span class="language-tag">HTML</span>
-                        <span class="language-tag">CSS</span>
-                        <span class="language-tag">JavaScript</span>
-                        <span class="language-tag">Node.js</span>
-                        <span class="language-tag">MongoDB</span>
+                        <span class="language-tag" data-language="HTML">HTML</span>
+                        <span class="language-tag" data-language="CSS">CSS</span>
+                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
+                        <span class="language-tag" data-language="Node.js">Node.js</span>
+                        <span class="language-tag" data-language="MongoDB">MongoDB</span>
                     </div>
                     <div class="project-card">
                         <h3>Movie Recommendation System</h3>
@@ -204,9 +203,9 @@
                             collaborative filtering techniques
                             to analyze user behavior.
                         </p>
-                        <span class="language-tag">Python (Flask)</span>
-                        <span class="language-tag">PostgreSQL</span>
-                        <span class="language-tag">SciKit-Learn</span>
+                        <span class="language-tag" data-language="Python (Flask)">Python (Flask)</span>
+                        <span class="language-tag" data-language="PostgreSQL">PostgreSQL</span>
+                        <span class="language-tag" data-language="SciKit-Learn">SciKit-Learn</span>
                     </div>
                     <div class="project-card">
                         <h3>Basic Search Engine</h3>
@@ -219,8 +218,8 @@
                             to perform keyword searches. <br>Goal:
                             learning about web crawling, indexing, and querying.
                         </p>
-                        <span class="language-tag">Python (Flask)</span>
-                        <span class="language-tag">Elasticsearch</span>
+                        <span class="language-tag" data-language="Python (Flask)">Python (Flask)</span>
+                        <span class="language-tag" data-language="Elasticsearch">Elasticsearch</span>
                     </div>
                     <div class="project-card">
                         <h3>Compiler</h3>
@@ -233,9 +232,9 @@
                             language, focusing on parsing,
                             syntax analysis, and basic code execution.
                         </p>
-                        <span class="language-tag">C</span>
-                        <span class="language-tag">ANTLR</span>
-                        <span class="language-tag">LVVM</span>
+                        <span class="language-tag" data-language="C">C</span>
+                        <span class="language-tag" data-language="ANTLR">ANTLR</span>
+                        <span class="language-tag" data-language="LVVM">LVVM</span>
                     </div>
                 </div>
                 <div class="column-2">
@@ -252,11 +251,11 @@
                             take a crack at one of these visualizers myself, if for no other reason than to drill
                             algorithms.
                         </p>
-                        <span class="language-tag">HTML</span>
-                        <span class="language-tag">CSS</span>
-                        <span class="language-tag">JavaScript</span>
-                        <span class="language-tag">D3.js</span>
-                        <span class="language-tag">React</span>
+                        <span class="language-tag" data-language="HTML">HTML</span>
+                        <span class="language-tag" data-language="CSS">CSS</span>
+                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
+                        <span class="language-tag" data-language="D3.js">D3.js</span>
+                        <span class="language-tag" data-language="React">React</span>
                     </div>
                     <div class="project-card">
                         <h3>Duolingo but for Cooking</h3>
@@ -268,12 +267,12 @@
                             and quizzes. Users can learn cooking
                             vocabulary, techniques, and recipes step by step.
                         </p>
-                        <span class="language-tag">HTML</span>
-                        <span class="language-tag">CSS</span>
-                        <span class="language-tag">JavaScript</span>
+                        <span class="language-tag" data-language="HTML">HTML</span>
+                        <span class="language-tag" data-language="CSS">CSS</span>
+                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
                         <span class="language-tag">Flutter</span>
-                        <span class="language-tag">Node.js</span>
-                        <span class="language-tag">MongoDB</span>
+                        <span class="language-tag" data-language="Node.js">Node.js</span>
+                        <span class="language-tag" data-language="MongoDB">MongoDB</span>
                     </div>
                     <div class="project-card">
                         <h3>Pathfinding Algorithm Simulator</h3>
@@ -285,11 +284,11 @@
                             Dijkstra's) work on a grid-based
                             map, showing step-by-step movement and decision-making.
                         </p>
-                        <span class="language-tag">HTML</span>
-                        <span class="language-tag">CSS</span>
-                        <span class="language-tag">JavaScript</span>
-                        <span class="language-tag">D3.js</span>
-                        <span class="language-tag">React</span>
+                        <span class="language-tag" data-language="HTML">HTML</span>
+                        <span class="language-tag" data-language="CSS">CSS</span>
+                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
+                        <span class="language-tag" data-language="D3.js">D3.js</span>
+                        <span class="language-tag" data-language="React">React</span>
                     </div>
                     <div class="project-card">
                         <h3>Data Visualization Dashboard</h3>
@@ -301,12 +300,12 @@
                             explore trends and insights.
                             This could be used for business analytics or personal projects.
                         </p>
-                        <span class="language-tag">HTML</span>
-                        <span class="language-tag">CSS</span>
-                        <span class="language-tag">JavaScript</span>
-                        <span class="language-tag">D3.js</span>
-                        <span class="language-tag">React</span>
-                        <span class="language-tag">Node.js</span>
+                        <span class="language-tag" data-language="HTML">HTML</span>
+                        <span class="language-tag" data-language="CSS">CSS</span>
+                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
+                        <span class="language-tag" data-language="D3.js">D3.js</span>
+                        <span class="language-tag" data-language="React">React</span>
+                        <span class="language-tag" data-language="Node.js">Node.js</span>
                     </div>
                     <div class="project-card">
                         <h3>Reddit Story Video Generator</h3>
@@ -319,11 +318,11 @@
                             read aloud, and overlays gameplay or
                             background footage. This combines web scraping, video editing, and audio processing.
                         </p>
-                        <span class="language-tag">Python</span>
-                        <span class="language-tag">PRAW</span>
-                        <span class="language-tag">OpenCV</span>
-                        <span class="language-tag">gTTS</span>
-                        <span class="language-tag">ffmpeg</span>
+                        <span class="language-tag" data-language="Python">Python</span>
+                        <span class="language-tag" data-language="PRAW">PRAW</span>
+                        <span class="language-tag" data-language="OpenCV">OpenCV</span>
+                        <span class="language-tag" data-language="gTTS">gTTS</span>
+                        <span class="language-tag" data-language="ffmpeg">ffmpeg</span>
                     </div>
                     <div class="project-card">
                         <h3>Neural Network From Scratch</h3>
@@ -335,9 +334,10 @@
                             propagation, activation functions,
                             and optimization algorithms. This project focuses on deep learning fundamentals.
                         </p>
-                        <span class="language-tag">Python</span>
-                        <span class="language-tag">NumPy</span>
-                        <span class="language-tag">PyTorch or TensorFlow</span>
+                        <span class="language-tag" data-language="Python">Python</span>
+                        <span class="language-tag" data-language="NumPy">NumPy</span>
+                        <span class="language-tag" data-language="PyTorch">PyTorch</span>
+                        <span class="language-tag" data-language="TensorFlow">TensorFlow</span>
                     </div>
                 </div>
                 <div class="column-3">
@@ -352,9 +352,8 @@
                             move it to "under development" -- I might just
                             delete it.
                         </p>
-                        <span class="language-tag">Python (Flask)</span>
-                        <span class="language-tag">Docker</span>
-                        <span class="language-tag">Git</span>
+                        <span class="language-tag" data-language="Python (Flask)">Python (Flask)</span>
+                        <span class="language-tag" data-language="Docker">Docker</span>
                     </div>
                     <div class="project-card">
                         <h3>To Do List</h3>
@@ -365,7 +364,7 @@
                             A web app that allows users to create, manage, and categorize their tasks with features like
                             deadlines, reminders, and progress tracking.
                         </p>
-                        <span class="language-tag">Ruby on Rails</span>
+                        <span class="language-tag" data-language="Ruby on Rails">Ruby on Rails</span>
                     </div>
                     <div class="project-card">
                         <h3>Exploratory Data Analysis on Public Dataset</h3>
@@ -379,11 +378,11 @@
                             on it. This project could include data cleaning, summarization, and visualization to find
                             patterns or insights.
                         </p>
-                        <span class="language-tag">Python</span>
-                        <span class="language-tag">Pandas</span>
-                        <span class="language-tag">Matplotlib</span>
-                        <span class="language-tag">Seaborn</span>
-                        <span class="language-tag">Jupyter</span>
+                        <span class="language-tag" data-language="Python">Python</span>
+                        <span class="language-tag" data-language="Pandas">Pandas</span>
+                        <span class="language-tag" data-language="Matplotlib">Matplotlib</span>
+                        <span class="language-tag" data-language="Seaborn">Seaborn</span>
+                        <span class="language-tag" data-language="Jupyter">Jupyter</span>
                     </div>
                     <div class="project-card">
                         <h3>Basic Web Browser</h3>
@@ -396,8 +395,8 @@
                             and manage bookmarks.
                             Goal: understand the fundamentals of how browsers work.
                         </p>
-                        <span class="language-tag">Java</span>
-                        <span class="language-tag">JavaFX</span>
+                        <span class="language-tag" data-language="Java">Java</span>
+                        <span class="language-tag" data-language="JavaFX">JavaFX</span>
                     </div>
                     <div class="project-card">
                         <h3>Data Pipeline for Real Time Data Processing</h3>
@@ -409,10 +408,10 @@
                             involve using tools like
                             Apache Kafka for data ingestion and Apache Spark for processing.
                         </p>
-                        <span class="language-tag">Python</span>
-                        <span class="language-tag">Apache Kafka</span>
-                        <span class="language-tag">Apache Spark</span>
-                        <span class="language-tag">MongoDB</span>
+                        <span class="language-tag" data-language="Python">Python</span>
+                        <span class="language-tag" data-language="Apache Kafka">Apache Kafka</span>
+                        <span class="language-tag" data-language="Apache Spark">Apache Spark</span>
+                        <span class="language-tag" data-language="MongoDB">MongoDB</span>
                     </div>
                     <div class="project-card">
                         <h3>Distributed Machine Learning System</h3>
@@ -425,10 +424,11 @@
                             project may involve implementing distributed algorithms and using frameworks like TensorFlow
                             or PyTorch.
                         </p>
-                        <span class="language-tag">Python</span>
-                        <span class="language-tag">PyTorch or TensorFlow</span>
-                        <span class="language-tag">Docker</span>
-                        <span class="language-tag">Kubernetes</span>
+                        <span class="language-tag" data-language="Python">Python</span>
+                        <span class="language-tag" data-language="TensorFlow">TensorFlow</span>
+                        <span class="language-tag" data-language="PyTorch">PyTorch</span>
+                        <span class="language-tag" data-language="Docker">Docker</span>
+                        <span class="language-tag" data-language="Kubernetes">Kubernetes</span>
                     </div>
                 </div>
             </div>
