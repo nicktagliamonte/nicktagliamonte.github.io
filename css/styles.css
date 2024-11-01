@@ -1,5 +1,5 @@
 body {
-    font-family: "Courier New",Courier,monospace;
+    font-family: "Courier New", Courier, monospace;
     background-color: #f0f0f0;
     color: #505050;
     margin: 0;
@@ -15,7 +15,8 @@ main {
     margin-top: 120px
 }
 
-.dark-mode-toggle,header {
+.dark-mode-toggle,
+header {
     top: 0;
     display: flex;
     align-items: center
@@ -31,7 +32,8 @@ header {
     justify-content: space-between
 }
 
-.dark-mode footer,.dark-mode header {
+.dark-mode footer,
+.dark-mode header {
     background-color: #4b6f4b;
     color: #d0d0d0
 }
@@ -45,7 +47,7 @@ header {
     text-decoration: none;
     color: #505050;
     padding: 5px;
-    transition: background-color .3s,color .3s
+    transition: background-color .3s, color .3s
 }
 
 .dark-mode .header-left h1 a {
@@ -57,7 +59,8 @@ header {
     color: #505050
 }
 
-.dark-mode .header-left h1 a:hover,.dark-mode .navigation li a:hover {
+.dark-mode .header-left h1 a:hover,
+.dark-mode .navigation li a:hover {
     background-color: #1f1f1f;
     color: #e0e0e0
 }
@@ -120,7 +123,8 @@ input:checked+.slider:before {
     border-radius: 4px
 }
 
-.dark-mode .project-card:hover,.dark-mode .social-link:hover {
+.dark-mode .project-card:hover,
+.dark-mode .social-link:hover {
     background-color: #4b6f4b
 }
 
@@ -135,10 +139,13 @@ input:checked+.slider:before {
     text-decoration: none;
     color: #505050;
     padding: 10px;
-    transition: background-color .3s,color .3s
+    transition: background-color .3s, color .3s
 }
 
-.dark-mode .navigation li a,.dark-mode .project-card p,.dark-mode .projects-header a,.dark-mode .skill-bar label {
+.dark-mode .navigation li a,
+.dark-mode .project-card p,
+.dark-mode .projects-header a,
+.dark-mode .skill-bar label {
     color: #e0e0e0
 }
 
@@ -172,7 +179,8 @@ input:checked+.slider:before {
     color: #6b6b6b
 }
 
-.dark-mode .projects-header a:hover,.dark-mode .projects-header h1 {
+.dark-mode .projects-header a:hover,
+.dark-mode .projects-header h1 {
     color: #d0d0d0
 }
 
@@ -183,11 +191,14 @@ input:checked+.slider:before {
     transition: color .3s
 }
 
-.projects-header a:hover,body.dark-mode address a {
+.projects-header a:hover,
+body.dark-mode address a {
     color: #dae7da
 }
 
-#finished-projects,#planned-projects,#under-development {
+#finished-projects,
+#planned-projects,
+#under-development {
     padding: 20px;
     margin: 0 auto;
     background-color: transparent;
@@ -195,10 +206,11 @@ input:checked+.slider:before {
     box-shadow: none
 }
 
-#greeting,.project-card {
+#greeting,
+.project-card {
     background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.1)
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1)
 }
 
 .project-card {
@@ -208,7 +220,7 @@ input:checked+.slider:before {
     width: 450px;
     vertical-align: top;
     margin: 20px 5px 5px;
-    transition: opacity .9s ease,transform .3s ease,background-color .3s ease
+    transition: opacity .9s ease, transform .3s ease, background-color .3s ease
 }
 
 .project-card.visible {
@@ -225,7 +237,9 @@ input:checked+.slider:before {
     margin-top: 20px
 }
 
-.column-1,.column-2,.column-3 {
+.column-1,
+.column-2,
+.column-3 {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -235,7 +249,7 @@ input:checked+.slider:before {
 .project-card:hover {
     transform: translateY(-5px);
     background-color: #dae7da;
-    transition: background-color,transform .3s ease
+    transition: background-color, transform .3s ease
 }
 
 .project-card:hover .language-tag {
@@ -306,9 +320,11 @@ input:checked+.slider:before {
     background-color: #2a2a2a
 }
 
-#about-me,#personal-interests,.right-content {
+#about-me,
+#personal-interests,
+.right-content {
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.1)
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1)
 }
 
 .right-content {
@@ -324,11 +340,13 @@ input:checked+.slider:before {
     border-top: 4px solid #4b6f4b
 }
 
-h2,h3 {
+h2,
+h3 {
     color: #6b6b6b
 }
 
-.dark-mode h2,.dark-mode h3 {
+.dark-mode h2,
+.dark-mode h3 {
     color: #d0d0d0
 }
 
@@ -337,14 +355,17 @@ h3 {
     margin-bottom: 10px
 }
 
-#about-me,#personal-interests {
+#about-me,
+#personal-interests {
     padding: 20px 30px;
     background-color: #fff;
     max-width: 700px;
     margin: 0 auto 20px
 }
 
-.dark-mode #about-me,.dark-mode #greeting,.dark-mode #personal-interests {
+.dark-mode #about-me,
+.dark-mode #greeting,
+.dark-mode #personal-interests {
     background-color: #3a3a3a;
     color: #e0e0e0
 }
@@ -393,7 +414,8 @@ h3 {
     background-color: #4b4b4b
 }
 
-.flag,.progress {
+.flag,
+.progress {
     background-color: #505050;
     border-radius: 5px
 }
@@ -402,7 +424,8 @@ h3 {
     height: 100%
 }
 
-.dark-mode .flag,.dark-mode .progress {
+.dark-mode .flag,
+.dark-mode .progress {
     background-color: #e0e0e0
 }
 
@@ -426,21 +449,25 @@ h3 {
     object-fit: cover;
     display: block;
     margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,.2)
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2)
 }
 
-#contact,#resume {
+#contact,
+#resume {
     text-align: left;
     max-width: 700px;
     margin: 20px auto;
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
     border-top: 4px solid #dae7da
 }
 
-.dark-mode #books,.dark-mode #contact,.dark-mode #photos,.dark-mode #resume {
+.dark-mode #books,
+.dark-mode #contact,
+.dark-mode #photos,
+.dark-mode #resume {
     background-color: #3a3a3a;
     color: #e0e0e0;
     border-top: 4px solid #4b6f4b
@@ -460,12 +487,17 @@ address a {
     transition: background-color .3s ease
 }
 
-#contactForm button:hover,.dark-mode #contactForm button,.dark-mode .download-button,.download-button:hover {
+#contactForm button:hover,
+.dark-mode #contactForm button,
+.dark-mode .download-button,
+.download-button:hover {
     background-color: #3a5a3a;
     color: #f0f0f0
 }
 
-.dark-mode #contactForm button:hover,.dark-mode .download-button:hover,.dark-mode section {
+.dark-mode #contactForm button:hover,
+.dark-mode .download-button:hover,
+.dark-mode section {
     background-color: #000
 }
 
@@ -485,13 +517,17 @@ address a {
     margin-bottom: 15px
 }
 
-.dark-mode input[type=email],.dark-mode input[type=text],.dark-mode textarea {
+.dark-mode input[type=email],
+.dark-mode input[type=text],
+.dark-mode textarea {
     background-color: #333;
     color: #fff;
     border: 1px solid #555
 }
 
-.dark-mode input[type=email]::placeholder,.dark-mode input[type=text]::placeholder,.dark-mode textarea::placeholder {
+.dark-mode input[type=email]::placeholder,
+.dark-mode input[type=text]::placeholder,
+.dark-mode textarea::placeholder {
     color: #aaa
 }
 
@@ -504,7 +540,8 @@ address a {
     margin-bottom: 15px
 }
 
-#contactForm button,footer {
+#contactForm button,
+footer {
     background-color: #dae7da;
     width: 100%
 }
@@ -527,12 +564,15 @@ address a {
     box-shadow: none
 }
 
-#books,#photos,section {
+#books,
+#photos,
+section {
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.1)
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1)
 }
 
-#books,#photos {
+#books,
+#photos {
     flex: 1;
     max-width: 100%;
     padding: 20px;
@@ -551,7 +591,7 @@ address a {
 
 #photos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 10px;
     max-width: 100%;
     overflow: hidden;
@@ -575,14 +615,14 @@ address a {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,.8)
+    background-color: rgba(0, 0, 0, .8)
 }
 
 .modal-content {
     position: absolute;
     top: 50%;
     left: 55%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 90%;
     max-width: 600px;
     border-radius: 10px;
@@ -632,7 +672,8 @@ address a {
     width: 100%
 }
 
-.next,.prev {
+.next,
+.prev {
     background: #dae7da;
     border: 0;
     color: #333;
@@ -645,22 +686,25 @@ address a {
     transition: background-color .3s
 }
 
-.dark-mode .next,.dark-mode .prev {
+.dark-mode .next,
+.dark-mode .prev {
     background: #4b6f4b;
     color: #e0e0e0
 }
 
-.next:hover,.prev:hover {
+.next:hover,
+.prev:hover {
     background: #4b6f4b
 }
 
-.dark-mode .next:hover,.dark-mode .prev:hover {
+.dark-mode .next:hover,
+.dark-mode .prev:hover {
     background: #000
 }
 
 #books-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 10px;
     max-width: 100%;
     overflow: hidden;
@@ -713,15 +757,19 @@ footer {
         width: 100%
     }
 
-    #personal,.three-column-container {
+    #personal,
+    .three-column-container {
         flex-direction: column
     }
 
-    .column-1,.column-2,.column-3 {
+    .column-1,
+    .column-2,
+    .column-3 {
         max-width: none
     }
 
-    #books,#photos {
+    #books,
+    #photos {
         max-width: 100%;
         width: 100%;
         margin-bottom: 20px

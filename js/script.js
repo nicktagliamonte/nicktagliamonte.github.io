@@ -3,13 +3,13 @@ const links = document.querySelectorAll('.projects-header a');
 
 // Add click event listeners to each link
 links.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         e.preventDefault(); // Prevent the default anchor behavior
 
         // Get the target section ID from the link's href attribute
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-        
+
         // Calculate the offset based on the navigation bar height
         const navHeight = document.querySelector('.navigation').offsetHeight; // Get the height of the navigation bar
         const projHeight = document.querySelector('.projects-header').offsetHeight; // Get the height of the project header
@@ -24,16 +24,16 @@ links.forEach(link => {
 });
 
 // JavaScript to handle the dark mode toggle
-document.getElementById('darkModeToggle').addEventListener('change', function() {
+document.getElementById('darkModeToggle').addEventListener('change', function () {
     document.body.classList.toggle('dark-mode');
-    
+
     // Optional: Change header or other elements
     const header = document.querySelector('header');
     header.classList.toggle('dark-mode');
-    
+
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => card.classList.toggle('dark-mode'));
-    
+
     console.log("Dark mode activated: ", this.checked); // Check if toggle works
 });
 
@@ -41,33 +41,33 @@ document.getElementById('darkModeToggle').addEventListener('change', function() 
 function applyDarkMode() {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
     document.body.classList.toggle('dark-mode', isDarkMode);
-    
+
     // Optional: Change header or other elements
     const header = document.querySelector('header');
     header.classList.toggle('dark-mode', isDarkMode);
-    
+
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => card.classList.toggle('dark-mode', isDarkMode));
 }
 
 // Event listener for the dark mode toggle
-document.getElementById('darkModeToggle').addEventListener('change', function() {
+document.getElementById('darkModeToggle').addEventListener('change', function () {
     const isChecked = this.checked;
     document.body.classList.toggle('dark-mode', isChecked);
-    
+
     // Optional: Change header or other elements
     const header = document.querySelector('header');
     header.classList.toggle('dark-mode', isChecked);
-    
+
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => card.classList.toggle('dark-mode', isChecked));
-    
+
     // Save user preference in local storage
     localStorage.setItem('darkMode', isChecked);
 });
 
 // Check local storage on page load
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     applyDarkMode();
     // Set checkbox state based on saved preference
     const toggle = document.getElementById('darkModeToggle');
@@ -127,10 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.querySelector('.next');
 
     const imageFilenames = [
-        'Amsterdam Central Canal.JPG', 'Amsterdam from Restaurant.JPG', 'Amsterdam Train Station.jpg', 
-        'Auditorium.jpg', 'Bolzano.jpg', 'Cathedral.JPG', 'Dougie.png', 'Drug Church.jpg', 
-        'Duck.jpg', 'Jefferson Memorial.jpg', 'Milan.jpg', 'Milanese.jpg', 'Mountain View.JPG', 
-        'PCT End.png', 'Pct Start.png', 'Profile.JPG', 'Rijksmuseum.jpg', 'Scout on Beach.PNG', 
+        'Amsterdam Central Canal.JPG', 'Amsterdam from Restaurant.JPG', 'Amsterdam Train Station.jpg',
+        'Auditorium.jpg', 'Bolzano.jpg', 'Cathedral.JPG', 'Dougie.png', 'Drug Church.jpg',
+        'Duck.jpg', 'Jefferson Memorial.jpg', 'Milan.jpg', 'Milanese.jpg', 'Mountain View.JPG',
+        'PCT End.png', 'Pct Start.png', 'Profile.JPG', 'Rijksmuseum.jpg', 'Scout on Beach.PNG',
         'Tre Cime.jpg', 'Wedding.jpg'
     ];
 
@@ -197,10 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const booksContainer = document.getElementById('books-container');
 
     const imageFilenames = [
-        '1q84.jpg', 'Acceptance.jpg', 'Anathem.jpg', 'Annihilation.jpg', 'Antimemetics.jpg', 'Authority.jpg', 
-        'Axiomatic.jpg', 'BBoD.jpg', 'Diaspora.jpg', 'Disquiet.jpg', 'Infinite Jest.jpg', 'Kafka.jpg', 
-        'Nausea.jpg', 'Notes From Underground.jpg', 'Permutation City.jpg', 'Prime Intellect.jpg', 
-        'Quarantine.jpg', 'Schilds Ladder.jpg', 'Strange Code.jpg', 'The Man Who Folded Himself.jpg', 
+        '1q84.jpg', 'Acceptance.jpg', 'Anathem.jpg', 'Annihilation.jpg', 'Antimemetics.jpg', 'Authority.jpg',
+        'Axiomatic.jpg', 'BBoD.jpg', 'Diaspora.jpg', 'Disquiet.jpg', 'Infinite Jest.jpg', 'Kafka.jpg',
+        'Nausea.jpg', 'Notes From Underground.jpg', 'Permutation City.jpg', 'Prime Intellect.jpg',
+        'Quarantine.jpg', 'Schilds Ladder.jpg', 'Strange Code.jpg', 'The Man Who Folded Himself.jpg',
         'The Stranger.jpg', 'Three Stigmata.jpg', 'Ubik.jpg'
     ];
 
