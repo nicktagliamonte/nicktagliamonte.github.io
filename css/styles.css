@@ -759,13 +759,13 @@ footer {
 
     #personal,
     .three-column-container {
-        flex-direction: column
+        max-width: calc(95% - 20px);
     }
 
     .column-1,
     .column-2,
     .column-3 {
-        max-width: none
+        max-width: calc(95% - 20px);
     }
 
     #books,
