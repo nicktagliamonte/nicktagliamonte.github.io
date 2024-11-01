@@ -208,7 +208,7 @@ body.dark-mode address a {
 
 #greeting,
 .project-card {
-    background-color: #f9f9f9;
+    background-color: #fefefe;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1)
 }
@@ -253,7 +253,7 @@ body.dark-mode address a {
 }
 
 .project-card:hover .language-tag {
-    background-color: #f9f9f9;
+    background-color: #fefefe;
     transition: background-color .3s ease
 }
 
@@ -329,7 +329,7 @@ body.dark-mode address a {
 
 .right-content {
     flex: 1;
-    background-color: #f9f9f9;
+    background-color: #fefefe;
     padding: 25px;
     margin-top: 80px;
     border-top: 4px solid #dae7da
@@ -358,7 +358,7 @@ h3 {
 #about-me,
 #personal-interests {
     padding: 20px 30px;
-    background-color: #fff;
+    background-color: #fefefe;
     max-width: 700px;
     margin: 0 auto 20px
 }
@@ -430,7 +430,7 @@ h3 {
 }
 
 .flag {
-    color: #f9f9f9;
+    color: #fefefe;
     padding: 3px 5px;
     font-size: 12px;
     display: inline-block;
@@ -458,7 +458,7 @@ h3 {
     max-width: 700px;
     margin: 20px auto;
     padding: 15px;
-    background-color: #f9f9f9;
+    background-color: #fefefe;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
     border-top: 4px solid #dae7da
@@ -576,7 +576,7 @@ section {
     flex: 1;
     max-width: 100%;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #fefefe;
     border-top: 4px solid #dae7da;
     text-align: center
 }
