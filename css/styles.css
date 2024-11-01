@@ -56,7 +56,8 @@ header {
 
 .header-left h1 a:hover {
     background-color: #fff;
-    color: #505050
+    color: #505050;
+    cursor: crosshair;
 }
 
 .dark-mode .header-left h1 a:hover,
@@ -76,7 +77,7 @@ header {
 
 .toggle {
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
 .toggle input {
@@ -90,6 +91,10 @@ header {
     border-radius: 34px;
     position: relative;
     cursor: pointer
+}
+
+.slider:hover {
+    cursor: crosshair;
 }
 
 .slider:before {
@@ -120,7 +125,8 @@ input:checked+.slider:before {
 
 .social-link:hover {
     background-color: #dae7da;
-    border-radius: 4px
+    border-radius: 3px;
+    cursor: crosshair;
 }
 
 .dark-mode .project-card:hover,
@@ -151,7 +157,8 @@ input:checked+.slider:before {
 
 .navigation li a:hover {
     background-color: #fff;
-    color: #505050
+    color: #505050;
+    cursor: crosshair;
 }
 
 .projects-header {
@@ -188,12 +195,26 @@ input:checked+.slider:before {
     margin-left: 10px;
     text-decoration: none;
     color: #505050;
-    transition: color .3s
+    padding: 5px;
+    transition: background-color .3s ease;
 }
 
-.projects-header a:hover,
+.projects-header a:hover {
+    background-color: #dae7da;
+    cursor: crosshair;
+}
+
+.dark-mode .projects-header a:hover {
+    background-color: #4b6f4b;
+    cursor: crosshair;
+}
+
 body.dark-mode address a {
     color: #dae7da
+}
+
+.proj a:hover {
+    cursor: crosshair;
 }
 
 #finished-projects,
@@ -249,12 +270,14 @@ body.dark-mode address a {
 .project-card:hover {
     transform: translateY(-5px);
     background-color: #dae7da;
-    transition: background-color, transform .3s ease
+    transition: background-color, transform .3s ease;
+    cursor: crosshair;
 }
 
 .project-card:hover .language-tag {
     background-color: #fefefe;
-    transition: background-color .3s ease
+    transition: background-color .3s ease;
+    cursor: crosshair;
 }
 
 .dark-mode .project-card:hover .language-tag {
@@ -493,7 +516,8 @@ address a {
 .dark-mode .download-button,
 .download-button:hover {
     background-color: #3a5a3a;
-    color: #f0f0f0
+    color: #f0f0f0;
+    cursor: crosshair;
 }
 
 .dark-mode #contactForm button:hover,
@@ -579,7 +603,8 @@ section {
     padding: 20px;
     background-color: #fefefe;
     border-top: 4px solid #dae7da;
-    text-align: center
+    text-align: center;
+    align-self: start;
 }
 
 .separator {
@@ -655,7 +680,7 @@ section {
     color: #dae7da;
     font-size: 35px;
     font-weight: 700;
-    cursor: pointer
+    cursor: crosshair
 }
 
 .dark-mode .close {
@@ -695,7 +720,8 @@ section {
 
 .next:hover,
 .prev:hover {
-    background: #4b6f4b
+    background: #4b6f4b;
+    cursor: crosshair;
 }
 
 .dark-mode .next:hover,

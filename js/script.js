@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = `images/${filename}`; // Path to each image
         img.alt = filename; // Optional: improves accessibility
         img.classList.add('photo-thumbnail'); // Add a class for styling
-        img.style.cursor = 'pointer'; // Change cursor to pointer on hover
+        img.style.cursor = 'crosshair'; // Change cursor to pointer on hover
         img.addEventListener('click', () => openSlideshow(index)); // Open slideshow on click
         photosContainer.appendChild(img);
 
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = `books/${filename}`; // Path to each image
         img.alt = filename; // Optional: improves accessibility
         img.classList.add('book-thumbnail'); // Add a class for styling
-        img.style.cursor = 'pointer'; // Change cursor to pointer on hover
+        img.style.cursor = 'crosshair'; // Change cursor to pointer on hover
 
         a.appendChild(img); // Append the image to the anchor
         booksContainer.appendChild(a); // Append the anchor to the books container
