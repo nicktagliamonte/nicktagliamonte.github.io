@@ -10,7 +10,8 @@ function sendMail() {
         return false;
     }
 
-    const mailtoLink = `mailto:ntagliamonte28@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)}`;
+    const mailtoLink = `mailto:ntagliamonte28@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${firstName} 
+        ${lastName}\nEmail: ${email}\n\n${message}`)}`;
     window.location.href = mailtoLink;
     return false;
 }

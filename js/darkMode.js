@@ -1,8 +1,6 @@
-// JavaScript to handle the dark mode toggle
 document.getElementById('darkModeToggle').addEventListener('change', function () {
     document.body.classList.toggle('dark-mode');
 
-    // Optional: Change header or other elements
     const header = document.querySelector('header');
     header.classList.toggle('dark-mode');
 
@@ -29,7 +27,6 @@ document.getElementById('darkModeToggle').addEventListener('change', function ()
     const isChecked = this.checked;
     document.body.classList.toggle('dark-mode', isChecked);
 
-    // Optional: Change header or other elements
     const header = document.querySelector('header');
     header.classList.toggle('dark-mode', isChecked);
 

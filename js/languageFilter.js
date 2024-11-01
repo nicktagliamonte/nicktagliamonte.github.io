@@ -4,12 +4,6 @@ const selectedLanguages = [];
 // Get reference to the "Clear Filters" button
 const clearFiltersButton = document.getElementById('clear-filters');
 
-// Function to update the visibility of the clear filters button
-function updateFilterDisplay() {
-    // Removed logic that hides the button
-    // Now it is always visible
-}
-
 // Function to set up language tag click listeners
 function setupLanguageTagListeners() {
     document.querySelectorAll('.language-tag').forEach(tag => {
@@ -64,16 +58,9 @@ clearFiltersButton.addEventListener('click', () => {
     document.querySelectorAll('.project-card').forEach(card => {
         card.style.display = 'block';
     });
-
-    // No need to hide the button after clearing filters
 });
 
 // Set up event listeners and initialize visibility on page load
 document.addEventListener("DOMContentLoaded", function () {
-    // Clear Filters button is always visible, so no need to hide it here
-
-    // Set up language tag listeners
     setupLanguageTagListeners();
-    
-    // The visibility of the button is always on, so this function is not needed
 });

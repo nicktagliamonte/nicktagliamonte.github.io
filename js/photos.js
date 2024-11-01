@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     imageFilenames.forEach((filename, index) => {
         const img = document.createElement('img');
         img.src = `images/${filename}`; // Path to each image
-        img.alt = filename; // Optional: improves accessibility
+        img.alt = filename;
         img.classList.add('photo-thumbnail'); // Add a class for styling
         img.style.cursor = 'crosshair'; // Change cursor to pointer on hover
         img.addEventListener('click', () => openSlideshow(index)); // Open slideshow on click
