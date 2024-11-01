@@ -360,7 +360,8 @@ h3 {
     padding: 20px 30px;
     background-color: #fefefe;
     max-width: 700px;
-    margin: 0 auto 20px
+    margin: 0 auto 20px;
+    min-width: 300px;
 }
 
 .dark-mode #about-me,
