@@ -42,7 +42,6 @@ function applyDarkMode() {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
     document.body.classList.toggle('dark-mode', isDarkMode);
 
-    // Optional: Change header or other elements
     const header = document.querySelector('header');
     header.classList.toggle('dark-mode', isDarkMode);
 
@@ -64,6 +63,16 @@ document.getElementById('darkModeToggle').addEventListener('change', function ()
 
     // Save user preference in local storage
     localStorage.setItem('darkMode', isChecked);
+});
+
+document.querySelector('.overlay-sun-icon').addEventListener('click', function() {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+
+    // Update the local storage
+    localStorage.setItem('darkMode', isDarkMode);
+
+    // Log for debugging
+    console.log("Dark mode activated: ", isDarkMode);
 });
 
 // Check local storage on page load
@@ -256,4 +265,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(img); // Observe the current image
     });
+});
+
+const menuIcon = document.getElementById('mobile-menu-icon');
+const overlayMenu = document.getElementById('overlay-menu');
+
+menuIcon.addEventListener('click', () => {
+    overlayMenu.classList.toggle('show');
+});
+
+// Optional: Close the overlay when clicking outside the nav links
+overlayMenu.addEventListener('click', (e) => {
+    if (e.target === overlayMenu) {
+        overlayMenu.classList.remove('show');
+    }
 });

@@ -38,6 +38,33 @@
                 <li><a href="personal.html">Personal</a></li>
             </ul>
         </nav>
+        <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+        <div id="mobile-menu-icon" class="hamburger-menu" aria-label="Open Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="overlay-menu">
+            <nav class="overlay-navigation" role="navigation" aria-label="Mobile Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="personal.html">Personal</a></li>
+                </ul>
+                <!-- Dark mode toggle at the bottom -->
+                <div class="overlay-dark-mode-toggle">
+                    <button class="overlay-sun-icon" role="img" aria-label="Sun" id="overlayDarkModeToggle">&#9728;</button>
+                    <label class="overlay-toggle">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </nav>
+        </div>        
+        
     </header>
 
     <!-- Main Content Section -->

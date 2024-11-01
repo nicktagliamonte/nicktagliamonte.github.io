@@ -32,6 +32,95 @@ header {
     justify-content: space-between
 }
 
+#mobile-menu-icon {
+    display: none;
+}
+
+/* Updated overlay styles */
+#overlay-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(218, 231, 218, 0.9); /* Semi-transparent #dae7da */
+    z-index: 1000;
+    opacity: 0; /* Initially hidden for transition effect */
+    transition: opacity 0.3s ease; /* Fade-in transition */
+}
+
+.dark-mode #overlay-menu {
+    background: rgba(75, 111, 75, 0.9);
+}
+
+/* Show overlay with transition */
+#overlay-menu.show {
+    display: block;
+    opacity: 1; /* Visible with smooth transition */
+}
+
+/* Navigation list */
+.overlay-navigation ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay-navigation li {
+    margin: 20px 0;
+}
+
+.overlay-navigation a {
+    font-size: 24px;
+    color: #333; /* Darker color for contrast */
+    text-decoration: none;
+}
+
+.dark-mode .overlay-navigation a {
+    color: #e0e0e0;
+}
+
+.overlay-navigation a:hover {
+    color: #4b6f4b; /* Dark hover color */
+}
+
+.dark-mode .overlay-navigation a:hover {
+    color: #333;
+}
+
+/* Optional: Style for the sun icon */
+.overlay-sun-icon {
+    margin-right: 8px; /* Space between icon and toggle */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    background: none; /* No background */
+    border: none; /* No border */
+    padding: 0; /* Remove padding */
+    outline: none; /* Remove outline */
+}
+
+.overlay-toggle {
+    display: none;
+}
+
+.overlay-sun-icon {
+    color: yellow; /* Light mode color */
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.dark-mode .overlay-sun-icon {
+    color: #ccc; /* Greyish color for dark mode */
+}
+
 .dark-mode footer,
 .dark-mode header {
     background-color: #4b6f4b;
@@ -311,8 +400,13 @@ body.dark-mode address a {
 }
 
 #greeting {
+    flex-direction: column;
     text-align: center;
-    border-top: 4px solid #dae7da
+    border-top: 4px solid #dae7da;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px
 }
 
 .dark-mode #greeting {
@@ -393,12 +487,12 @@ h3 {
     color: #e0e0e0
 }
 
-#about-me {
+#about-me, #rgreeting {
     border-top: 4px solid #dae7da;
     margin-top: 80px
 }
 
-.dark-mode #about-me {
+.dark-mode #about-me, .dark-mode #greeting {
     border-top: 4px solid #4b6f4b
 }
 
@@ -761,18 +855,33 @@ footer {
 }
 
 @media (max-width:768px) {
-    body {
-        padding-top: 100px
+    .navigation ul, .sun-icon, .toggle, .slider {
+        display: none;
     }
 
-    .navigation ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center
+    #mobile-menu-icon {
+        display: block;
+        cursor: crosshair; /* Changes the cursor to a pointer on hover */        
+        position: absolute; /* Allows positioning using top and left */
+        top: 14px; /* Moves it down from the top */
+        right: 13px; /* Moves it slightly to the left */
     }
 
-    .navigation ul li {
-        margin: 5px 0
+    /* Style the individual lines of the hamburger icon */
+    #mobile-menu-icon span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #505050; /* Adjust color as needed */
+        margin: 5px 0; /* Adds spacing between the lines */
+    }
+
+    #greeting {
+        max-width: calc(83%);
+    }
+
+    #resume, #contact {
+        max-width: calc(90%);
     }
 
     .projects-header {
@@ -780,24 +889,21 @@ footer {
     }
 
     .project-card {
-        max-width: calc(95% - 20px);
+        max-width: calc(95% - 50px);
         width: 100%
     }
 
-    .column-1,
-    .column-2,
-    .column-3 {
-        max-width: calc(95% - 20px);
-        padding: 10px;
+    .three-column-container {
+        flex-direction: column;
     }
 
-    .personal {
+    #personal {
         flex-direction: column;
     }
 
     #books,
     #photos {
-        max-width: 100%;
+        max-width: 95%;
         width: 100%;
         margin-bottom: 20px
     }
