@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const options = {
         root: null, // Use the viewport as the root
         rootMargin: "0px",
-        threshold: 0.9 // Trigger when 90% of the card is visible
+        threshold: 0.78 // Trigger when 90% of the card is visible
     };
 
     const observer = new IntersectionObserver((entries) => {
