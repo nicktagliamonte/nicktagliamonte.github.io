@@ -293,6 +293,24 @@ body.dark-mode address a
 	margin-top:20px
 }
 
+.three-column-container a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #505050;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.three-column-container a:hover {
+    background-color: #dae7da;
+    cursor: crosshair;
+}
+
+.dark-mode .three-column-container a:hover {
+    background-color: #4b6f4b;
+    cursor: crosshair;
+}
+
 .column-1,.column-2,.column-3
 {
 	flex:1;
