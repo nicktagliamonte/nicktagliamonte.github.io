@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About | Nick Tagliamonte</title>
+    <title>Information | Nick Tagliamonte</title>
     <meta
       name="description"
       content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, data optimization, and web development."
@@ -41,6 +41,7 @@
           <li><a href="resume.html">Resume</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="personal.html">Personal</a></li>
+          <li><a href="information.html" role="link">Information</a></li>
         </ul>
       </nav>
       <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
@@ -66,6 +67,7 @@
             <li><a href="resume.html">Resume</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="personal.html">Personal</a></li>
+            <li><a href="information.html" role="link">Information</a></li>
           </ul>
           <!-- Dark mode toggle at the bottom -->
           <div class="overlay-dark-mode-toggle">
@@ -89,148 +91,41 @@
     <!-- Main Content Section -->
     <main role="main" class="about-container">
       <section class="left-content">
-        <!-- About Me Section -->
-        <section id="about-me">
-          <!-- It makes things easiest if i just keep this id as is. -->
+        <!-- Information Section -->
+        <section id="information">
           <h2>Information</h2>
           <p>
             This page corresponds to the projects page. As I work on and
-            complete projects, more detailed information on the process can be
+            complete projects, more detailed information on the process as well
+            as information on next steps or future planned expansions can be
             found in the articles below.
           </p>
+          <div class="controls-container">
+            <div class="items-per-page">
+              <label for="articlesPerPage">Items per page:</label>
+              <select id="articlesPerPage">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+              </select>
+            </div>
+            <div class="quick-select-container">
+              <label for="quickSelect">Quick Select:</label>
+              <select id="quickSelect">
+                <option value="" disabled selected>Select a project</option>
+              </select>
+            </div>
+          </div>
         </section>
 
-        <!-- Personal Interests Section -->
-        <section id="personal-interests">
-          <h2>Personal Interests</h2>
-          <p>
-            Outside of development, I enjoy cooking and reading science fiction
-            (Greg Egan is a favorite). Recently married, I share my home with my
-            wife and a cat, Douglas (“Tiny Boy Dougie”), and have a bucket list
-            goal to one day thru-hike the Pacific Crest Trail. I've been trying
-            and failing for years to get good at cycling.
-          </p>
+        <!-- Articles Section -->
+        <section id="articles">
+          <!-- This content is dynamically loaded by articles.js -->
         </section>
+        <div id="pagination">
+          <!-- This is dynamically rendered by articles.js -->
+        </div>
       </section>
-
-      <aside class="right-content">
-        <h3>Skills</h3>
-        <p>Here are some of my key skills with proficiency levels.</p>
-
-        <!-- Skill Bars Section -->
-        <div class="skill-bar">
-          <label>MS Office</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 90%"></div>
-          </div>
-          <span class="flag">90</span>
-        </div>
-        <div class="skill-bar">
-          <label>Windows</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 90%"></div>
-          </div>
-          <span class="flag">90</span>
-        </div>
-        <div class="skill-bar">
-          <label>Active Directory</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 70%"></div>
-          </div>
-          <span class="flag">70</span>
-        </div>
-        <div class="skill-bar">
-          <label>Java</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 65%"></div>
-          </div>
-          <span class="flag">65</span>
-        </div>
-        <div class="skill-bar">
-          <label>Intune</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 60%"></div>
-          </div>
-          <span class="flag">60</span>
-        </div>
-        <div class="skill-bar">
-          <label>Python</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 50%"></div>
-          </div>
-          <span class="flag">50</span>
-        </div>
-        <div class="skill-bar">
-          <label>C</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 50%"></div>
-          </div>
-          <span class="flag">50</span>
-        </div>
-        <div class="skill-bar">
-          <label>RDP</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 50%"></div>
-          </div>
-          <span class="flag">50</span>
-        </div>
-        <div class="skill-bar">
-          <label>DSA</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 50%"></div>
-          </div>
-          <span class="flag">50</span>
-        </div>
-        <div class="skill-bar">
-          <label>GDB</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 50%"></div>
-          </div>
-          <span class="flag">40</span>
-        </div>
-        <div class="skill-bar">
-          <label>Git</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 40%"></div>
-          </div>
-          <span class="flag">40</span>
-        </div>
-        <div class="skill-bar">
-          <label>Linux</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 40%"></div>
-          </div>
-          <span class="flag">40</span>
-        </div>
-        <div class="skill-bar">
-          <label>Azure</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 30%"></div>
-          </div>
-          <span class="flag">30</span>
-        </div>
-        <div class="skill-bar">
-          <label>Cobol</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 30%"></div>
-          </div>
-          <span class="flag">30</span>
-        </div>
-        <div class="skill-bar">
-          <label>HTML & CSS</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 30%"></div>
-          </div>
-          <span class="flag">30</span>
-        </div>
-        <div class="skill-bar">
-          <label>AWS</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 20%"></div>
-          </div>
-          <span class="flag">20</span>
-        </div>
-      </aside>
     </main>
 
     <!-- Footer Section -->
@@ -240,5 +135,6 @@
 
     <script src="js/mobileNavigation.js"></script>
     <script src="js/darkMode.js"></script>
+    <script src="js/articles.js"></script>
   </body>
 </html>
