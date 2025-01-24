@@ -1,107 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfolio of Nick Tagliamonte, showcasing projects, skills, and contact information.">
-    <meta name="keywords" content="Nick Tagliamonte, portfolio, web developer, contact">
-    <meta name="author" content="Nick Tagliamonte">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Nick Tagliamonte, showcasing projects, skills, and contact information."
+    />
+    <meta
+      name="keywords"
+      content="Nick Tagliamonte, portfolio, web developer, contact"
+    />
+    <meta name="author" content="Nick Tagliamonte" />
     <title>Contact | Nick Tagliamonte</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Header Section -->
     <header role="banner">
-        <div class="header-left">
-            <h1 role="heading" aria-level="1" class="home-link">
-                <a href="index.html">Nick Tagliamonte</a>
-            </h1>
-        </div>
-        <div class="dark-mode-toggle">
-            <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
-            <label class="toggle">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider"></span>
+      <div class="header-left">
+        <h1 role="heading" aria-level="1" class="home-link">
+          <a href="index.html">Nick Tagliamonte</a>
+        </h1>
+      </div>
+      <div class="dark-mode-toggle">
+        <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav class="navigation" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="about.html" role="link">About</a></li>
+          <li><a href="projects.html" role="link">Projects</a></li>
+          <li><a href="resume.html" role="link">Resume</a></li>
+          <li><a href="contact.html" role="link">Contact</a></li>
+          <li><a href="personal.html" role="link">Personal</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+      <div
+        id="mobile-menu-icon"
+        class="hamburger-menu"
+        aria-label="Open Navigation Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="overlay-menu">
+        <nav
+          class="overlay-navigation"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="personal.html">Personal</a></li>
+          </ul>
+          <!-- Dark mode toggle at the bottom -->
+          <div class="overlay-dark-mode-toggle">
+            <span class="overlay-sun-icon" role="img" aria-label="Sun"
+              >&#9728;</span
+            >
+            <label class="overlay-toggle">
+              <input type="checkbox" id="overlayDarkModeToggle" />
+              <span class="slider"></span>
             </label>
-        </div>
-        <nav class="navigation" role="navigation" aria-label="Main Navigation">
-            <ul>
-                <li><a href="about.html" role="link">About</a></li>
-                <li><a href="projects.html" role="link">Projects</a></li>
-                <li><a href="resume.html" role="link">Resume</a></li>
-                <li><a href="contact.html" role="link">Contact</a></li>
-                <li><a href="personal.html" role="link">Personal</a></li>
-            </ul>
+          </div>
         </nav>
-        <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
-        <div id="mobile-menu-icon" class="hamburger-menu" aria-label="Open Navigation Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div id="overlay-menu">
-            <nav class="overlay-navigation" role="navigation" aria-label="Mobile Navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="personal.html">Personal</a></li>
-                </ul>
-                <!-- Dark mode toggle at the bottom -->
-                <div class="overlay-dark-mode-toggle">
-                    <span class="overlay-sun-icon" role="img" aria-label="Sun">&#9728;</span>
-                    <label class="overlay-toggle">
-                        <input type="checkbox" id="overlayDarkModeToggle">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </nav>
-        </div>        
-        
+      </div>
     </header>
 
     <!-- Main Content Section -->
     <main role="main">
-        <section id="contact" role="complementary">
-            <h2 role="heading" aria-level="2">Contact Me</h2>
-            <form id="contactForm" onsubmit="return sendMail();">
-                <div class="form-row">
-                    <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
-                    <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
-                </div>
-                <div class="form-row">
-                    <input type="email" id="email" name="email" placeholder="Email" required>
-                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                </div>
-                <textarea id="message" name="message" rows="5" cols="50" placeholder="Message" required></textarea>
-                <button type="submit">Send Message</button><br>
+      <section id="contact" role="complementary">
+        <h2 role="heading" aria-level="2">Contact Me</h2>
+        <form id="contactForm" onsubmit="return sendMail();">
+          <div class="form-row">
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              placeholder="First Name"
+              required
+            />
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+              required
+            />
+          </div>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            cols="50"
+            placeholder="Message"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button><br />
 
-                <hr>
+          <hr />
 
-                <p>
-                    It might be easier to reach me here:<br><br>
-                    <a href="https://github.com/nicktagliamonte" target="_blank" class="social-link" role="link"
-                        style="text-decoration: none; color: inherit;">
-                        <i class="fab fa-github"></i>
-                    </a> •
-                    <a href="https://www.linkedin.com/in/nick-tagliamonte-b44129241/" target="_blank"
-                        class="social-link" role="link" style="text-decoration: none; color: inherit;">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </p>
-            </form>
-        </section>
+          <p>
+            It might be easier to reach me here:<br /><br />
+            <a
+              href="https://github.com/nicktagliamonte"
+              target="_blank"
+              class="social-link"
+              role="link"
+              style="text-decoration: none; color: inherit"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            •
+            <a
+              href="https://www.linkedin.com/in/nick-tagliamonte-b44129241/"
+              target="_blank"
+              class="social-link"
+              role="link"
+              style="text-decoration: none; color: inherit"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </p>
+        </form>
+      </section>
     </main>
 
     <!-- Footer Section -->
     <footer role="contentinfo">
-        <p>&copy; 2024 Nick Tagliamonte</p>
+      <p>&copy; 2024 Nick Tagliamonte</p>
     </footer>
 
     <script src="js/mobileNavigation.js"></script>
@@ -109,25 +167,24 @@
     <script src="js/darkMode.js"></script>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Nick Tagliamonte",
-      "url": "https://nicktagliamonte.github.io",
-      "sameAs": [
-        "https://www.linkedin.com/in/nick-tagliamonte-b44129241/",
-        "https://github.com/nicktagliamonte"
-      ],
-      "jobTitle": "Developer",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Philadelphia",
-        "addressRegion": "PA",
-        "postalCode": "19121",
-        "streetAddress": "n/a"
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nick Tagliamonte",
+        "url": "https://nicktagliamonte.github.io",
+        "sameAs": [
+          "https://www.linkedin.com/in/nick-tagliamonte-b44129241/",
+          "https://github.com/nicktagliamonte"
+        ],
+        "jobTitle": "Developer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Philadelphia",
+          "addressRegion": "PA",
+          "postalCode": "19121",
+          "streetAddress": "n/a"
+        }
       }
-    }
     </script>
-</body>
-
+  </body>
 </html>
