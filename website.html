@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information | Nick Tagliamonte</title>
+    <meta
+      name="description"
+      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, data optimization, and web development."
+    />
+    <meta
+      name="keywords"
+      content="Nick Tagliamonte, about me, computer science, software development, personal interests, skills"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header role="banner">
+      <div class="header-left">
+        <h1 role="heading" aria-level="1" class="home-link">
+          <a href="index.html">Nick Tagliamonte</a>
+        </h1>
+      </div>
+      <div class="dark-mode-toggle">
+        <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav class="navigation" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="information.html" role="link">Information</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+      <div
+        id="mobile-menu-icon"
+        class="hamburger-menu"
+        aria-label="Open Navigation Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="overlay-menu">
+        <nav
+          class="overlay-navigation"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="information.html" role="link">Information</a></li>
+          </ul>
+          <!-- Dark mode toggle at the bottom -->
+          <div class="overlay-dark-mode-toggle">
+            <button
+              class="overlay-sun-icon"
+              role="img"
+              aria-label="Sun"
+              id="overlayDarkModeToggle"
+            >
+              &#9728;
+            </button>
+            <label class="overlay-toggle">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main role="main" class="about-container">
+      <section class="left-content">
+        <!-- Article Section -->
+        <section id="information">
+          <h2>Project Name: Nicktagliamonte.github.io</h2>
+          <hr />
+          <h3>Information</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            This first project was completed months before I had the idea to do
+            these further information sections, so this is a somewhat distant
+            retrospective on the process and won't hold as much information as,
+            for example, the game development project (which is a years-long
+            undertaking)
+          </p>
+          <h3>History</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Going into this project, I had never written a word of HTML or CSS.
+            I had only the lowest level of familiarity with vanilla JavaScript,
+            barely having written more than hello world. So the exercise here
+            became mostly one of picking up understandings of these things while
+            falling back heavily on reference material. Which it's fair to say
+            is evident in the final product; the CSS is rambling and
+            disorganized, the standards for menu sections change and improve
+            with added pages, the intricacy of functions develops and increases
+            as pages get later and later, even the comment style improves
+            palpably.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Development happened page-by-page in the order they appear on the
+            navigation bar (index first, then about, projects, resume, etc). I
+            tried to bang out one page per day while I had the time, but the
+            result of this was that the site developed faster than it should
+            have and the code quality is lowered by that fact.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            There was a prominent undercurrent of feature explosion throughout
+            the process. It's a static site, but it wasn't enough to just throw
+            together some basic, simply styled pages - About had to have some
+            skill progress bars. Projects had to be this interactive, filterable
+            set of cards with smooth scrolling. Of course, my project ideas then
+            had to be broad enough to justify this, so I wound up throwing
+            anything at the wall and I'll see what sticks. Dockerized hello
+            world? Come on. Each new page had this process, which was kind of
+            fun, kind of a headache, and at times only half worked (click on one
+            of the pictures under Personal. The slideshow … works. But unless
+            you have a goldilocks viewport size, they're badly off center and
+            eventually having something that worked superseded having something
+            pretty).
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            There were challenges throughout the process, and the prominent ones
+            have to do with spacing around the projects section and the personal
+            page. I had a picture in my head of something like a grid that is
+            filled in with variable-height rows, so each new project card starts
+            some set amount of padding from the one above it regardless of how
+            long that card might be. I was consistently running into an issue
+            where the grid would either use the same spacing for each column, or
+            else split every project into its own column (padded appropriately
+            from the div that is above it). The end result sort of achieves the
+            vision though! ...Because the end result is 3 flex boxes, side by
+            side, each of which just holds a single column of project cards.
+            It's easy to make a grid of variable length row heights if you just
+            don't make it a grid. It makes upkeep a little bit of a headache
+            (column 1 having an item moved to "Under Development" means that the
+            top card in column 2 has to move to column 1, the top card of 3 to
+            2, and so on.) The pictures caused the same headache, and the
+            workaround there is to just put them all at the same aspect ratio so
+            that the grid doesn't have to be variable length. it's just a run of
+            the mill grid.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            I don't think it's too bad, for a first go at it.
+          </p>
+          <h3>Future Expansion</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            “Future Expansion” also falls into this same explosive category
+            described above. I have fun ideas, expansions, that sort of thing.
+            The act of writing this is a function of that - the page that
+            brought you here only was introduced months after I moved this
+            project into finished, knocked out a game engine, took my finals,
+            and wrote a notes app. But really, future expansion would be to make
+            the code presentable. It shouldn't count as done until it is done
+            right. I'm fine saying that “done right” can mean “done to the best
+            capacity I had at the time I took on the project,” but I've gotten
+            better at this since having wrapped up the site and I could fix some
+            of the shortcomings that currently just have old hacky workarounds.
+            I could organize the CSS and remove conflicting or deprecated rules.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            I talked at one point about taking this out of github.io and hosting
+            it elsewhere, giving it a custom domain, incorporating a backend.
+            There isn't a lot of functional reason to do that, and there is
+            obvious if minor financial detriment to it, so that probably won't
+            happen. It could be nice, though, to have this as a demo platform
+            for some of my other web apps. It isn't a far jump to make the game
+            engine run on web rather than terminal, the notes app certainly
+            would become demonstrable. Perhaps, at some point, it's something
+            I'd take on.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Also, it's a massive jump to make the game engine run as a webapp
+            rather than through the terminal. There's no way that's going to
+            happen, especially as I've already poured work into getting it
+            halfway functional on a terminal.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+      <p>&copy; 2024 Nick Tagliamonte</p>
+    </footer>
+
+    <script src="js/mobileNavigation.js"></script>
+    <script src="js/darkMode.js"></script>
+  </body>
+</html>
