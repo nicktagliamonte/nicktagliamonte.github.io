@@ -7,6 +7,14 @@ const articlesData = [
       "example, the game development project (which is a years-long underta...",
     link: "website.html",
   },
+  {
+    projectName: "School Study Tool",
+    description:
+      "Note that this is a tiny program that serves a single tiny function adequately, and was written over the " + 
+      "course of like 2 hours. This project was not originally planned, and kind of came up organically " + 
+      "while I was working on the final which it pertains to - I ju...",
+    link: "studyTool.html",
+  },
 ];
 
 let currentPage = 1;
