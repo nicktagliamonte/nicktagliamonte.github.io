@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Engine | Nick Tagliamonte</title>
+    <meta
+      name="description"
+      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, data optimization, and web development."
+    />
+    <meta
+      name="keywords"
+      content="Nick Tagliamonte, about me, computer science, software development, personal interests, skills"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header role="banner">
+      <div class="header-left">
+        <h1 role="heading" aria-level="1" class="home-link">
+          <a href="index.html">Nick Tagliamonte</a>
+        </h1>
+      </div>
+      <div class="dark-mode-toggle">
+        <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav class="navigation" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="information.html" role="link">Information</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+      <div
+        id="mobile-menu-icon"
+        class="hamburger-menu"
+        aria-label="Open Navigation Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="overlay-menu">
+        <nav
+          class="overlay-navigation"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="information.html" role="link">Information</a></li>
+          </ul>
+          <!-- Dark mode toggle at the bottom -->
+          <div class="overlay-dark-mode-toggle">
+            <button
+              class="overlay-sun-icon"
+              role="img"
+              aria-label="Sun"
+              id="overlayDarkModeToggle"
+            >
+              &#9728;
+            </button>
+            <label class="overlay-toggle">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main role="main" class="about-container">
+      <section class="left-content">
+        <!-- Article Section -->
+        <section id="information">
+          <h2>Project Name: Game Engine</h2>
+          <hr />
+          <h3>Information</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            This is by far the largest project I've ever attempted. It's at a
+            semi-functional state, undergoing testing and expansion as an active
+            process, so this page will be somewhat regularly updated as I
+            optimize and bugfix the game engine (using some test data I've
+            layered on top of the engine itself).
+          </p>
+          <h3>History</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            The assumptions going into this project were that it would be very
+            simple. The first project description even indicated that this was
+            more an exercise in storytelling than coding, which experience has
+            shown to be not at all true. This is a description of the game
+            engine itself, which I'm taking to mean the entire code base
+            separate from the JSON data where the actual story lives (as someone
+            with enough patience could craft any story they want into JSON and
+            run it as a separate game on this same engine).
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Key features are the quest system, region/room system, dialogue
+            system, bartering system, the command parsing itself, and the
+            persistence. Each was a significant challenge, with the smaller game
+            systems like thievery, sneaking, the menu, timed and random events,
+            and puzzle solving being simpler and quicker to produce.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            The quests are made up of a set of quest objectives, as well as
+            holding a reward or rewards and a status (active, complete, etc).
+            Once the player chooses to take on a quest, it is added to their
+            quest log along with information on upcoming or incomplete
+            objectives. On completion of main story quests, part of the reward
+            is the gameState transitioning to a new region.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            The region/room system is one I was happy with what I came up with.
+            Each region is made up of a list of rooms. Each room contains a list
+            of adjacencies. Each adjacency indicates the ID of the two rooms it
+            joins. This way, with the list of rooms, it's possible for the
+            player to feel like they are navigating a 3D, interconnected space
+            while the game is just parsing individual rooms and only holding the
+            ID of the next one (or set of possible next ones) in memory at any
+            one time. Each room can be represented as a 2D array (which is very
+            helpful for mapping purposes) where each array element is a 1 or 0
+            to represent a “walkable” or “non-walkable” tile respectively. This
+            allows for rooms which feel non-rectangular to the player, but which
+            are really just big rectangles with maybe a circle of 0s creating a
+            false sense of boundary, for example.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Dialogue pulls its data from JSON, where each NPC is given a
+            dialogue tree made up of dialogue nodes. Different external starting
+            events can impact that NPC such that the starting node of
+            conversation will be different, and some nodes only become evident
+            to the player based on external conditions like quest status. Some
+            nodes contain relative file paths to quest data and allow for new
+            quests to be assigned to the player.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Bartering was difficult but more as a challenge of creating a
+            scalable economy where items found in game hold consistent values
+            relative to one another. I ultimately nerfed this game system for
+            simplicity, essentially to barter the player has to release some
+            quantity of their items so they have the purchasing power to buy
+            items from the NPC. Which is ultimately just a step away from using
+            a fiat currency, in this game it's just that the purchasing power
+            such currency would represent isn't held as a double value until the
+            player puts up something to “barter” with.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Command parsing occurs through a loop in the main game engine, which
+            runs infinitely until it encounters a 'QUIT'command. Each time the
+            player presses enter, it looks at the command words entered, passes
+            them into gameCommand, and gameCommand parses and error handles on a
+            case-by-case basis.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Persistence involves writing to and reading from JSON. It was a
+            major hurdle, on the grounds that the adjacency list has to be
+            flattened (rooms containing adjacencies which contain rooms…which
+            contain adjacencies) which I didn't know was a potential pitfall of
+            my design going into the project. I had written almost everything
+            (including a story) by the time I got to persistence, so I was not
+            prepared to go back and re-write the room system to use flattened
+            data. In the future I'll understand to maintain a concept of what
+            the minimum required data is to build a gameState from, but in this
+            go around I wound up writing a function toSerializableFormat in each
+            of my files which contains that object's custom serialization
+            format. Then the main gameEngine file just combines those various
+            JSON data into a single master list, and writes that to disk.
+            Reading is easy as a consequence, because the data being read is
+            unique to the objects which created that data.
+          </p>
+          <h3>Future Expansion</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            It's difficult to keep this section focused on the game
+            <em>engine</em> and not the game itself, because the game is still
+            an ongoing process (and will be for probably the next 3 years).
+            Currently, I'm working on having the game tested by people who
+            didn't write it; I was surprised by how many potential problems I
+            miss by knowing that I have to type “Enter the chamber” “talk to
+            milo” at exactly the right time. So the expansions I have in mind
+            are largely bug fix oriented, I'm not sure there are any significant
+            things left that I want to add in terms of expansions.
+          </p>
+          <ul>
+            <li>
+              Examine [puzzle] needs to give the player the puzzle description
+              and an OPTION to begin solving, rather than jumping right into the
+              puzzle sequence if they aren't anticipating it.
+            </li>
+            <li>
+              Mastermind puzzles need to have better explanations for what the
+              puzzle IS (gameplay, valid numbers for input, etc).
+            </li>
+            <li>
+              There needs to be some kind of warning system so that if you are
+              going to fight and kill someone who you need alive for a quest,
+              the game cannot proceed.
+            </li>
+            <li>
+              A check to see whether a character is alive for dialogue based
+              quest objectives.
+              <ul>
+                <li>
+                  Consequently, a quest failed state if player actions result in
+                  a quest becoming impossible to complete.
+                </li>
+              </ul>
+            </li>
+            <li>
+              An update to objective completion checks such that a character who
+              you have to hide from being dead counts as an auto-complete.
+            </li>
+            <li>
+              There are some characters causing '?' to render in the final
+              output, because I wrote some of the game data outside of the IDE
+              and it isn't formatted correctly.
+            </li>
+            <li>
+              The random event/status effect timer has to start AFTER character
+              initialization, so that the time it takes to initialize a new
+              character on new game start isn't counted against the player for
+              things like hunger and thirst (and so that a barter event doesn't
+              launch before the player inventory has been initialized).
+            </li>
+          </ul>
+          <h3>Critique</h3>
+          <p>
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Critically analyzing this engine, it's clearly the work of an
+            amateur (which, as an amateur, I think is fair). It probably takes
+            up more code than it needs to, manually addressing conditions which
+            should have been prevented from occurring by tightening up the
+            logic. There was a critical point in development where it started to
+            feel duct taped together. I tried to fight that, to avoid losing
+            generality and keep things organized, and this does mark an
+            improvement compared to past efforts on different projects. But, end
+            of the day, it's duct taped together.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+      <p>&copy; 2024 Nick Tagliamonte</p>
+    </footer>
+
+    <script src="js/mobileNavigation.js"></script>
+    <script src="js/darkMode.js"></script>
+  </body>
+</html>

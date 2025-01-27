@@ -15,6 +15,14 @@ const articlesData = [
       "while I was working on the final which it pertains to - I ju...",
     link: "studyTool.html",
   },
+  {
+    projectName: "Game Engine",
+    description:
+    "This is by far the largest project I've ever attempted. It's at a semi-functional state, undergoing testing and " + 
+    "expansion as an active process, so this page will be somewhat regularly updated as I optimize and bugfix the game " + 
+    "engine (using some test data I've layered on top of the engine itsel...",
+    link: "gameEngine.html",
+  },
 ];
 
 let currentPage = 1;
