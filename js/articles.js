@@ -20,9 +20,16 @@ const articlesData = [
     description:
     "This is by far the largest project I've ever attempted. It's at a semi-functional state, undergoing testing and " + 
     "expansion as an active process, so this page will be somewhat regularly updated as I optimize and bugfix the game " + 
-    "engine (using some test data I've layered on top of the engine itsel...",
+    "engine (using some test data I've layered on top of the eng...",
     link: "gameEngine.html",
-  },
+  },{
+    projectName: "Markdown Note Taking App",
+    description:
+    "The process here was simple: I wanted a web app which would just record notes that I wrote, have the option to view " + 
+    "those notes formatted in markdown, and give me the option for multiple tabs. Basically the Windows 11 notes app but " + 
+    "online and with a markdo...",
+    link: "markdownNotes.html",
+  }
 ];
 
 let currentPage = 1;

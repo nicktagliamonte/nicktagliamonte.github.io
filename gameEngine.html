@@ -156,32 +156,32 @@
             relative to one another. I ultimately nerfed this game system for
             simplicity, essentially to barter the player has to release some
             quantity of their items so they have the purchasing power to buy
-            items from the NPC. Which is really just a step away from using
-            a fiat currency, in this game it's just that the purchasing power
-            such currency would represent isn't held as a double value until the
+            items from the NPC. Which is really just a step away from using a
+            fiat currency, in this game it's just that the purchasing power such
+            currency would represent isn't held as a double value until the
             player puts up something to “barter” with.
             <br /><br /><span style="display: inline-block; width: 2em"></span>
             Command parsing occurs through a loop in the main game engine, which
-            runs infinitely until it encounters a 'QUIT'command. Each time the
+            runs infinitely until it encounters a 'QUIT' command. Each time the
             player presses enter, it looks at the command words entered, passes
             them into gameCommand, and gameCommand parses and error handles on a
             case-by-case basis.
             <br /><br /><span style="display: inline-block; width: 2em"></span>
             Persistence involves writing to and reading from JSON. It was a
             major hurdle, on the grounds that the adjacency list has to be
-            flattened (rooms containing adjacencies which contain rooms…which
-            contain adjacencies) which I didn't know was a potential pitfall of
-            my design going into the project. I had written almost everything
-            (including a story) by the time I got to persistence, so I was not
-            prepared to go back and re-write the room system to use flattened
-            data. In the future I'll understand to maintain a concept of what
-            the minimum required data is to build a gameState from, but in this
-            go around I wound up writing a function toSerializableFormat in each
-            of my files which contains that object's custom serialization
-            format. Then the main gameEngine file just combines those various
-            JSON data into a single master list, and writes that to disk.
-            Reading is easy as a consequence, because the data being read is
-            unique to the objects which created that data.
+            flattened (rooms contain adjacencies which contain rooms…which
+            contain adjacencies and so on) which I didn't know was a potential
+            pitfall of my design going into the project. I had written almost
+            everything (including a story) by the time I got to persistence, so
+            I was not prepared to go back and re-write the room system to use
+            flattened data. In the future I'll understand to maintain a concept
+            of what the minimum required data is to build a gameState from, but
+            in this go around I wound up writing a function toSerializableFormat
+            in each of my files which contains that object's custom
+            serialization format. Then the main gameEngine file just combines
+            those various JSON data into a single master list, and writes that
+            to disk. Reading is easy as a consequence, because the data being
+            read is unique to the objects which created that data.
           </p>
           <h3>Future Expansion</h3>
           <p>
@@ -240,7 +240,7 @@
           </ul>
           <h3>Critique</h3>
           <p>
-            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            <span style="display: inline-block; width: 2em"></span>
             Critically analyzing this engine, it's clearly the work of an
             amateur (which, as an amateur, I think is fair). It probably takes
             up more code than it needs to, manually addressing conditions which

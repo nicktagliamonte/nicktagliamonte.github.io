@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Notes | Nick Tagliamonte</title>
+    <meta
+      name="description"
+      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, data optimization, and web development."
+    />
+    <meta
+      name="keywords"
+      content="Nick Tagliamonte, about me, computer science, software development, personal interests, skills"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header role="banner">
+      <div class="header-left">
+        <h1 role="heading" aria-level="1" class="home-link">
+          <a href="index.html">Nick Tagliamonte</a>
+        </h1>
+      </div>
+      <div class="dark-mode-toggle">
+        <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav class="navigation" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="information.html" role="link">Information</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+      <div
+        id="mobile-menu-icon"
+        class="hamburger-menu"
+        aria-label="Open Navigation Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="overlay-menu">
+        <nav
+          class="overlay-navigation"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="information.html" role="link">Information</a></li>
+          </ul>
+          <!-- Dark mode toggle at the bottom -->
+          <div class="overlay-dark-mode-toggle">
+            <button
+              class="overlay-sun-icon"
+              role="img"
+              aria-label="Sun"
+              id="overlayDarkModeToggle"
+            >
+              &#9728;
+            </button>
+            <label class="overlay-toggle">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main role="main" class="about-container">
+      <section class="left-content">
+        <!-- Article Section -->
+        <section id="information">
+          <h2>Project Name: Markdown Note Taking App</h2>
+          <hr />
+          <h3>History</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            This project was unique in that it represented the first break from
+            only building one thing at a time. Honestly, a few months and untold
+            hours into the development of the game engine and with the story
+            still looming ahead of me, I needed a break and to work on
+            <em>anything</em> else. This app is simple, functional, and was a
+            good learning experience wrt web development.
+          </p>
+          <h3>Process</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            The process here was simple: I wanted a web app which would just
+            record notes that I wrote, have the option to view those notes
+            formatted in markdown, and give me the option for multiple tabs.
+            Basically the Windows 11 notes app but online and with a markdown
+            preview window. Having gone through some vanilla JS development at
+            this point with the github site (and having seen more than a few job
+            postings mentioning React which I had not to this point used at
+            all), I decided to use React.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Similar to the website itself, that made this a significant exercise
+            in using reference material during the development process. But
+            having already worked with HTML and CSS, it was a lot easier to put
+            the site together from a static perspective.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Divided into a topMenu, tabBar, sideMenu, editorWindow,
+            previewWindow, and bottomBar, and combined through App.js, it was
+            fairly simple to iterate through and construct those components
+            visually, then layer the functionality over top of them. Integrating
+            changes made to the side menu (adding or deleting notes, opening new
+            notes, renaming notes or pages) with the tabs accessible through the
+            tab bar was a challenge, but as I got more comfortable with the idea
+            of forward refs and how props and states really function this got
+            progressively smoother.
+          </p>
+          <h3>Hurdles</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span> The major
+            one came in the edit window, and barely had anything to do with the
+            function of the application itself. My original edit menu contained
+            options “find”, “find in notes”, “replace”, and “replace in notes”.
+            None of those made it to the finished app. I had modals created for
+            all of these components, and they were launching correctly and
+            stylized nicely. But the editor is just a simple text area, and I
+            struggled to get the found word selected properly. I went pretty far
+            down the wrong path working to get editor content 'highlighted', and
+            I eventually wound up replacing the simple text area with a div that
+            could have style tags passed into it. And so it was that I got the
+            find function to work to replace 'text' with
+            <span style="background-color: blue; color: white">'text'</span>
+            ...but not to just select 'text'.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            After some deliberation, I decided that the find and replace
+            functions were not vital to the app functionality and removed the
+            edit menu. It was a few days later that I thought of some other edit
+            menu based functions that could be nice to include, one of which was
+            'select all'. Of course, looking for reference material on
+            <em>selecting</em> text in a text area rather than highlighting it
+            brought me to the .select() function. Which would have perfectly
+            answered my need as it relates to the find and replace functions.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            At this point, the edit menu was getting crowded and I chose not to
+            include find and replace functions. The note taking app is targeted
+            as a notes and markdown formatting application and I wanted to avoid
+            building in too many elements of rich text editors.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            Functions like persistence of notes came easily after the experience
+            gained from other projects, and I was happy to see JSON parsing go
+            from one of the most significant challenges of a past project to a
+            footnote of this one, taken care of with barely a second thought.
+            The styling is more organized, the themecontext.js file making
+            darkmode and lightmode styles quick and simple without growing into
+            the behemoth css sheet that my first webapp had.
+          </p>
+          <h3>Future Expansion</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            There's not a lot I would change with this one. I could add a find
+            function in, obviously the app is bare bones enough that any
+            comparison to an actual rich text editor is unwarranted, but I can
+            honestly say I'm happy to put a bow on this as-is.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+      <p>&copy; 2024 Nick Tagliamonte</p>
+    </footer>
+
+    <script src="js/mobileNavigation.js"></script>
+    <script src="js/darkMode.js"></script>
+  </body>
+</html>
