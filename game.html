@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>In the City | Nick Tagliamonte</title>
+    <meta
+      name="description"
+      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, data optimization, and web development."
+    />
+    <meta
+      name="keywords"
+      content="Nick Tagliamonte, about me, computer science, software development, personal interests, skills"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header role="banner">
+      <div class="header-left">
+        <h1 role="heading" aria-level="1" class="home-link">
+          <a href="index.html">Nick Tagliamonte</a>
+        </h1>
+      </div>
+      <div class="dark-mode-toggle">
+        <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav class="navigation" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="information.html" role="link">Information</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+      <div
+        id="mobile-menu-icon"
+        class="hamburger-menu"
+        aria-label="Open Navigation Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="overlay-menu">
+        <nav
+          class="overlay-navigation"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="information.html" role="link">Information</a></li>
+          </ul>
+          <!-- Dark mode toggle at the bottom -->
+          <div class="overlay-dark-mode-toggle">
+            <button
+              class="overlay-sun-icon"
+              role="img"
+              aria-label="Sun"
+              id="overlayDarkModeToggle"
+            >
+              &#9728;
+            </button>
+            <label class="overlay-toggle">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main role="main" class="about-container">
+      <section class="left-content">
+        <!-- Article Section -->
+        <section id="information">
+          <h2>Project Name: In the City</h2>
+          <hr />
+          <h3>History</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            This is a unique writeup in the sense that the game itself is just a
+            story, something I'm constructing in a data format digestible by the
+            game engine, which is the actual coding project component of this.
+            In that sense, the two are very tightly coupled and the writeup on
+            the engine can be found
+            <a
+              href="gameEngine.html"
+              style="text-decoration: none; color: inherit"
+              >here</a
+            >. <br /><br /><span
+              style="display: inline-block; width: 2em"
+            ></span>
+            I'll offer a brief overview of the story, but I don't want to go
+            into exhaustive detail because there is quite a bit of content.
+            Players begin in the northeast, around St. Jeromes (where I went to
+            elementary school. Most of the game occurs across locations familiar
+            to me from my life). They progress through regions in the following
+            order:
+          </p>
+          <ol>
+            <li>St Jeromes (my elementary school)</li>
+            <li>
+              Arch Street/lower Chinatown (a cool place to be, and an easy way
+              to introduce the bartering system given the already transaction
+              oriented nature of this area).
+            </li>
+            <li>
+              Cobbs Creek (the 'safe zone' associated with the Cobbs Creek level
+              is in a bookstore I like which <em>is</em> in West Philly, but not
+              at all Cobbs Creek or even anywhere near it. But calling the
+              location Cobbs Creek allows me to use the creek artistically in
+              light of a drought condition impacting this place).
+            </li>
+            <li>
+              Art Museum (similar to the cobbs creek thing, the location was
+              chosen mostly because it is a good place to introduce gameplay
+              elements which incorporate the player's perception. The art museum
+              becomes a House of Leaves esque labarynth).
+            </li>
+            <li>
+              FDR Park (there's not a lot to this. I was writing the story in
+              May, and had ridden my bike down that way the day I was thinking
+              about locations. It was a nice day and put me in a good mood, so I
+              decided to throw the park in as a level).
+            </li>
+            <li>
+              Temple (where I am currently attending school, and around where I
+              have historically lived).
+            </li>
+            <li>
+              Port Richmond (just a cool place to hang out. The gameplay here is
+              more whimsical than in other regions, particularly the mentally
+              harrowing Temple level).
+            </li>
+            <li>
+              Manayunk (in the far future world we see the hills have
+              haphazardly collapsed into the Schuylkill River, creating an alien
+              landscape of cliffs and crags. The fact that the river is not
+              nearly deep or wide enough to accommodate this notwithstanding).
+            </li>
+            <li>
+              City Hall (this is where the Annihilation influence comes in. I
+              try to invoke the spire of city hall like the
+              <s>tower</s>pit/lighthouse for a surreal ending sequence)
+            </li>
+          </ol>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Beyond that, it's a survival adventure game in a far future, loosely
+            dystopic world with some D&D influence. It's meant to build towards
+            a kind of downer ending, with a number of themes which will become
+            clear in that ending. Further updates to this page will occur
+            regularly (albeit infrequently) as I build this into actual game
+            data.
+          </p>
+          <h3>Prior to 1/30/25</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Created in JSON the first half of the first region. Progress was
+            incredibly slow-going and significantly repetitive, so I broke from
+            proper region creation in favor of laying out templates which I can
+            use for rooms and adjacencies throughout all levels to reduce the
+            repetitive nature of this work. To that end, I created a few
+            template houses which can be modified to fit any level, as well as a
+            few different sorts of industrial buildings. The idea is that, for
+            example, the school might be the industrial building on its own. The
+            art museum is just 3 of these industrial buildings put together in a
+            sort of 'U' shape.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+      <p>&copy; 2024 Nick Tagliamonte</p>
+    </footer>
+
+    <script src="js/mobileNavigation.js"></script>
+    <script src="js/darkMode.js"></script>
+  </body>
+</html>

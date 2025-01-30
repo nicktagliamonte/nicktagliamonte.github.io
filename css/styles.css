@@ -166,7 +166,8 @@ input:checked + .slider:before {
   transition: background-color 0.3s ease;
 }
 
-.social-link:hover {
+.social-link:hover,
+#information a:hover {
   background-color: #dae7da;
   border-radius: 3px;
   cursor: crosshair;
@@ -772,6 +773,7 @@ address a,
 
 .dark-mode .project-card:hover,
 .dark-mode .social-link:hover,
+.dark-mode #information a:hover,
 .project-card:hover .language-tag.selected {
   background-color: #4b6f4b;
 }

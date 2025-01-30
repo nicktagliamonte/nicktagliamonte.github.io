@@ -30,6 +30,14 @@ const articlesData = [
     "online and with a markdo...",
     link: "markdownNotes.html",
   }
+  ,{
+    projectName: "In the City",
+    description:
+    "I'll offer a brief overview of the story, but I don't want to go into exhaustive detail because there is quite a bit " + 
+    "of content. Players begin in the northeast, around St. Jeromes (where I went to elementary school. Most of the game " + 
+    "occurs across locations fami...",
+    link: "game.html",
+  }
 ];
 
 let currentPage = 1;
