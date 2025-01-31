@@ -29,14 +29,20 @@ const articlesData = [
     "those notes formatted in markdown, and give me the option for multiple tabs. Basically the Windows 11 notes app but " + 
     "online and with a markdo...",
     link: "markdownNotes.html",
-  }
-  ,{
+  },{
     projectName: "In the City",
     description:
     "I'll offer a brief overview of the story, but I don't want to go into exhaustive detail because there is quite a bit " + 
     "of content. Players begin in the northeast, around St. Jeromes (where I went to elementary school. Most of the game " + 
     "occurs across locations fami...",
     link: "game.html",
+  },{
+    projectName: "Data Structure Library",
+    description:
+    "A library implementing common (and some uncommon but interesting) data structures in java. The idea here is largely " + 
+    "to drill data structures in a way that will hopefully improve performance in technical interviews, in addition to " + 
+    "testing with JUnit, which is a prac...",
+    link: "library.html",
   }
 ];
 

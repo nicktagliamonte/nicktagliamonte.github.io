@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library | Nick Tagliamonte</title>
+    <meta
+      name="description"
+      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, data optimization, and web development."
+    />
+    <meta
+      name="keywords"
+      content="Nick Tagliamonte, about me, computer science, software development, personal interests, skills"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header role="banner">
+      <div class="header-left">
+        <h1 role="heading" aria-level="1" class="home-link">
+          <a href="index.html">Nick Tagliamonte</a>
+        </h1>
+      </div>
+      <div class="dark-mode-toggle">
+        <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav class="navigation" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="information.html" role="link">Information</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+      <div
+        id="mobile-menu-icon"
+        class="hamburger-menu"
+        aria-label="Open Navigation Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="overlay-menu">
+        <nav
+          class="overlay-navigation"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="information.html" role="link">Information</a></li>
+          </ul>
+          <!-- Dark mode toggle at the bottom -->
+          <div class="overlay-dark-mode-toggle">
+            <button
+              class="overlay-sun-icon"
+              role="img"
+              aria-label="Sun"
+              id="overlayDarkModeToggle"
+            >
+              &#9728;
+            </button>
+            <label class="overlay-toggle">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main role="main" class="about-container">
+      <section class="left-content">
+        <!-- Article Section -->
+        <section id="information">
+          <h2>Project Name: Data Structure Library</h2>
+          <hr />
+          <h3>Oberview</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            A library implementing common (and some uncommon but interesting)
+            data structures in java. The idea here is largely to drill data
+            structures in a way that will hopefully improve performance in
+            technical interviews, in addition to testing with JUnit, which is a
+            practice that I'm not going into this with any experience in.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            This is also the first project where I am creating the write up in
+            line with creating the program itself, so the rest of this will come
+            in the form of regular dated updates.
+          </p>
+          <h3>1/31/25</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Today I created the maven project and basic file structure for the
+            Java library project, which I'm (somewhat regrettably) calling
+            'nickslibrary'. The file structure is: <br /><br />NicksLibrary/<br />
+            │── src/main/java/<br />
+            │ ├── com/nickslibrary/datastructures/<br />
+            │ │ ├── linear/<br />
+            │ │ │ ├── DoublyLinkedList.java<br />
+            │ │ │ ├── StackArray.java<br />
+            │ │ │ ├── StackLinkedList.java<br />
+            │ │ │ ├── CircularQueue.java<br />
+            │ │ │ ├── Deque.java<br />
+            │ │ ├── hashing/<br />
+            │ │ │ ├── HashTableOpenAddressing.java<br />
+            │ │ │ ├── HashTableSeparateChaining.java<br />
+            │ │ ├── trees/<br />
+            │ │ │ ├── BinarySearchTree.java<br />
+            │ │ │ ├── AVLTree.java<br />
+            │ │ │ ├── RedBlackTree.java<br />
+            │ │ │ ├── BTree.java<br />
+            │ │ │ ├── RadixTrie.java<br />
+            │ │ ├── heaps/<br />
+            │ │ │ ├── MinHeap.java<br />
+            │ │ │ ├── MaxHeap.java<br />
+            │ │ │ ├── FibonacciHeap.java<br />
+            │ │ ├── graphs/<br />
+            │ │ │ ├── GraphAdjList.java<br />
+            │ │ │ ├── GraphAdjMatrix.java<br />
+            │ │ │ ├── DisjointSet.java<br />
+            │ │ │ ├── BFS.java (or as a method)<br />
+            │ │ │ ├── DFS.java (or as a method)<br />
+            │ │ ├── advanced/<br />
+            │ │ │ ├── SkipList.java<br />
+            │ │ │ ├── BloomFilter.java<br />
+            │ │ │ ├── FenwickTree.java<br />
+            │ │ │ ├── SegmentTree.java<br />
+            │ │ │ ├── SuffixTree.java<br />
+            │ ├── com/nickslibrary/utils/<br />
+            │ │ ├── HashFunctions.java<br />
+            │ │ ├── TreeNode.java<br />
+            │ │ ├── GraphNode.java<br />
+            │ ├── com/nickslibrary/tests/<br />
+            │ │ ├── linear/<br />
+            │ │ │ ├── DoublyLinkedListTest.java<br />
+            │ │ │ ├── StackTest.java<br />
+            │ │ │ ├── QueueTest.java<br />
+            │ │ ├── hashing/<br />
+            │ │ │ ├── HashTableTest.java<br />
+            │ │ ├── trees/<br />
+            │ │ │ ├── BSTTest.java<br />
+            │ │ │ ├── AVLTreeTest.java<br />
+            │ │ │ ├── RedBlackTreeTest.java<br />
+            │ │ ├── graphs/<br />
+            │ │ │ ├── GraphTest.java<br />
+            │ │ │ ├── DisjointSetTest.java<br />
+            │ ├── Main.java (for testing during development)<br />
+            ├── lib/ (for external dependencies if needed)<br />
+            ├── test/java/com/nickslibrary (JUnit test results/external test
+            scripts)<br />
+            │ ├──AppTest.java<br />
+            ├── build/ (compiled binaries if using an IDE)<br />
+            ├── docs/ (JavaDocs documentation)<br />
+            ├── README.md<br />
+            ├── pom.xml
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            So there are now file stubs for all of the various data structures I
+            plan to implement in the coming…weeks? Months? Days? The timeline is
+            very much up in the air at the moment, but I'd like to knock out
+            this project and the calculator by the end of the semester then
+            maybe spend the summer developing something that isn't a homework
+            assignment.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            It's very likely that BFS and DFS will be implemented as methods in
+            the graph files rather than as separate files.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+      <p>&copy; 2024 Nick Tagliamonte</p>
+    </footer>
+
+    <script src="js/mobileNavigation.js"></script>
+    <script src="js/darkMode.js"></script>
+  </body>
+</html>
