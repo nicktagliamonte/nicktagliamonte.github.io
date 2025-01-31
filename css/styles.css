@@ -488,6 +488,45 @@ h3 {
   box-shadow: 0 4px 8px #0003;
 }
 
+.gameEngine-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display:grid;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px #0008;
+}
+
+.c-pic {
+  width: 275px;
+  height: 200px;
+  object-fit: scale-down;
+  display:grid;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px #0008;
+}
+
+.markdown-pic {
+  width: 500px;
+  height: 455px;
+  object-fit: scale-down;
+  display:grid;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px #0008;
+}
+
+.markdown-pic-small {
+  width: 167px;
+  height: 150px;
+  object-fit:contain;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px #0008;
+}
+
+.wide-pic {
+  width: 700px;
+}
+
 #contact,
 #resume {
   text-align: left;
@@ -973,7 +1012,9 @@ select option {
   }
 
   #resume,
-  #contact {
+  #contact,
+  .information,
+  .about-container {
     max-width: calc(90%);
   }
 
