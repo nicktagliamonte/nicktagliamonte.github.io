@@ -990,6 +990,11 @@ select option {
   margin-right: 0.5rem; /* Optional: Space between label and dropdown */
 }
 
+code {
+  font-size: large;
+  background-color: #f0f0f0;
+}
+
 @media (max-width: 768px) {
   #mobile-menu-icon {
     display: block;

@@ -108,82 +108,47 @@
             line with creating the program itself, so the rest of this will come
             in the form of regular dated updates.
           </p>
+          <h3>List of Structures to be Implemented</h3>
+          <p>
+            dynamic array, doubly linked list (optionally circular, and
+            optionally singly linked), array/linked list based stack, array
+            based circular queue, deque, open addressing hash table, separate
+            chaining hash table, binary search tree, avl tree, red black tree,
+            b-tree, min heap, max heap, fibonacci heap, standard trie (just for
+            comprehension, will be replaced by the...), compressed (radix) trie,
+            adjacency list, adjacency matrix, BFS and DFS graph traversal
+            (probably methods), disjoint set, skip list, bloom filter, fenwick
+            tree, segment tree, suffix tree.
+          </p>
           <h3>1/31/25</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span>
             Today I created the maven project and basic file structure for the
             Java library project, which I'm (somewhat regrettably) calling
-            'nickslibrary'. The file structure is: <br /><br />NicksLibrary/<br />
-            │── src/main/java/<br />
-            │ ├── com/nickslibrary/datastructures/<br />
-            │ │ ├── linear/<br />
-            │ │ │ ├── DoublyLinkedList.java<br />
-            │ │ │ ├── StackArray.java<br />
-            │ │ │ ├── StackLinkedList.java<br />
-            │ │ │ ├── CircularQueue.java<br />
-            │ │ │ ├── Deque.java<br />
-            │ │ ├── hashing/<br />
-            │ │ │ ├── HashTableOpenAddressing.java<br />
-            │ │ │ ├── HashTableSeparateChaining.java<br />
-            │ │ ├── trees/<br />
-            │ │ │ ├── BinarySearchTree.java<br />
-            │ │ │ ├── AVLTree.java<br />
-            │ │ │ ├── RedBlackTree.java<br />
-            │ │ │ ├── BTree.java<br />
-            │ │ │ ├── RadixTrie.java<br />
-            │ │ ├── heaps/<br />
-            │ │ │ ├── MinHeap.java<br />
-            │ │ │ ├── MaxHeap.java<br />
-            │ │ │ ├── FibonacciHeap.java<br />
-            │ │ ├── graphs/<br />
-            │ │ │ ├── GraphAdjList.java<br />
-            │ │ │ ├── GraphAdjMatrix.java<br />
-            │ │ │ ├── DisjointSet.java<br />
-            │ │ │ ├── BFS.java (or as a method)<br />
-            │ │ │ ├── DFS.java (or as a method)<br />
-            │ │ ├── advanced/<br />
-            │ │ │ ├── SkipList.java<br />
-            │ │ │ ├── BloomFilter.java<br />
-            │ │ │ ├── FenwickTree.java<br />
-            │ │ │ ├── SegmentTree.java<br />
-            │ │ │ ├── SuffixTree.java<br />
-            │ ├── com/nickslibrary/utils/<br />
-            │ │ ├── HashFunctions.java<br />
-            │ │ ├── TreeNode.java<br />
-            │ │ ├── GraphNode.java<br />
-            │ ├── com/nickslibrary/tests/<br />
-            │ │ ├── linear/<br />
-            │ │ │ ├── DoublyLinkedListTest.java<br />
-            │ │ │ ├── StackTest.java<br />
-            │ │ │ ├── QueueTest.java<br />
-            │ │ ├── hashing/<br />
-            │ │ │ ├── HashTableTest.java<br />
-            │ │ ├── trees/<br />
-            │ │ │ ├── BSTTest.java<br />
-            │ │ │ ├── AVLTreeTest.java<br />
-            │ │ │ ├── RedBlackTreeTest.java<br />
-            │ │ ├── graphs/<br />
-            │ │ │ ├── GraphTest.java<br />
-            │ │ │ ├── DisjointSetTest.java<br />
-            │ ├── Main.java (for testing during development)<br />
-            ├── lib/ (for external dependencies if needed)<br />
-            ├── test/java/com/nickslibrary (JUnit test results/external test
-            scripts)<br />
-            │ ├──AppTest.java<br />
-            ├── build/ (compiled binaries if using an IDE)<br />
-            ├── docs/ (JavaDocs documentation)<br />
-            ├── README.md<br />
-            ├── pom.xml
-            <br /><br /><span style="display: inline-block; width: 2em"></span>
-            So there are now file stubs for all of the various data structures I
-            plan to implement in the coming…weeks? Months? Days? The timeline is
-            very much up in the air at the moment, but I'd like to knock out
-            this project and the calculator by the end of the semester then
-            maybe spend the summer developing something that isn't a homework
-            assignment.
+            'nickslibrary'. So there are now file stubs for all of the various
+            data structures I plan to implement in the coming…weeks? Months?
+            Days? The timeline is very much up in the air at the moment, but I'd
+            like to knock out this project and the calculator by the end of the
+            semester then maybe spend the summer developing something that isn't
+            a homework assignment.
             <br /><br /><span style="display: inline-block; width: 2em"></span>
             It's very likely that BFS and DFS will be implemented as methods in
             the graph files rather than as separate files.
+          </p>
+          <h3>2/2/25</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            I realized I forgot to add DynamicArray (main and test) in the
+            original file structure, so I added those in. As by far the simplest
+            data structure on the list, this is the first one I am creating. I
+            started the skeleton of the file, basic methods that I know I'll use
+            and a couple of constructors were added as stubs. Users can
+            initialize one of my DynamicArrays empty, with a specification of an
+            initial capacity, or by declaring the array with some variable
+            quantity of objects T. The question of whether to use a generic
+            <code>T[]</code> or an <code>Object[]</code> came up, and I went
+            with <code>Object[]</code> to avoid excessive
+            <code>SuppressWarning(“unchecked”)</code> flags.
           </p>
         </section>
       </section>
