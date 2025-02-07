@@ -109,17 +109,56 @@
             in the form of regular dated updates.
           </p>
           <h3>List of Structures to be Implemented</h3>
-          <p>
-            dynamic array, doubly linked list (optionally circular, and
-            optionally singly linked), array/linked list based stack, array
-            based circular queue, deque, open addressing hash table, separate
-            chaining hash table, binary search tree, avl tree, red black tree,
-            b-tree, min heap, max heap, fibonacci heap, standard trie (just for
-            comprehension, will be replaced by the...), compressed (radix) trie,
-            adjacency list, adjacency matrix, BFS and DFS graph traversal
-            (probably methods), disjoint set, skip list, bloom filter, fenwick
-            tree, segment tree, suffix tree.
-          </p>
+          <ol>
+            <li>Linear</li>
+            <ol>
+              <li>Dynamic array</li>
+              <li>
+                Doubly linked list (optionally circular, optionally singly
+                linked)
+              </li>
+              <li>Array based stack</li>
+              <li>Linked list-based stack</li>
+              <li>Array-based circular queue</li>
+              <li>Deque</li>
+            </ol>
+            <li>Hashing</li>
+            <ol>
+              <li>Open addressing hash table</li>
+              <li>Separate chaining hash table</li>
+            </ol>
+            <li>Trees</li>
+            <ol>
+              <li>Binary search tree</li>
+              <li>AVL tree</li>
+              <li>Red-black tree</li>
+              <li>B-tree</li>
+              <li>Min heap</li>
+              <li>Max heap</li>
+              <li>Fibonacci heap</li>
+              <li>
+                Standard trie (just for comprehension; will be replaced by
+                the...)
+              </li>
+              <li>Compressed (radix) trie</li>
+            </ol>
+            <li>Graphs</li>
+            <ol>
+              <li>Adjacency list</li>
+              <li>Adjacency matrix</li>
+              <li>BFS and DFS graph traversal (probably methods)</li>
+              <li>Disjoint set</li>
+            </ol>
+            <li>Advanced</li>
+            <ol>
+              <li>Skip list</li>
+              <li>Bloom filter</li>
+              <li>Fenwick tree</li>
+              <li>Segment tree</li>
+              <li>Suffix tree</li>
+            </ol>
+          </ol>
+
           <h3>1/31/25</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span>
@@ -149,6 +188,67 @@
             <code>T[]</code> or an <code>Object[]</code> came up, and I went
             with <code>Object[]</code> to avoid excessive
             <code>SuppressWarning(“unchecked”)</code> flags.
+          </p>
+          <h3>2/5/25</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Work has now been completed on the LinkedList, Array-Based Stack,
+            and Linked List based stack. Both stack implementations were
+            extremely easy, almost trivial, because the logic for accessing a
+            dynamic array or linked list element at a given index (and inserting
+            one at that index) already exists in the dynamic array and linked
+            list classes themselves. Linked List was probably the most logically
+            difficult thing to create, probably because that one class can,
+            depending on flags, act as either singly or doubly linked and as
+            either circular or non. I wound up finding a flow once it became
+            clear that each add, search, or remove operation basically falls
+            into the category of 'dealing with an empty list', 'addressing the
+            item at the head', 'addressing the item at the tail', and 'other'.
+            There are some small optimizations: if you have a doubly linked list
+            and want to interact in some way with an element that is at index
+            greater than size / 2, it's quicker to start at the tail and
+            traverse to the element backwards. If you have a circular list, then
+            it's easier to address any index as <code>index % size</code> to
+            handle errors, rather than immediately declaring OOB something which
+            really is not. <br /><br /><span
+              style="display: inline-block; width: 2em"
+            ></span>
+            Testing, on the other hand, is another story. Half the point of this
+            exercise is gaining an understanding of unit tests. Right now I have
+            an issue where a certain test was failing, so I made changes to the
+            code to resolve it. I think I see what the problem was, and I think
+            my fix should work…but the test is still failing with the same
+            error. I entered some print statements to get more info than I was
+            getting from the test cases, and they are indicating that things are
+            working well. I build the stack on top of the arraylist which was
+            giving me the error and all THOSE test cases are passing. Somehow, I
+            don't really understand why yet, my LinkedListTest.java file seems
+            to be testing an old version of the linked list class. So we don't
+            have these structures in the books quite yet, but they're getting
+            there. By tomorrow this all should be figured out.
+          </p>
+          <h3>2/7/25</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Today's big addition was the circular queue. I was struck by how
+            simple this was to implement, the whole thing plus tests took like
+            an hour. Which I think is decent time for all the tests to pass and
+            for me to learn what a circular queue is.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            It was quick enough that I went on to at least begin the deque
+            implementation. At the moment, I am trying to decide between an
+            array based implementation or a linked list based. This being an
+            arbitrary library with no expected use-case, I might go with linked
+            list just because of it's slightly higher conceptual complexity.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            I wrote that while writing the skeleton of the file, figuring out my
+            fields and constructors, and landed on linked list based because of
+            the conceptual complexity being higher and there being no other use
+            case. Then I spent 10 minutes writing a program that exclusively
+            calls methods I already wrote in the linked list class, with no
+            local logic at all, so I guess so much for conceptual complexity.
+            Anyway, another data structure is in the books, because I did the
+            real work a few days ago.
           </p>
         </section>
       </section>
