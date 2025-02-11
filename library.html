@@ -102,15 +102,14 @@
             data structures in java. The idea here is largely to drill data
             structures in a way that will hopefully improve performance in
             technical interviews, in addition to testing with JUnit, which is a
-            practice that I'm not going into this with any experience in.
-            <br /><br /><span style="display: inline-block; width: 2em"></span>
-            This is also the first project where I am creating the write up in
-            line with creating the program itself, so the rest of this will come
-            in the form of regular dated updates.
+            practice that I'm not going into this with any experience in. All of
+            the higher level or more complex structures will be built using
+            simpler structures that I create. For example, the hash table uses
+            an instance of my DynamicArray class to store entries.
           </p>
           <h3>List of Structures to be Implemented</h3>
           <ol>
-            <li>Linear</li>
+            <li>Linear [Complete]</li>
             <ol>
               <li>Dynamic array</li>
               <li>
@@ -122,10 +121,12 @@
               <li>Array-based circular queue</li>
               <li>Deque</li>
             </ol>
-            <li>Hashing</li>
+            <li>Hashing [In Progress]</li>
             <ol>
-              <li>Open addressing hash table</li>
-              <li>Separate chaining hash table</li>
+              <li>
+                Open Addressing or Separate Chaining (differenteiated with
+                constructor arguments)
+              </li>
             </ol>
             <li>Trees</li>
             <ol>
@@ -159,96 +160,63 @@
             </ol>
           </ol>
 
-          <h3>1/31/25</h3>
+          <h3>Linear</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span>
-            Today I created the maven project and basic file structure for the
-            Java library project, which I'm (somewhat regrettably) calling
-            'nickslibrary'. So there are now file stubs for all of the various
-            data structures I plan to implement in the coming…weeks? Months?
-            Days? The timeline is very much up in the air at the moment, but I'd
-            like to knock out this project and the calculator by the end of the
-            semester then maybe spend the summer developing something that isn't
-            a homework assignment.
-            <br /><br /><span style="display: inline-block; width: 2em"></span>
-            It's very likely that BFS and DFS will be implemented as methods in
-            the graph files rather than as separate files.
+            Major questions that came up during the creation of the linear data
+            structures were:
           </p>
-          <h3>2/2/25</h3>
+          <ul>
+            <li>Generics: Using <code>Object[]</code> or <code>T[]</code></li>
+            <ul>
+              <li>
+                I went with <code>Object[]</code> to avoid excessive
+                <code>SuppressWarning(“unchecked”)</code> flags.
+              </li>
+            </ul>
+            <li>
+              Testing: My LinkedList test class was failing one test because of
+              an issue which I resolved. The reason wound up being a deleted
+              class file, the result of which was the test being run on an old
+              version of the LinkedList class.
+            </li>
+            <li>Array or LinkedList based Deque.</li>
+            <ul>
+              <li>
+                Without an actual use case for this library, there wasn't a
+                clearly superior choice between these two. I went with
+                LinkedList based on the idea that it was more conceptually
+                complex and would therefore be a better fit for what is really
+                just a portfolio project. The conceptual complexity had already
+                been handled by the LinkedList class itself though, so the Deque
+                turned out to be a wrapper over that LinkedList class which was
+                very quick to create.
+              </li>
+            </ul>
+          </ul>
+
+          <h3>Hashing</h3>
+          <h3>2/11/25</h3>
           <p>
-            <span style="display: inline-block; width: 2em"></span>
-            I realized I forgot to add DynamicArray (main and test) in the
-            original file structure, so I added those in. As by far the simplest
-            data structure on the list, this is the first one I am creating. I
-            started the skeleton of the file, basic methods that I know I'll use
-            and a couple of constructors were added as stubs. Users can
-            initialize one of my DynamicArrays empty, with a specification of an
-            initial capacity, or by declaring the array with some variable
-            quantity of objects T. The question of whether to use a generic
-            <code>T[]</code> or an <code>Object[]</code> came up, and I went
-            with <code>Object[]</code> to avoid excessive
-            <code>SuppressWarning(“unchecked”)</code> flags.
-          </p>
-          <h3>2/5/25</h3>
-          <p>
-            <span style="display: inline-block; width: 2em"></span>
-            Work has now been completed on the LinkedList, Array-Based Stack,
-            and Linked List based stack. Both stack implementations were
-            extremely easy, almost trivial, because the logic for accessing a
-            dynamic array or linked list element at a given index (and inserting
-            one at that index) already exists in the dynamic array and linked
-            list classes themselves. Linked List was probably the most logically
-            difficult thing to create, probably because that one class can,
-            depending on flags, act as either singly or doubly linked and as
-            either circular or non. I wound up finding a flow once it became
-            clear that each add, search, or remove operation basically falls
-            into the category of 'dealing with an empty list', 'addressing the
-            item at the head', 'addressing the item at the tail', and 'other'.
-            There are some small optimizations: if you have a doubly linked list
-            and want to interact in some way with an element that is at index
-            greater than size / 2, it's quicker to start at the tail and
-            traverse to the element backwards. If you have a circular list, then
-            it's easier to address any index as <code>index % size</code> to
-            handle errors, rather than immediately declaring OOB something which
-            really is not. <br /><br /><span
+            <span style="display: inline-block; width: 2em"></span> The first
+            major change from my initial plan was to combine the Separate
+            Chaining and Open Addressing implementations of a Hash Table into a
+            single class which can differentiate between the two based on
+            constructor arguments, but which creates just a simple linear
+            probing hash table if nothing else is specified. <br /><br /><span
               style="display: inline-block; width: 2em"
             ></span>
-            Testing, on the other hand, is another story. Half the point of this
-            exercise is gaining an understanding of unit tests. Right now I have
-            an issue where a certain test was failing, so I made changes to the
-            code to resolve it. I think I see what the problem was, and I think
-            my fix should work…but the test is still failing with the same
-            error. I entered some print statements to get more info than I was
-            getting from the test cases, and they are indicating that things are
-            working well. I build the stack on top of the arraylist which was
-            giving me the error and all THOSE test cases are passing. Somehow, I
-            don't really understand why yet, my LinkedListTest.java file seems
-            to be testing an old version of the linked list class. So we don't
-            have these structures in the books quite yet, but they're getting
-            there. By tomorrow this all should be figured out.
-          </p>
-          <h3>2/7/25</h3>
-          <p>
-            <span style="display: inline-block; width: 2em"></span>
-            Today's big addition was the circular queue. I was struck by how
-            simple this was to implement, the whole thing plus tests took like
-            an hour. Which I think is decent time for all the tests to pass and
-            for me to learn what a circular queue is.
-            <br /><br /><span style="display: inline-block; width: 2em"></span>
-            It was quick enough that I went on to at least begin the deque
-            implementation. At the moment, I am trying to decide between an
-            array based implementation or a linked list based. This being an
-            arbitrary library with no expected use-case, I might go with linked
-            list just because of it's slightly higher conceptual complexity.
-            <br /><br /><span style="display: inline-block; width: 2em"></span>
-            I wrote that while writing the skeleton of the file, figuring out my
-            fields and constructors, and landed on linked list based because of
-            the conceptual complexity being higher and there being no other use
-            case. Then I spent 10 minutes writing a program that exclusively
-            calls methods I already wrote in the linked list class, with no
-            local logic at all, so I guess so much for conceptual complexity.
-            Anyway, another data structure is in the books, because I did the
-            real work a few days ago.
+            With the hash function, probing, and searching logic separated out
+            to a utility HashFunctions file, the skeleton of this class came
+            together quickly. A few put, delete, get, and clear methods. The
+            biggest issue to manage was the array resizing logic in
+            DynamicArray, which I built this on top of. I found myself having to
+            independently track the resizing conditions in both this and the
+            DynamicArray class, so that if the DynamicArray automatically
+            resizes the hash table will rehash all its elements based on the new
+            capacity. With that out of the way though, it was a fairly simple if
+            verbose (because of the variety of options r/e collision resolution
+            and probing).
           </p>
         </section>
       </section>
