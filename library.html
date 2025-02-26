@@ -218,6 +218,35 @@
             verbose (because of the variety of options r/e collision resolution
             and probing).
           </p>
+
+          <h3>Trees</h3>
+          <h3>2/26/25</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span> The first
+            time back after a long break during which time I sort of
+            nonsensically decided to switch to Gentoo from Windows (really
+            jumping into the deep end with that one), I finally have a commit
+            with the first tree structure: BST.<br /><br /><span
+              style="display: inline-block; width: 2em"
+            ></span>
+            This was more an exercise in writing recursive methods than anything
+            else. Which was helpful at first but became repetitive after the 3rd
+            or 4th largely identical one. I question whether I could have
+            centralized some of that logic into BinaryTreeNode rather than hold
+            it in all these separate methods themselves, but after thinking
+            about it for a while I did not see an easy way into that: the things
+            that the various methods were looking for and doing were both too
+            direct and too disparate from one another for a clear abstraction of
+            the process to come to mind for me. For example, deleting a node vs
+            traversing and serializing nodes -- even if the recursive steps are
+            centralized elsewhere, one needs each node's data to be serialized
+            and returned in a list type structure, while the other just removes
+            the node itself from the tree itself, and so needs direct access to
+            the tree. It's possible that I'm just missing something (and I bet
+            the thing I'm missing is really very simple and will seem obvious if
+            someone tells me) but for now I have a class which contains a half
+            dozen distinct and somewhat verbose recursive methods.
+          </p>
         </section>
       </section>
     </main>

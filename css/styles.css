@@ -871,6 +871,10 @@ section,
   box-shadow: 0 2px 5px #0000001a;
 }
 
+#information p {
+  text-align: justify;
+}
+
 #photos-container,
 #books-container {
   display: grid;
