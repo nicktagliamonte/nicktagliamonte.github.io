@@ -95,7 +95,7 @@
         <section id="information">
           <h2>Project Name: Data Structure Library</h2>
           <hr />
-          <h3>Oberview</h3>
+          <h3>Overview</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span>
             A library implementing common (and some uncommon but interesting)
@@ -254,6 +254,27 @@
             minor challenge and change from BST, but largely I was able to use
             the BST that was passing test cases as a skeleton for this whole
             day. In and out in like 90 minutes.
+          </p>
+          <h3>2/28/25</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Red Black Trees represent a fairly significant departure from the
+            previous two tree implementations, and I had gone into the day
+            expecting much more of the same. Initially I set out to model this
+            after AVL, which was itself modeled after BST. Attempting to track
+            parent pointers over comparable recursive methods made this a huge
+            headache, so I switched to insertions and deletions being done
+            iteratively instead. This did not come intuitively to me. I
+            consulted (and, frankly, borrowed from) reference material
+            <strong>heavily</strong> through this part of the process and it was
+            just not easy. One consequence of that <s>consultation</s>borrowing
+            is that this class is much more robust and useful than my other two
+            trees -- there is a clearer purpose for traversals, less redundancy
+            in min and max methods, iterator support, and a cloning method. It
+            would probably be straightforward to add these in to the other two
+            trees, and I actually might in the coming days. But as it stands,
+            this was a marathon ran at the pace of a sprint and I am simply too
+            tired to make that update right now.
           </p>
         </section>
       </section>
