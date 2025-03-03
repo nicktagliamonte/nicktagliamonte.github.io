@@ -128,19 +128,16 @@
                 constructor arguments)
               </li>
             </ol>
-            <li>Trees [In Progress]</li>
+            <li>Trees [Complete]</li>
             <ol>
               <li>Binary search tree</li>
               <li>AVL tree</li>
               <li>Red-black tree</li>
               <li>B-tree</li>
-              <li>
-                Standard trie (just for comprehension; will be replaced by
-                the...)
-              </li>
+              <li>Standard trie</li>
               <li>Compressed (radix) trie</li>
             </ol>
-            <li>Heaps</li>
+            <li>Heaps [In Progress]</li>
             <ol>
               <li>Min heap</li>
               <li>Max heap</li>
@@ -223,7 +220,6 @@
           </p>
 
           <h3>Trees</h3>
-          <h3>2/26/25</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span> The first
             time back after a long break during which time I sort of
@@ -232,55 +228,31 @@
             with the first tree structure: BST.<br /><br /><span
               style="display: inline-block; width: 2em"
             ></span>
-            This was more an exercise in writing recursive methods than anything
-            else. Which was helpful at first but became repetitive after the 3rd
-            or 4th largely identical one. I question whether I could have
-            centralized some of that logic into BinaryTreeNode rather than hold
-            it in all these separate methods themselves, but after thinking
-            about it for a while I did not see an easy way into that: the things
-            that the various methods were looking for and doing were both too
-            direct and too disparate from one another for a clear abstraction of
-            the process to come to mind for me. For example, deleting a node vs
-            traversing and serializing nodes -- even if the recursive steps are
-            centralized elsewhere, one needs each node's data to be serialized
-            and returned in a list type structure, while the other just removes
-            the node itself from the tree itself, and so needs direct access to
-            the tree. It's possible that I'm just missing something (and I bet
-            the thing I'm missing is really very simple and will seem obvious if
-            someone tells me) but for now I have a class which contains a half
-            dozen distinct and somewhat verbose recursive methods.<br /><br />
-          </p>
-          <h3>2/27/25</h3>
-          <p>
-            <span style="display: inline-block; width: 2em"></span>
-            AVL Trees were strikingly more of the same. Balancing logic was a
-            minor challenge and change from BST, but largely I was able to use
-            the BST that was passing test cases as a skeleton for this whole
-            day. In and out in like 90 minutes.
-          </p>
-          <h3>2/28/25</h3>
-          <p>
+            The first few structures on the list, BST and AVL, were similar and
+            more an exercise in writing recursive methods than anything else.
+            Which was helpful at first but became repetitive after the 3rd or
+            4th largely identical one. I question whether I could have
+            centralized some of that logic into _TreeNode rather than hold it in
+            all these separate methods themselves, but after thinking about it
+            for a while I did not see an easy way into that: the things that the
+            various methods were looking for and doing were both too direct and
+            too disparate from one another for a clear abstraction of the
+            process to come to mind for me. <br /><br />
             <span style="display: inline-block; width: 2em"></span>
             Red Black Trees represent a fairly significant departure from the
-            previous two tree implementations, and I had gone into the day
-            expecting much more of the same. Initially I set out to model this
+            previous two tree implementations. Initially I set out to model this
             after AVL, which was itself modeled after BST. Attempting to track
             parent pointers over comparable recursive methods made this a huge
             headache, so I switched to insertions and deletions being done
             iteratively instead. This did not come intuitively to me. I
-            consulted (and, frankly, borrowed from) reference material
+            consulted reference material
             <strong>heavily</strong> through this part of the process and it was
-            just not easy. One consequence of that <s>consultation</s>borrowing
-            is that this class is much more robust and useful than my other two
-            trees -- there is a clearer purpose for traversals, less redundancy
-            in min and max methods, iterator support, and a cloning method. It
-            would probably be straightforward to add these in to the other two
-            trees, and I actually might in the coming days. But as it stands,
-            this was a marathon ran at the pace of a sprint and I am simply too
-            tired to make that update right now.
-          </p>
-          <h3>3/3/25</h3>
-          <p>
+            just not easy.
+            <span style="display: inline-block; width: 2em"></span>
+            BTrees were the hardest of the bunch, because of the merging of
+            nodes. it's working, but only just, and I'm hoping that as I get
+            practice with the different structures that require comparable logic
+            it will get easier.
             <span style="display: inline-block; width: 2em"></span>
             Tries were the focus of the last few days. Standard Tries were very
             easy. came together quickly, no muss no fuss, and as a result I
