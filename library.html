@@ -102,10 +102,7 @@
             data structures in java. The idea here is largely to drill data
             structures in a way that will hopefully improve performance in
             technical interviews, in addition to testing with JUnit, which is a
-            practice that I'm not going into this with any experience in. All of
-            the higher level or more complex structures will be built using
-            simpler structures that I create. For example, the hash table uses
-            an instance of my DynamicArray class to store entries.
+            practice that I'm not going into this with any experience in.
           </p>
           <h3>List of Structures to be Implemented</h3>
           <ol>
@@ -136,67 +133,55 @@
               <li>B-tree</li>
               <li>Standard trie</li>
               <li>Compressed (radix) trie</li>
+              <li>Treap</li>
             </ol>
-            <li>Heaps [In Progress]</li>
+            <li>Heaps [Complete]</li>
             <ol>
               <li>Min heap</li>
               <li>Max heap</li>
               <li>Fibonacci heap</li>
             </ol>
-            <li>Graphs</li>
+            <li>Graphs [Complete]</li>
             <ol>
               <li>Adjacency list</li>
               <li>Adjacency matrix</li>
               <li>BFS and DFS graph traversal (probably methods)</li>
               <li>Disjoint set</li>
             </ol>
-            <li>Advanced</li>
+            <li>Advanced [Complete]</li>
             <ol>
               <li>Skip list</li>
               <li>Bloom filter</li>
               <li>Fenwick tree</li>
               <li>Segment tree</li>
               <li>Suffix tree</li>
+              <li>Bloomier Filter</li>
+              <li>Count Min Sketch</li>
+              <li>Dancing Links</li>
+              <li>HyperLogLog</li>
+              <li>KD Tree</li>
+              <li>Oct Tree</li>
+              <li>Quad Tree</li>
+              <li>Rope</li>
+              <li>Splay Tree</li>
+              <li>Van Emde Boas Tree</li>
             </ol>
           </ol>
 
           <h3>Linear</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span>
-            Major questions that came up during the creation of the linear data
-            structures were:
+            Array or LinkedList based structures: without an actual use case for
+            this library, there wasn't a clearly superior choice between these
+            two. I went with LinkedList based on the idea that it was more
+            conceptually complex and would therefore be a better fit for what is
+            really just a portfolio project. The conceptual complexity had
+            already been handled by the LinkedList class itself though, so the
+            Deque turned out to be a wrapper over that LinkedList class which
+            was very quick to create.
           </p>
-          <ul>
-            <li>Generics: Using <code>Object[]</code> or <code>T[]</code></li>
-            <ul>
-              <li>
-                I went with <code>Object[]</code> to avoid excessive
-                <code>SuppressWarning(“unchecked”)</code> flags.
-              </li>
-            </ul>
-            <li>
-              Testing: My LinkedList test class was failing one test because of
-              an issue which I resolved. The reason wound up being a deleted
-              class file, the result of which was the test being run on an old
-              version of the LinkedList class.
-            </li>
-            <li>Array or LinkedList based Deque.</li>
-            <ul>
-              <li>
-                Without an actual use case for this library, there wasn't a
-                clearly superior choice between these two. I went with
-                LinkedList based on the idea that it was more conceptually
-                complex and would therefore be a better fit for what is really
-                just a portfolio project. The conceptual complexity had already
-                been handled by the LinkedList class itself though, so the Deque
-                turned out to be a wrapper over that LinkedList class which was
-                very quick to create.
-              </li>
-            </ul>
-          </ul>
 
           <h3>Hashing</h3>
-          <h3>2/11/25</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span> The first
             major change from my initial plan was to combine the Separate
@@ -221,56 +206,70 @@
 
           <h3>Trees</h3>
           <p>
-            <span style="display: inline-block; width: 2em"></span> The first
-            time back after a long break during which time I sort of
-            nonsensically decided to switch to Gentoo from Windows (really
-            jumping into the deep end with that one), I finally have a commit
-            with the first tree structure: BST.<br /><br /><span
+            <span style="display: inline-block; width: 2em"></span> After a long
+            break, I returned with a commit for the first tree structure:
+            BST.<br /><br /><span
               style="display: inline-block; width: 2em"
             ></span>
-            The first few structures on the list, BST and AVL, were similar and
-            more an exercise in writing recursive methods than anything else.
-            Which was helpful at first but became repetitive after the 3rd or
-            4th largely identical one. I question whether I could have
-            centralized some of that logic into _TreeNode rather than hold it in
-            all these separate methods themselves, but after thinking about it
-            for a while I did not see an easy way into that: the things that the
-            various methods were looking for and doing were both too direct and
-            too disparate from one another for a clear abstraction of the
-            process to come to mind for me. <br /><br />
+            The first few structures, BST and AVL, were mostly an exercise in
+            recursion. While helpful, they became repetitive. I wondered if
+            centralizing logic in _TreeNode could work but found no easy
+            abstraction.<br /><br />
+            <span style="display: inline-block; width: 2em"></span><br /><br />
+            Red-Black Trees were a departure, with iterative insertions and
+            deletions replacing recursive methods, which were a headache to
+            manage with parent pointers. I relied heavily on reference
+            material.<br /><br />
+            <span style="display: inline-block; width: 2em"></span><br /><br />
+            BTrees were the hardest due to node merging. They're working, but
+            barely. I'm hopeful practice will make it easier.<br /><br />
+            <span style="display: inline-block; width: 2em"></span><br /><br />
+            Tries were straightforward; I added extra functionality. Radix Tries
+            were more challenging, but I got the core methods working. Merging
+            and splitting nodes remains unintuitive, but my previous experience
+            with BTree made this process smoother. I expect future operations
+            like Fibonacci heaps and suffix trees will help refine my intuition
+            over time.
+          </p>
+
+          <h3>Graphs and Heaps</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span> There was
+            really not a lot to these implementations. They all went up in a
+            day, and I largely have a class I recently too (Mathematical
+            Concepts of Computing, which heavily went over graph and set
+            structures) to thank. Minor bump in the road with heap property
+            violations, that was somewhat tricky with reordering after
+            insertion, but it's all testing well so I'm happy to call it.
+          </p>
+          <h3>Advanced Structures</h3>
+          <p>
             <span style="display: inline-block; width: 2em"></span>
-            Red Black Trees represent a fairly significant departure from the
-            previous two tree implementations. Initially I set out to model this
-            after AVL, which was itself modeled after BST. Attempting to track
-            parent pointers over comparable recursive methods made this a huge
-            headache, so I switched to insertions and deletions being done
-            iteratively instead. This did not come intuitively to me. I
-            consulted reference material
-            <strong>heavily</strong> through this part of the process and it was
-            just not easy.
-            <span style="display: inline-block; width: 2em"></span>
-            BTrees were the hardest of the bunch, because of the merging of
-            nodes. it's working, but only just, and I'm hoping that as I get
-            practice with the different structures that require comparable logic
-            it will get easier.
-            <span style="display: inline-block; width: 2em"></span>
-            Tries were the focus of the last few days. Standard Tries were very
-            easy. came together quickly, no muss no fuss, and as a result I
-            <strong>really</strong> padded out the functionality here. There are
-            methods which have not been present in any other data structure, I
-            had some time over spring break and was enjoying working with
-            strings and prefixes. Radix Tries were harder, and that reads in the
-            sparser methods written for them -- I got add and delete and search
-            to work, and that's kind of fine for my purposes. There's something
-            about the merge and split nodes process that I find very
-            unintuitive. I ran into the same issue with BTree. I'm happy to say
-            that based on that experience this one came together more quickly,
-            but the difference is close to marginal. There are more coming up
-            that will require operations which are more or less like this (in
-            the short term, i'll be handling Fibonacci heaps by the end of the
-            week. Longer term, I'm looking at things like suffix trees a month
-            or two down the line). As a result, I am hoping that this becomes
-            more intuitive as time goes on. We'll see.
+            Honestly I had hoped I would have something more to report here.
+            Truth is though, these were mechanical and deliberate. Unlike some
+            other structures where there are a hundred good ways forward and I
+            could really put myself into the code, there are just not as many
+            changes to be made to these. Many rely on particular mathematical
+            models and algorithms which are just that: algorithms. There's no
+            personal flavor to my application of the quadratic equation vs
+            someone elses, and there's nothing personal about my implementation
+            of a bloom filter either.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            The whole experience was fast because me producing something that
+            worked was essentially just active note-taking on my part.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            I abandoned some of the more carefully structured elements of the
+            past structures, the primary way is being a touch lazier about
+            javadoc comments and switching ot mostly using private inner classes
+            rather than separate class files for utilities like nodes.
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            One structure didn't make the cut at all: The Fusion Tree. It was
+            already feeling like what I was doing was over the top when I was
+            working on CountMinSketch, and by the time I got to fusion tree and
+            some of those much much deeper bit manipulation moves, I found that
+            I wasn't getting much out of the process and there was going to be
+            precisely zero difference between the code I submitted and the code
+            available online, so I called it there.
           </p>
         </section>
       </section>
