@@ -523,6 +523,13 @@ h3 {
   box-shadow: 0 4px 8px #0008;
 }
 
+.library-pic {
+  width: 102%;
+  object-fit:contain;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px #0008;
+}
+
 .wide-pic {
   width: 700px;
 }

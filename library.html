@@ -125,7 +125,7 @@
                 constructor arguments)
               </li>
             </ol>
-            <li>Trees [Complete]</li>
+            <li>Trees</li>
             <ol>
               <li>Binary search tree</li>
               <li>AVL tree</li>
@@ -135,20 +135,19 @@
               <li>Compressed (radix) trie</li>
               <li>Treap</li>
             </ol>
-            <li>Heaps [Complete]</li>
+            <li>Heaps</li>
             <ol>
               <li>Min heap</li>
               <li>Max heap</li>
               <li>Fibonacci heap</li>
             </ol>
-            <li>Graphs [Complete]</li>
+            <li>Graphs</li>
             <ol>
               <li>Adjacency list</li>
               <li>Adjacency matrix</li>
-              <li>BFS and DFS graph traversal (probably methods)</li>
               <li>Disjoint set</li>
             </ol>
-            <li>Advanced [Complete]</li>
+            <li>Advanced</li>
             <ol>
               <li>Skip list</li>
               <li>Bloom filter</li>
@@ -215,15 +214,15 @@
             recursion. While helpful, they became repetitive. I wondered if
             centralizing logic in _TreeNode could work but found no easy
             abstraction.<br /><br />
-            <span style="display: inline-block; width: 2em"></span><br /><br />
+            <span style="display: inline-block; width: 2em"></span>
             Red-Black Trees were a departure, with iterative insertions and
             deletions replacing recursive methods, which were a headache to
             manage with parent pointers. I relied heavily on reference
             material.<br /><br />
-            <span style="display: inline-block; width: 2em"></span><br /><br />
+            <span style="display: inline-block; width: 2em"></span>
             BTrees were the hardest due to node merging. They're working, but
             barely. I'm hopeful practice will make it easier.<br /><br />
-            <span style="display: inline-block; width: 2em"></span><br /><br />
+            <span style="display: inline-block; width: 2em"></span>
             Tries were straightforward; I added extra functionality. Radix Tries
             were more challenging, but I got the core methods working. Merging
             and splitting nodes remains unintuitive, but my previous experience
@@ -236,7 +235,7 @@
           <p>
             <span style="display: inline-block; width: 2em"></span> There was
             really not a lot to these implementations. They all went up in a
-            day, and I largely have a class I recently too (Mathematical
+            day, and I largely have a class I recently took (Mathematical
             Concepts of Computing, which heavily went over graph and set
             structures) to thank. Minor bump in the road with heap property
             violations, that was somewhat tricky with reordering after
@@ -270,6 +269,43 @@
             I wasn't getting much out of the process and there was going to be
             precisely zero difference between the code I submitted and the code
             available online, so I called it there.
+          </p>
+          <h3>Benchmarking</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            The idea that I would benchmark differences in performance at all
+            was an afterthought. I had already written the code and was just
+            about to wrap up the project when I decided it would be neat to do a
+            comparison. The expectation was that my functions would be hugely
+            outperformed by the real deal implementations. A manic 6 hours
+            later, I wrapped up a python script and ran it to find that the
+            differences in almost every method were...too small to be detectable
+            on matPlotLib output. A frenzied hour reading about z-score
+            normalization later, I ran the updated script and found...basically
+            the exact same thing. A calm 10 minutes later I ran a script that
+            disregarded instances where the difference in method efficiency was
+            zero or very near zero and found that there were a couple of
+            implementations where my code marginally edges out the official
+            "real versions"!
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            More importantly, that last step of disregarding results at or near
+            zero cut the number of bars on the output chart from about 200 to
+            24. So the difference between my library and a real library is
+            essentially negligible. Anyway, without further ado, here are the
+            results. Blue bars indicate that my implementation was faster, red
+            bars indicate that the real implementation was faster. Distance from
+            the x-axis indicates the degree of difference. Open the image in a
+            new tab to see it in full size.
+          </p>
+          <img
+            src="images/testResults.png"
+            alt="bar chart comparing execution time of various methods"
+            class="library-pic"
+            role="img"
+          />
+          <p>
+            Anyone with a need for bizarre tree variants with fast insertion,
+            let me know.
           </p>
         </section>
       </section>
