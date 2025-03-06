@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator | Nick Tagliamonte</title>
+    <meta
+      name="description"
+      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, data optimization, and web development."
+    />
+    <meta
+      name="keywords"
+      content="Nick Tagliamonte, about me, computer science, software development, personal interests, skills"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header role="banner">
+      <div class="header-left">
+        <h1 role="heading" aria-level="1" class="home-link">
+          <a href="index.html">Nick Tagliamonte</a>
+        </h1>
+      </div>
+      <div class="dark-mode-toggle">
+        <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav class="navigation" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="information.html" role="link">Information</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+      <div
+        id="mobile-menu-icon"
+        class="hamburger-menu"
+        aria-label="Open Navigation Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="overlay-menu">
+        <nav
+          class="overlay-navigation"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="information.html" role="link">Information</a></li>
+          </ul>
+          <!-- Dark mode toggle at the bottom -->
+          <div class="overlay-dark-mode-toggle">
+            <button
+              class="overlay-sun-icon"
+              role="img"
+              aria-label="Sun"
+              id="overlayDarkModeToggle"
+            >
+              &#9728;
+            </button>
+            <label class="overlay-toggle">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main role="main" class="about-container">
+      <section class="left-content">
+        <!-- Article Section -->
+        <section id="information">
+          <h2>About</h2>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            The basic idea here is that I'm going to make a calculator which
+            replicates as closely as possible the TI-30X IIS. Initial thoughts
+            include "wow, I have no idea what most of these menus do. What on
+            earth is STATVAR?" and "wow, python was an awful choice for a
+            language to make this locally-runnable GUI app. PySide is fine and
+            perfectly functional, but I don't know the first thing about it. I
+            know plenty of java, why didn't I pick that."
+          </p>
+          <p>
+            <br /><br /><span style="display: inline-block; width: 2em"></span>
+            More updates will follow, of course, and this text will be replaced
+            by something halfway reasonable. Tonight I just did the initial
+            commit and designed some buttons.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+      <p>&copy; 2024 Nick Tagliamonte</p>
+    </footer>
+
+    <script src="js/mobileNavigation.js"></script>
+    <script src="js/darkMode.js"></script>
+  </body>
+</html>
