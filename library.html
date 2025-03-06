@@ -206,29 +206,30 @@
           <h3>Trees</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span> After a long
-            break, I returned with a commit for the first tree structure:
-            BST.<br /><br /><span
+            break (during which time i switched to Gentoo from Windows which was
+            in retrospect nonsensical to the point of masochism), I returned
+            with a commit for the first tree structure: BST.<br /><br /><span
               style="display: inline-block; width: 2em"
             ></span>
             The first few structures, BST and AVL, were mostly an exercise in
             recursion. While helpful, they became repetitive. I wondered if
-            centralizing logic in _TreeNode could work but found no easy
-            abstraction.<br /><br />
+            centralizing recursion logic in _TreeNode could work but found no
+            obvious abstraction.<br /><br />
             <span style="display: inline-block; width: 2em"></span>
             Red-Black Trees were a departure, with iterative insertions and
             deletions replacing recursive methods, which were a headache to
-            manage with parent pointers. I relied heavily on reference
-            material.<br /><br />
+            manage with parent pointers. I relied heavily on reference material
+            -- this just did not come intuitively to me at all.<br /><br />
             <span style="display: inline-block; width: 2em"></span>
             BTrees were the hardest due to node merging. They're working, but
             barely. I'm hopeful practice will make it easier.<br /><br />
             <span style="display: inline-block; width: 2em"></span>
-            Tries were straightforward; I added extra functionality. Radix Tries
-            were more challenging, but I got the core methods working. Merging
-            and splitting nodes remains unintuitive, but my previous experience
-            with BTree made this process smoother. I expect future operations
-            like Fibonacci heaps and suffix trees will help refine my intuition
-            over time.
+            Standard Tries were straightforward, so I added a good bit of extra
+            functionality. Radix Tries were more challenging, but I got the core
+            methods working. Merging and splitting nodes remains unintuitive,
+            but my previous experience with BTree made this process smoother. I
+            expect future operations like Fibonacci heaps and suffix trees will
+            help refine my intuition over time.
           </p>
 
           <h3>Graphs and Heaps</h3>
