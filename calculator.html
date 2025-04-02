@@ -6,7 +6,7 @@
     <title>Calculator | Nick Tagliamonte</title>
     <meta
       name="description"
-      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, data optimization, and web development."
+      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, optimization, and web development."
     />
     <meta
       name="keywords"
@@ -93,23 +93,210 @@
       <section class="left-content">
         <!-- Article Section -->
         <section id="information">
-          <h2>About</h2>
+          <h2>
+            Project Name:
+            <a
+              href="https://github.com/nicktagliamonte/calculator"
+              target="_blank"
+              >Calculator</a
+            >
+          </h2>
+          <hr />
+          <h3>Overview</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span>
-            The basic idea here is that I'm going to make a calculator which
-            replicates as closely as possible the TI-30X IIS. Initial thoughts
-            include "wow, I have no idea what most of these menus do. What on
-            earth is STATVAR?" and "wow, python was an awful choice for a
-            language to make this locally-runnable GUI app. PySide is fine and
-            perfectly functional, but I don't know the first thing about it. I
-            know plenty of java, why didn't I pick that."
+            A locally runnable GUI application which replicates as closely as
+            possible the TI-30X IIS. There wasn't supposed to be much to this
+            one. I have poured a lot of work into the last few projects, and I
+            kind of just wanted to get something else on the board. Turns out,
+            this calculator I was replicating has 45 or so buttons, most with
+            secondary features, and a fair few with the function to open a menu
+            with many more options contained within.
           </p>
           <p>
-            <br /><br /><span style="display: inline-block; width: 2em"></span>
-            More updates will follow, of course, and this text will be replaced
-            by something halfway reasonable. Tonight I just did the initial
-            commit and designed some buttons.
+            <br /><br />
+            Some general Notes:
           </p>
+          <ul>
+            <li>
+              You can replace characters from previous cursor positions, but the
+              only way to replace the final char is to delete and re-enter it.
+              This is an extra button press but saves like 200 lines of code
+              between several modules.
+            </li>
+            <li>
+              I'm very happy with the modulo addition. However, note that it
+              does NOT output any data in sci or eng modes. An earlier,
+              pre-release version of the calculator did, and I realized that I
+              was across the board applying the modulo function to the mantissa,
+              stripping the rest, and then just appending x10^0, which felt
+              pointless and bloated. I was initially concerned that this might
+              be suboptimal for people working with moduli high enough to have
+              least positive residues that need to be output in scientific
+              notation. However, those isolated and unlikely cases are already
+              addressed by the auto-output of the calculator and the number
+              length limitation, which automatically converts certain very
+              high-magnitude results to scientific notation.
+            </li>
+            <li>
+              I'm happy to report cross-platform compatibility. The save/load
+              system behaves differently for Windows/Darwin/other (Linux and
+              other Unix-like systems) in an appropriate manner.
+            </li>
+            <li>
+              Some keyboard-potential functions were not included OOB for the
+              sake of clarity or avoiding ambiguity:
+              <ul>
+                <li>e and EE (to keep the hotkeys case-independent)</li>
+                <li>
+                  Clear maps to CLEAR because using c would impede cos, cl would
+                  impede memclr, and clr would impede memclr. So we need the
+                  full word.
+                </li>
+                <li>
+                  K was avoided because of collision while in vs. out of the K
+                  menu.
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p>Some Things The original Calculator Has Which I Left Out:</p>
+          <ul>
+            <li>
+              I got rid of memvar because rcl adequately addresses its purpose.
+            </li>
+            <li>
+              Handling of frequency domain errors is passed to the stat function
+              evaluator rather than raising an immediate error. This is because
+              my implementation handles stat function calculators in a way that
+              makes this order of error notification reasonable from and
+              end-user perspective.
+            </li>
+          </ul>
+          <p>Some Regrets:</p>
+          <ul>
+            <li>
+              It was unwise to commit so hard to recreating a device limited by
+              physical space. I don't really need these buttons in general. I
+              could have simplified everything by abstracting things to keyboard
+              input, dropdown menus, or doing what I did with statistical
+              output—rapidly calculating and displaying all relevant
+              possibilities for quick analysis. This would have been
+              particularly wise for trig functions.
+            </li>
+            <li>
+              I should have removed K. It's a confusing feature that seems
+              crafted to be forgotten about and to therefore vex the end user
+              with invalid output at best or bizarre syntax errors at worst. At
+              least my implementation has detailed error handling and doesn't
+              just say "SYNTAX Error."
+            </li>
+            <li>
+              I wanted to add custom hotkeys and user-editable keyword creation.
+              For example, pressing s, i, and n in succession adds a sin
+              function to input. I thought it would be nice to include a
+              2-column table with the bottom row empty and editable, where users
+              could enter a key in column 1 and select a calculator button in
+              column 2. Before saving the new mapping, the program would check
+              for prefix collisions among existing hotkeys. However,
+              implementing this required a deep architectural change—moving from
+              directly coupling buffer input to functions into creating a key
+              mapping dictionary and altering keypress events to data-driven
+              functionality. Additionally, some key mappings add input to the
+              screen, others alter the calculator state, and still others recall
+              values from memory. These cases are handled by different modules
+              and require individual consideration in the new approach... it was
+              out of scope. While some users might want to remap the spacebar to
+              functions like sin, the majority would only use it for adding
+              mappings to functions that couldn't be input through the keyboard
+              out-of-the-box. If I included such mappings, the majority of use
+              cases for my custom implementation would become null, and I
+              wouldn't have to refactor so much code. It felt like a win-win,
+              but a loss in that a very complex feature was left on the cutting
+              room floor. So it goes.
+            </li>
+          </ul>
+          <p>Some Points of Pride:</p>
+          <ul>
+            <li>
+              Added an ABS function to the calculator. This is a simple
+              function, but I have it and TI doesn't.
+            </li>
+            <li>
+              Defaulted to radians instead of degrees (why on earth wouldn't
+              you)
+            </li>
+            <li>
+              Simplified keypress sequence to enter a K value, and reduced the
+              number of characters possible to enter into K. There's no need to
+              put K=R>Pθ at the end of every user function, as this can only
+              cause errors. Only menus that return characters valid at the end
+              of an expression are valid inserts into K. But it is valid to say
+              that I should have just scrapped the feature altogether.
+              <ul>
+                <li>
+                  Some functions that lead to errors are not addressed—e.g.,
+                  adding "sin(" to the end of every function, which is
+                  ridiculous. The improvement over the real calculator is
+                  present, but there are still cases where having a 'K' menu is
+                  somewhat unnecessary.
+                </li>
+              </ul>
+            </li>
+            <li>
+              The keypress sequence to input stat data is more user friendly and
+              intuitive.
+            </li>
+            <li>
+              I added a modulus function to the calculator, this is a more
+              significant point of pride.
+            </li>
+            <li>
+              Technically, my calculator can handle higher values. But my
+              calculator is powered by a very large desktop computer and is not
+              a handheld device for schoolchildren...
+            </li>
+            <li>My error messages are FAR more descriptive</li>
+            <li>
+              My insert mode allows insertion of as many characters as desired,
+              until insert is manually turned off.
+            </li>
+          </ul>
+          <p>Some things I would have liked to add but didn't have time for:</p>
+          <ul>
+            <li>
+              Complex numbers. This didn't really occur to me until after I
+              started typing this, but I might now go back and add them in. How
+              would that work exactly? I guess I would need to either input a
+              complex number state and error out on complex input when not in
+              this state. Or maybe just add "+0i" to anything without a complex
+              part and evaluate EVERYTHING as complex? Probably the latter, if
+              either.
+            </li>
+            <li>
+              Advanced functions like the gamma function, Bessel functions,
+              Dirac delta function, polynomial manipulation and root-finding
+              functions. I skipped it because the labor to payoff ratio was
+              bananas.
+            </li>
+            <li>
+              Calculus functions like derivatives and integrals. I probably
+              would need to have restricted the input to a single variable and
+              restrict the symbol for that variable to something like 'x' or
+              'y'. Then, I would need to implement input buttons and shortcuts
+              via keyboard, followed by integrating a symbolic differentiation
+              library or write my own algorithm to compute derivatives and
+              evaluate integrals numerically. This would require significant
+              effort and testing to ensure accuracy and reliability and i
+              mean...Wolfram is literally right there, just use that.
+            </li>
+          </ul>
+          <img
+            src="images/calculator.png"
+            alt="calculator"
+            class="calculator-pic"
+            role="img"
+          />
         </section>
       </section>
     </main>

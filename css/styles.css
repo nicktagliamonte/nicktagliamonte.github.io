@@ -530,6 +530,24 @@ h3 {
   box-shadow: 0 4px 8px #0008;
 }
 
+.calculator-pic {
+  height: 700px;
+  object-fit: scale-down;
+  display:grid;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px #0008;
+}
+
+.about-container .left-content #information h2 a {
+  color: #5a5a5a;
+  text-decoration: underline;
+}
+
+.dark-mode .about-container .left-content #information h2 a {
+  color: #e0e0e0;
+  text-decoration: underline;
+}
+
 .wide-pic {
   width: 700px;
 }
