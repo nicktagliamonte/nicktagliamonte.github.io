@@ -102,6 +102,95 @@
             >
           </h2>
           <hr />
+          <h1>NOTE: THIS IS NOT COMPLETE.</h1>
+          <p>
+            I had a great idea for a number theory menu that will work similar
+            to the stat menu
+          </p>
+          <ul>
+            <li>
+              Users will click the 'num' button to enter a menu prompting for
+              input of an 'n', a modulus, and an 'a'
+            </li>
+            <li>Any and all of these are optional</li>
+            <li>The modulus will default to the currently-set mod</li>
+            <li>
+              After inputting the various items, they can exit the menu and
+              access 'numvar'
+            </li>
+            <li>
+              Very similar to statvar, this will present a list of options that
+              will be left/right scrollable
+            </li>
+            <ul>
+              <li>φ(n) (Eulier's Totient)</li>
+              <li>
+                The prime factors of n (listed in exponential form, i.e. "2³, 3"
+                for n = 24)
+              </li>
+              <li>σn (Sum of Divisors)</li>
+              <li>τn (Count of Divisors)</li>
+              <li>
+                A primality test of n (Outputs 1 if n is prime, 0 otherwise)
+              </li>
+              <li>
+                The modular inverse of n mod m (if m was entered, else it will
+                be blank)
+              </li>
+              <li>
+                The order of n (Smallest k where nᵏ ≡ 1 (mod m), so this only
+                shows if m was entered)
+              </li>
+              <li>A Generator Test (1 if n generates (ℤ/mℤ)*, 0 otherwise)</li>
+              <li>A list of Quadratic Residues (Squares mod m)</li>
+              <li>
+                μ(n) The Mobius Function, returns 0 if n is divisible by a
+                square, otherwise ±1
+              </li>
+              <li>rad(n) (Product of the distinct prime factors of n)</li>
+              <li>
+                λ(n) (Carmichael Function - Like φ(n), but gives the exponent of
+                the group (Z/nZ)*)
+              </li>
+              <li>
+                Discrete Log estimation (find smallest x such that a^x ≡ b mod
+                m” if b is given)
+              </li>
+              <li>
+                Legendre Symbol (a/p) (1 if a is a quadratic residue mod p, -1
+                if not, 0 if p divides a)
+              </li>
+              <li>
+                Jacobi Symbol (a/n) (generalization of the Legendre symbol)
+              </li>
+              <li>GCD(a, m)</li>
+              <li>LCM(a, m)</li>
+              <li>
+                Bezout coefficients (the x and y such that abs(x)+abs(y) is
+                minimized and ax + my = gcd(a, m), or at least with minimal
+                absolute x)
+              </li>
+              <li>
+                Pisano Period of n mod m (Returns the length of the period of
+                the Fibonacci sequence mod m. That is, the smallest k such that:
+                F₀ mod m, F₁ mod m, ..., F_k mod m starts repeating the cycle
+                again)
+              </li>
+              <li>
+                Knödel Number Check (returns whether, for (n, a), a^(n−1) ≡ 1
+                mod n for all a coprime to n)
+              </li>
+              <li>
+                CubCls(m) (A wierd one - count how many equivalence classes of
+                binary cubic forms modulo m there are, under the action of
+                GL₂(ℤ/mℤ))
+              </li>
+            </ul>
+          </ul>
+          <p>
+            I thought of this just in time for finals to start, so it probably
+            won't get sent up until early May.
+          </p>
           <h3>Overview</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span>
@@ -114,7 +203,7 @@
             with many more options contained within.
           </p>
           <p>
-            <br /><br />
+            <br />
             Some general Notes:
           </p>
           <ul>
@@ -122,7 +211,9 @@
               You can replace characters from previous cursor positions, but the
               only way to replace the final char is to delete and re-enter it.
               This is an extra button press but saves like 200 lines of code
-              between several modules.
+              between several modules...which is poor design, it certainly
+              SHLOULDN'T save 200 lines of code, but that's the way things fell
+              and it's not the end of the world.
             </li>
             <li>
               I'm very happy with the modulo addition. However, note that it
@@ -160,7 +251,7 @@
               </ul>
             </li>
           </ul>
-          <p>Some Things The original Calculator Has Which I Left Out:</p>
+          <p>Some Things the Original Calculator Has Which I Left Out:</p>
           <ul>
             <li>
               I got rid of memvar because rcl adequately addresses its purpose.
@@ -168,7 +259,7 @@
             <li>
               Handling of frequency domain errors is passed to the stat function
               evaluator rather than raising an immediate error. This is because
-              my implementation handles stat function calculators in a way that
+              my implementation handles stat function calculations in a way that
               makes this order of error notification reasonable from and
               end-user perspective.
             </li>
@@ -231,7 +322,7 @@
               number of characters possible to enter into K. There's no need to
               put K=R>Pθ at the end of every user function, as this can only
               cause errors. Only menus that return characters valid at the end
-              of an expression are valid inserts into K. But it is valid to say
+              of an expression are valid inserts into K. But it is fair to say
               that I should have just scrapped the feature altogether.
               <ul>
                 <li>
@@ -239,7 +330,7 @@
                   adding "sin(" to the end of every function, which is
                   ridiculous. The improvement over the real calculator is
                   present, but there are still cases where having a 'K' menu is
-                  somewhat unnecessary.
+                  unnecessary.
                 </li>
               </ul>
             </li>
