@@ -46,9 +46,8 @@ const articlesData = [
   },{
     projectName: "Calculator",
     description:
-    "A locally runnable GUI application which replicates as closely as possible the TI-30X IIS. Initial thoughts " + 
-    "include \"wow, I have no idea what most of these menus do. What on earth is STATVAR?\" and \"wow, " + 
-    "python was an awful choice for a language to make this loca...",
+    "Initially, this was a locally runnable GUI application which replicates as closely as possible the TI-30X IIS. " + 
+    "It still covers the bases of that calculator, but has grown into something specialized in number theoretic functions.",
     link: "calculator.html",
   }
 ];
