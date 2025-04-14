@@ -1,4 +1,5 @@
 (function () {
+  console.log("Logging script updated");
   const SESSION_KEY = "log_session_id";
   const PATHS_KEY = "log_path_trail";
   const startedAt = Date.now();
@@ -29,7 +30,7 @@
     };
 
     // Send log to Google Sheets via the Google Apps Script Web App
-    fetch("https://script.google.com/macros/s/AKfycbx1zW4fV_Vd4A63IatI2PHn8Z7eWzcftdZ9LTiHT_DIS6Kg18QyiAlabHJATTPrYUlcCA/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzPnon2hAhJ5EqgrD94cHxjbcqgNBgzVI6FnFEpPEVthUl0qoF3pe2or7L1PSdq7jsKSw/exec", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
