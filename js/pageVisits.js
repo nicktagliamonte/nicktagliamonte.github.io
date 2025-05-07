@@ -1,9 +1,9 @@
 // Track page visits using GitHub API
 (function() {
-  const GITHUB_TOKEN = "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"; // Replace with your actual token
-  const OWNER = "nicktagliamonte"; // Your GitHub username
-  const REPO = "portfolio-logs"; // Your private repository for logs
-  const FILE_PATH = "visits.json"; // Path to the visits file in the repo
+  const GITHUB_TOKEN = "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";
+  const OWNER = "nicktagliamonte";
+  const REPO = "portfolio-logs";
+  const FILE_PATH = "visits.json";
   
   // Get current page path
   const currentPath = window.location.pathname === "/" ? "/" : window.location.pathname;

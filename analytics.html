@@ -134,17 +134,6 @@
     
     <div id="warningMessage" class="warning" style="display: none;"></div>
     
-    <div id="setupInfo" class="setup-info">
-      <h3>Setup Instructions</h3>
-      <p>To enable global visit tracking across all users:</p>
-      <ol>
-        <li>Create a private GitHub repository called <code>portfolio-logs</code></li>
-        <li>Generate a GitHub Personal Access Token with "repo" scope</li>
-        <li>Replace the placeholder token in both <code>pageVisits.js</code> and <code>analytics.html</code></li>
-      </ol>
-      <p>Without a valid GitHub token setup, the analytics will only display visits from your current browser.</p>
-    </div>
-    
     <div class="page-visits">
       <h2>Page Visits</h2>
       <div id="loading" class="loading">Loading visit data...</div>
@@ -179,7 +168,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // GitHub API configuration
-      const GITHUB_TOKEN = "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"; 
+      const GITHUB_TOKEN = "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"; 
       const OWNER = "nicktagliamonte";
       const REPO = "portfolio-logs";
       const FILE_PATH = "visits.json";
