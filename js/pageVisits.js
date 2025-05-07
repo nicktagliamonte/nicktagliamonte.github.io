@@ -1,8 +1,6 @@
 // Track page visits using GitHub API
 (function() {
-  // GitHub API configuration - IMPORTANT: Replace this with your actual token when testing
-  // For production, consider using a more secure approach like environment variables
-  const GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"; // Replace with your actual token
+  const GITHUB_TOKEN = "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"; // Replace with your actual token
   const OWNER = "nicktagliamonte"; // Your GitHub username
   const REPO = "portfolio-logs"; // Your private repository for logs
   const FILE_PATH = "visits.json"; // Path to the visits file in the repo
