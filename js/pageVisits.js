@@ -21,7 +21,7 @@
         
         const response = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE_PATH}`, {
           headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`, // Changed from 'token' to 'Bearer'
+            'Authorization': `token ${GITHUB_TOKEN}`, // Changed from 'Bearer' to 'token'
             'Accept': 'application/vnd.github.v3+json'
           }
         });
@@ -91,7 +91,7 @@
         const response = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE_PATH}`, {
           method: 'PUT',
           headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`, // Changed from 'token' to 'Bearer'
+            'Authorization': `token ${GITHUB_TOKEN}`, // Changed from 'Bearer' to 'token'
             'Content-Type': 'application/json',
             'Accept': 'application/vnd.github.v3+json'
           },
