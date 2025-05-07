@@ -1,10 +1,10 @@
 // Track page visits using GitHub API
 (function() {
   // GitHub API configuration
-  const GITHUB_TOKEN = "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";
-  const OWNER = "nicktagliamonte";
-  const REPO = "portfolio-logs";
-  const FILE_PATH = "visits.json";
+  const GITHUB_TOKEN = "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"; // Replace with your actual token
+  const OWNER = "nicktagliamonte"; // Your GitHub username
+  const REPO = "portfolio-logs"; // Your private repository for logs
+  const FILE_PATH = "visits.json"; // Path to the visits file in the repo
   
   // Get current page path
   const currentPath = window.location.pathname === "/" ? "/" : window.location.pathname;
@@ -21,8 +21,13 @@
           }
         });
         
+        if (response.status === 404) {
+          console.log('Visits file not found. Creating new file.');
+          return { visits: {}, sha: null };
+        }
+        
         if (!response.ok) {
-          throw new Error(`GitHub API error: ${response.status}`);
+          throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
         }
         
         const data = await response.json();
@@ -33,15 +38,27 @@
         return { visits, sha };
       } catch (error) {
         console.error('Error fetching visit data:', error);
-        // If file doesn't exist yet, return empty object
-        return { visits: {}, sha: null };
+        // Fall back to localStorage if GitHub API fails
+        try {
+          const localVisits = JSON.parse(localStorage.getItem('page_visits') || '{}');
+          return { visits: localVisits, useFallback: true };
+        } catch (e) {
+          return { visits: {}, useFallback: true };
+        }
       }
     }
     
     // Function to update visits data
-    async function updateVisitsData(visits, sha) {
+    async function updateVisitsData(visits, sha, useFallback = false) {
       // Increment count for current page
       visits[currentPath] = (visits[currentPath] || 0) + 1;
+      
+      // If using fallback, just store in localStorage
+      if (useFallback) {
+        localStorage.setItem('page_visits', JSON.stringify(visits));
+        console.log(`Page visit recorded locally for ${currentPath}`);
+        return;
+      }
       
       try {
         // Prepare the content for GitHub API
@@ -49,13 +66,12 @@
         
         const body = {
           message: `Update page visit count for ${currentPath}`,
-          content: content,
-          sha: sha // Include SHA if updating an existing file
+          content: content
         };
         
-        // If we don't have a SHA, it means the file doesn't exist yet
-        if (!sha) {
-          delete body.sha;
+        // If we have a SHA, it means the file exists and we're updating it
+        if (sha) {
+          body.sha = sha;
         }
         
         const response = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE_PATH}`, {
@@ -69,19 +85,24 @@
         });
         
         if (!response.ok) {
-          throw new Error(`GitHub API error: ${response.status}`);
+          const errorData = await response.json();
+          console.error('GitHub API error:', errorData);
+          throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
         }
         
         console.log(`Page visit recorded for ${currentPath}`);
       } catch (error) {
         console.error('Error updating visit data:', error);
+        // Fall back to localStorage if GitHub API fails
+        localStorage.setItem('page_visits', JSON.stringify(visits));
+        console.log(`Page visit recorded locally for ${currentPath} (fallback)`);
       }
     }
     
     // Execute the tracking logic
     (async function trackPageVisit() {
-      const { visits, sha } = await fetchVisitsData();
-      await updateVisitsData(visits, sha);
+      const { visits, sha, useFallback } = await fetchVisitsData();
+      await updateVisitsData(visits, sha, useFallback);
     })();
   }
 })();
