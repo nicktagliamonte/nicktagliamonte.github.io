@@ -53,6 +53,24 @@
           style="width: 100%; height: 600px; border: none;"
           title="Analytics Dashboard"
         ></iframe>
+        <script>
+            const USERNAME = "nicktagliamonte";
+        
+            fetch(`https://counter.dev/api/v1/${USERNAME}/pages`)
+              .then(response => response.json())
+              .then(data => {
+                const list = document.getElementById("analytics");
+                data.forEach(page => {
+                  const li = document.createElement("li");
+                  li.textContent = `${page.url}: ${page.count} visits`;
+                  list.appendChild(li);
+                });
+              })
+              .catch(err => {
+                document.getElementById("analytics").textContent = "Error loading analytics.";
+                console.error(err);
+              });
+          </script>
       </section>
     </main>
 
