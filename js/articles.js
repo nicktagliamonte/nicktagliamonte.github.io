@@ -49,6 +49,13 @@ const articlesData = [
     "Initially, this was a locally runnable GUI application which replicates as closely as possible the TI-30X IIS. " + 
     "It still covers the bases of that calculator, but has grown into something specialized in number theoretic functions.",
     link: "calculator.html",
+  },{
+    projectName: "Sorting Visualizer",
+    description:
+    "This is a simple sorting visualizer, which allows you to visualize the process of sorting an array of numbers. " +
+    "It gives the option to sort the array using 25 different algorithms, and can be demo'd from within this article. " +
+    "The algorithms are all implemented in JavaScript, and the visuali...",
+    link: "visualizer.html",
   }
 ];
 
