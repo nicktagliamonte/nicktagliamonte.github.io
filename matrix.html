@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallel Matrix | Nick Tagliamonte</title>
+    <meta
+      name="description"
+      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, optimization, and web development."
+    />
+    <meta
+      name="keywords"
+      content="Nick Tagliamonte, about me, computer science, software development, personal interests, skills"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script
+      src="https://cdn.counter.dev/script.js"
+      data-id="62e79f82-01f9-4983-bf0c-007d5a6acb15"
+      data-utcoffset="-4"
+    ></script>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: "Georgia", serif;
+        font-size: 14px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        text-align: center;
+      }
+
+      thead {
+        background-color: #f9f9f9;
+      }
+
+      .dark-mode thead {
+        background-color: #2a2a2a;
+      }
+
+      tr:nth-child(even) {
+        background-color: #fdfdfd;
+      }
+
+      .dark-mode tr:nth-child(even) {
+        background-color: #3a3a3a;
+      }
+
+      tr:hover {
+        background-color: #f3f3f3;
+      }
+
+      .dark-mode tr:hover {
+        background-color: #4a4a4a;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header role="banner">
+      <div class="header-left">
+        <h1 role="heading" aria-level="1" class="home-link">
+          <a href="index.html">Nick Tagliamonte</a>
+        </h1>
+      </div>
+      <div class="dark-mode-toggle">
+        <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav class="navigation" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="information.html" role="link">Information</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+      <div
+        id="mobile-menu-icon"
+        class="hamburger-menu"
+        aria-label="Open Navigation Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="overlay-menu">
+        <nav
+          class="overlay-navigation"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="information.html" role="link">Information</a></li>
+          </ul>
+          <!-- Dark mode toggle at the bottom -->
+          <div class="overlay-dark-mode-toggle">
+            <button
+              class="overlay-sun-icon"
+              role="img"
+              aria-label="Sun"
+              id="overlayDarkModeToggle"
+            >
+              &#9728;
+            </button>
+            <label class="overlay-toggle">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main role="main" class="about-container">
+      <section class="left-content">
+        <!-- Article Section -->
+        <section id="information">
+          <p>
+            <small
+              >Note: Throughout this document, usage instructions assume there
+              is a running tsh server on "port", and therefore that there are
+              two terminals running. They are meant to be run from the unpacked
+              /tsh directory, all relevant binaries are included there for
+              convenience. All tests and scripts mentioned below can be run
+              locally by following these usage prompts without needing to
+              recompile anything.<br /><br />
+              This is a project which was originally completed for Temple CIS
+              3207 Operating Systems, and has been modified for general
+              readership. Any discussion of time constraints relate specifically
+              to the conclusion of that course, and any reference to lecture
+              refers to the course material.
+            </small>
+          </p>
+          <h2>Abstract</h2>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            This project presents a parallel matrix multiplication framework in
+            C, built on a custom tuple space server (TSH) for distributed
+            coordination. A streamlined API enables clean read/put/get tuple
+            operations, decoupling computation from shell-based controls. The
+            system features a master process that dynamically spawns worker
+            processes, which execute tasks in parallel by communicating through
+            tuple space. Granularity of task division is tunable, and fault
+            tolerance is achieved via timeout-based reissuing and redundant
+            result filtering. <br /><br /><span
+              style="display: inline-block; width: 2em"
+            ></span>
+            Benchmarking scripts evaluate performance across matrix sizes and
+            granularities, recording both total and pure computation times.
+            Results highlight a "Goldilocks zone" of optimal granularity,
+            balancing overhead with parallel efficiency. Notably, worker
+            failures often improved performance by reducing resource contention.
+            The system illustrates fault-tolerant parallel computation over
+            tuple space and suggests future enhancements such as shared memory
+            models and regex-based tuple queries.
+          </p>
+          <h2>1. Create an API library for applications to use tsh services</h2>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Having a working tshtest.c and tshtest.h from a past project was
+            helpful here. To keep the library as general-purpose as possible and
+            make testing the matrix operations easier, I stripped away all but
+            the core read/put/get functionality. This includes removal of shell
+            operations from the library. I wrote a new program, tsh_test.c, to
+            test each of put, read, and get. The output of one such test is:
+          </p>
+          <figure>
+            <img
+              src="images/testingApiLibrary.png"
+              alt="tsh_test output"
+              style="width: 100%"
+            />
+            <figcaption>Figure 1: Testing the API library</figcaption>
+          </figure>
+          <h2>
+            2. Composing a parallel matrix multiiplication program in C using
+            these API calls
+          </h2>
+          <p>
+            <span style="display: inline-block; width: 2em"></span> This was a
+            challenging program to construct, and it is visible in two files in
+            my final repository: matrix_master.c and matrix_worker.c.
+            <br /><br />
+            <span style="display: block; text-align: center"
+              ><code
+                ><b
+                  >Usage: ./matrix_master "port" "matrix_size" "granularity"</b
+                ></code
+              ></span
+            >
+            <br /><br />
+            Matrix master is the coordinating program which follows the process
+            of:
+          </p>
+          <ul>
+            <li><b>Initialization:</b></li>
+            <ul>
+              <li>Parse command line arguments</li>
+              <li>Allocate memory for matrices A, B, and C</li>
+              <li>Generate random values for input matrices A and B</li>
+            </ul>
+            <li><b>Data Distribution:</b></li>
+            <ul>
+              <li>Place each row of matrix A in tuple space as A_row_i</li>
+              <li>
+                Write matrix B to a file for workers to read directly (this is
+                to reduce the overhead of each worker needing to run a read
+                operation for each row of matrix B from tuple space. The file
+                exists in place of a more robust shared memory space
+                implementation for workers, which I would have sprung for under
+                other circumstances)
+              </li>
+              <li>
+                Place work chunks in tuple space as work_chunk_i, based on
+                granularity
+              </li>
+            </ul>
+            <li><b>Worker Management:</b></li>
+            <ul>
+              <li>
+                Calculate optimal number of workers from available CPU cores and
+                number of work chunks
+              </li>
+              <li>Store the total number of chunks in tuple space</li>
+              <li>
+                Spawn worker processes with port number, matrix size, and B
+                matrix file path
+              </li>
+            </ul>
+            <li><b>Result Collection:</b></li>
+            <ul>
+              <li>Track which result rows have been received</li>
+              <li>
+                Concurrently collect C_row_i results as they become available
+              </li>
+              <li>Display progress</li>
+              <li>Implement timeout mechanism if rows aren't collected</li>
+            </ul>
+            <li><b>Cleanup:</b></li>
+            <ul>
+              <li>Terminate any lingering workers</li>
+              <li>Wait for worker processes</li>
+              <li>Display timing statistics and result matrix</li>
+              <li>Clean up tuple space and temporary files</li>
+              <li>Free allocated memory</li>
+            </ul>
+          </ul>
+          <p>
+            Matrix Worker is the worker object generated by matrix_master. It
+            follows the process of:
+          </p>
+          <ul>
+            <li><b>Initialization</b></li>
+            <ul>
+              <li>Parse arguments (port, matrix size, B matrix file path)</li>
+              <li>Read matrix B directly from file</li>
+              <li>Check total_chunks tuple to know how many chunks exist</li>
+            </ul>
+            <li><b>Work Steal Algorithm</b></li>
+            <ul>
+              <li>Try to claim any available work_chunk_i using tsh_get</li>
+              <li>When successful, process multiple rows within that chunk</li>
+              <li>
+                Read the assigned rows from A, multiply with B in kij order, and
+                store the results as C_row_i
+              </li>
+            </ul>
+            <li><b>Termination Logic</b></li>
+            <ul>
+              <li>
+                Workers self-terminate after processing chunks when no more work
+                is found after multiple attempts
+              </li>
+              <li>
+                Self-termination also occurs after a set maximum lifespan time
+                limit
+              </li>
+              <li>
+                Check for and place termination signals (all_work_complete)
+              </li>
+              <li>Efficiently exit when all chunks are processed</li>
+            </ul>
+          </ul>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            The major challenge here, once the master/worker architecture I
+            should be using became clear, was race conditions. I was
+            consistently running into a result in which all workers looked for
+            work row 0, one of them got it, and the rest just quit when row 0
+            wasn't available. It was very challenging arriving at the end
+            product in which each tuple space operation uses a fresh connection
+            to prevent workers from getting stuck.
+            <br /><br />
+            <span style="display: inline-block; width: 2em"></span>
+            Taking a critical eye to this, I would say that the architecture
+            adequately achieves the end goal of parallel matrix multiplication,
+            but it fails on some points of efficiency. This takes a sort of
+            “half stripped” approach, whereas altering the code so that it can
+            be either tiled or just stripped would certainly improve efficiency.
+            The reason this wasn't implemented is time constraints.
+          </p>
+          <figure>
+            <img
+              src="images/64.png"
+              alt="64x64 multiplication result"
+              style="width: 100%"
+            />
+            <figcaption>
+              Figure 2: Result of 64x64 parallel multiplication
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/2.png"
+              alt="2x2 multiplication result"
+              style="width: 100%"
+            />
+            <figcaption>
+              Figure 3: Result of 2x2 parallel multiplication
+            </figcaption>
+          </figure>
+          <h2>
+            3. Change parallel task granularity and build a script to run the
+            parallel matrix program automatically with different granularity
+          </h2>
+          <br />
+          <span style="display: block; text-align: center"
+            ><code><b>Usage: ./granularity.sh "port"</b></code></span
+          >
+          <br /><br />
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            The script I made for this is included in the tsh directory as
+            granularity.sh. It systematically benchmarks the distributed matrix
+            multiplication implementation across a few different matrix sizes
+            and granularity settings. For each configuration, it:
+          </p>
+          <ol>
+            <li>Runs matrix_master twice with identical parameters</li>
+            <li>
+              Calculates the average execution times (both total and pure
+              multiplication time)
+            </li>
+            <ul>
+              <li>
+                I included total and pure multiplication time comparison to view
+                how much runtime comes from the multiplication itself compared
+                to overhead
+              </li>
+            </ul>
+            <li>Outputs results to matrix_performance.csv for analysis</li>
+          </ol>
+          <p>
+            The script implements aggressive worker termination and server
+            failover mechanisms to handle challenges I ran into with repeated
+            tests in a short time frame over the same server session:
+          </p>
+          <ol>
+            <li>
+              Worker Termination Issues: Worker processes sometimes get stuck in
+              tuple request loops when they fail to properly detect job
+              completion. This stems from asynchronous work being done in tuple
+              space
+            </li>
+            <li>
+              Server State Corruption: The tuple space server can accumulate
+              stale data or enter inconsistent states after multiple test runs,
+              causing subsequent tests to fail or hang indefinitely.
+            </li>
+            <li>
+              Process Management Challenges: The parent-child relationship
+              between master and workers can break down when workers don't
+              receive termination signals, especially under high CPU load or
+              when many workers are competing for resources.
+            </li>
+          </ol>
+          <p>The robust resolution strategies are:</p>
+          <ul>
+            <li>Forceful process termination between test runs using pkill</li>
+            <li>Server migration to fresh ports when failures occur</li>
+            <li>Test execution timeouts to prevent indefinite hanging</li>
+            <li>
+              Multiple retry attempts with increasingly aggressive recovery
+              methods
+            </li>
+          </ul>
+          <p>
+            This approach ensures reliable benchmarking results even when
+            testing edge cases with unusual matrix dimensions or granularity
+            settings that might stress the underlying tsh framework
+          </p>
+          <figure>
+            <img
+              src="images/earlyGranularityTest.png"
+              alt="early granularity test output"
+              style="width: 100%"
+            />
+            <figcaption>
+              Figure 4: An early run of the program using small matrix sizes
+            </figcaption>
+          </figure>
+          <h2>
+            4. Revise the parallel program to allow processors to fail by
+            timeout alarm signal handler (re-issuing a suspected lost tuple) and
+            redundant tuple reult elimination
+          </h2>
+          <br />
+          <span style="display: block; text-align: center"
+            ><code
+              ><b
+                >Usage: ./fault_tolerance_test.sh "port" "kill_probability"</b
+              ></code
+            ></span
+          >
+          <br /><br />
+          <p>
+            I altered matrix_master and _worker to improve fault tolerance here.
+            I was already implementing some timeout code for the sake of
+            avoiding infinite work-wait loops in the worker code (this had been
+            added in step 2 as a minor bugfix), but made things more robust here
+            in the following ways:
+          </p>
+          <h1>Matrix Master Enhancements</h1>
+          <ol>
+            <li><b>Work Tracking System</b></li>
+            <ul>
+              <li>
+                Added a work_tracker_t structure to keep track of each work
+                chunk
+              </li>
+              <li>
+                The system now tracks chunk ID, start row, number of rows, issue
+                time, number of attempts, and completion status
+              </li>
+            </ul>
+            <li><b>Alarm-Based Timeout Detection:</b></li>
+            <ul>
+              <li>Implemented a SIGALRM handler in the master process</li>
+              <li>
+                Added the check_and_reissue_work function that periodically
+                checks for stalled work chunks
+              </li>
+              <li>
+                When a chunk times out, it gets reissued with a higher priority
+                value
+              </li>
+            </ul>
+            <li><b>Redundant Result Handling:</b></li>
+            <ul>
+              <li>
+                Enhanced the result collection code to properly mark chunks as
+                completed when all rows in a chunk are processed
+              </li>
+              <li>
+                When a row result is received, the master now identifies which
+                chunk it belongs to and updates tracking information
+              </li>
+            </ul>
+            <li><b>Progress Monitoring:</b></li>
+            <ul>
+              <li>Added detailed logging about reissued work chunks</li>
+              <li>
+                The master provides better visibility into the fault tolerance
+                mechanisms
+              </li>
+            </ul>
+          </ol>
+          <h1>Matrix Worker Enhancements</h1>
+          <ol>
+            <li><b>Graceful Timeout Termination:</b></li>
+            <ul>
+              <li>
+                Added alarm signal handling with SIGALRM (comparable to the item
+                added to _master)
+              </li>
+              <li>
+                Workers now report their progress before terminating when timed
+                out
+              </li>
+              <li>
+                Progress information includes PID, number of chunks processed,
+                and total results generated
+              </li>
+            </ul>
+            <li><b>Redundant Work Prevention:</b></li>
+            <ul>
+              <li>
+                Workers check if results already exist for a chunk before
+                processing
+              </li>
+              <li>
+                If all rows in a chunk already have results, the worker skips
+                that chunk
+              </li>
+              <li>
+                For partial chunks, workers check each individual row before
+                processing
+              </li>
+              <li>
+                This prevents duplicate computation when work is reissued due to
+                suspected lost tuples
+              </li>
+            </ul>
+            <li>Periodic Timeout Checks</li>
+            <ul>
+              <li>
+                Workers now perform timeout checks before heavy computation
+              </li>
+              <li>
+                This allows them to exit cleanly even in the middle of
+                processing a chunk
+              </li>
+            </ul>
+          </ol>
+          <h1>System-Level Benefits</h1>
+          <p>The revised implementation provides a few benefits:</p>
+          <ul>
+            <li>
+              <b>Resilience:</b> The system can now recover from worker failures
+              or slowdowns by automatically reissuing work
+            </li>
+            <li>
+              <b>Efficiency: </b>Redundant computation is minimized as workers
+              check for existing results
+            </li>
+            <li>
+              <b>Responsiveness: </b>Timeout detection ensures stalled work gets
+              reassigned promptly, which is particularly helpful when testing a
+              series of matrix operations in a single script
+            </li>
+            <li>
+              <b>Graceful Degradation: </b>Even if some workers fail, the system
+              will continue to progress and reassign
+            </li>
+          </ul>
+          <h2>5. Analyze the elapsed times to find the best performing size</h2>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            The results of a few test cases, averaged from 5 total runs at the
+            given size and granularity, are included in matrix_performance.csv.
+            Note that those results differ somewhat from the results described
+            below because the file was regenerated after this analysis was
+            written, but the core principles addressed below still hold.
+          </p>
+          <h1>Key Observations</h1>
+          <h3>For 64x64 Matrices</h3>
+          <ul>
+            <li>
+              <b>Performance Trend: </b>As granularity increases from 1 to 64,
+              execution time decreases significantly
+            </li>
+            <li>
+              <b>Best Performance: </b>Achieved at granularity 64 (0.346s) -
+              essentially using a single chunk
+            </li>
+            <li>
+              <b>Worst Performance: </b>At granularity 1 (11.260s) - creating
+              too many tiny work units
+            </li>
+            <li>
+              <b>Overhead Impact: </b>With small matrices, the overhead of work
+              distribution outweighs parallelism benefits
+            </li>
+          </ul>
+          <h3>For 128x128 Matrices</h3>
+          <ul>
+            <li>
+              <b>Performance Trend: </b>Similar pattern of decreasing time with
+              increasing granularity
+            </li>
+            <li><b>Best Performance: </b>At granularity 32 (1.098s)</li>
+            <li>
+              <b>Interesting Note: </b>Granularity 128 (entire matrix as one
+              chunk) is actually slower (1.513s) than optimal chunking
+            </li>
+            <li>
+              <b>Improvement Factor: </b>~30× speed improvement from smallest to
+              optimal granularity
+            </li>
+          </ul>
+          <h3>For 512x512 Matrices</h3>
+          <ul>
+            <li>
+              <b>Timeouts: </b>Very small granularities (1, 2, 4) completely
+              timeout - too much tuple space overhead
+            </li>
+            <li><b>Best Performance: </b>At granulariity 128 (14.459s)</li>
+            <li>
+              <b>Suboptimal: </b>Full matrix processing (granularity 512) is
+              significantly slower at 22.131s
+            </li>
+            <li>
+              <b>Sweet Spot: </b>Medium-large chunks perform best, showing that
+              some parallelism is beneficial
+            </li>
+          </ul>
+          <h1>Interpretation</h1>
+          <ul>
+            <li><b>Oberhead vs. Parallelism:</b></li>
+            <ul>
+              <li>
+                Too fine-grained work (small granularity) creates excessive
+                tuple space overhead
+              </li>
+              <li>
+                Too coarse-grained work (large granularity) doesn't utilize
+                parallel workers effectively
+              </li>
+              <li>
+                Connection setup and teardown overhead is by far the greatest
+                cause of this. Because each tuple operation must use its own
+                connection, just reading all rows of matrix A for each worker
+                runs in O(n2) which adds a huge amount of time for large
+                matrices. This is an explanation for why I split matrix B out to
+                a separate file and why the overall time and multiplication time
+                gets to be so close for large matrices with large chunk sizes.
+              </li>
+            </ul>
+            <li><b>Optimal Chunking Pattern</b></li>
+            <ul>
+              <li>
+                For each matrix size N, optimal granularity tends to be around
+                N/4 to N/8
+              </li>
+              <li>This pattern is consistent across different matrix sizes</li>
+            </ul>
+            <li><b>Matrix Size Impact:</b></li>
+            <ul>
+              <li>Smaller matrices (64x64) benefit less from parallelism</li>
+              <li>
+                Larger matrices (512x512) require parallelism but with carefully
+                chosen chunk sizes
+              </li>
+              <li>
+                The parallel overhead becomes more justified as matrix size
+                increases
+              </li>
+            </ul>
+            <li><b>System Limitations:</b></li>
+            <ul>
+              <li>
+                The timeout for 512x512 with small granularities shows system
+                resource constraints
+              </li>
+              <li>
+                The tuple space appears to get overwhelmed when managing too
+                many small work units, which again is likely attributable at
+                least in large part to the connection setup and teardown
+                overhead
+              </li>
+            </ul>
+          </ul>
+          <h2>6. Test fault tolerance by randomly killing worker processes</h2>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            The results here are counterintuitive to me. In a lot of cases,
+            killing processes actually improved performance. It didn't always,
+            but even those times that worker failure decreased performance it
+            was always by a relatively low margin. The major reason for this
+            must have to do with overhead: when workers are in the work-wait
+            loop, the competition between them consumes resources which can
+            otherwise be devoted to just processing matrices. To go into more
+            detail, I'd like to consider these cases:
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Matrix Size</th>
+                <th>Granularity</th>
+                <th>Normal Time (s)</th>
+                <th>With Failures (s)</th>
+                <th>Workers Killed</th>
+                <th>Change (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>128</td>
+                <td>4</td>
+                <td>160.106</td>
+                <td>46.760</td>
+                <td>15</td>
+                <td>-70.8</td>
+              </tr>
+              <tr>
+                <td>128</td>
+                <td>8</td>
+                <td>66.613</td>
+                <td>5.232</td>
+                <td>2</td>
+                <td>-92.4</td>
+              </tr>
+              <tr>
+                <td>256</td>
+                <td>4</td>
+                <td>140.796</td>
+                <td>14.545</td>
+                <td>6</td>
+                <td>-89.7</td>
+              </tr>
+              <tr>
+                <td>256</td>
+                <td>8</td>
+                <td>363.075</td>
+                <td>21.472</td>
+                <td>11</td>
+                <td>-94.1</td>
+              </tr>
+              <tr>
+                <td>64</td>
+                <td>32</td>
+                <td>29.330</td>
+                <td>10.042</td>
+                <td>2</td>
+                <td>-65.8</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            This case set accurately depicts the size dependent behavior overall
+            - excluded cases show larger variation in small granularities or
+            essentially no impact at large granularities, which is more
+            intuitive, with the smallest matrices having more pronounced
+            variation in results as well.
+          </p>
+          <figure>
+            <img
+              src="images/performanceComparison1.png"
+              alt="Most dramatic speedup from worker failure"
+              style="width: 100%"
+            />
+            <figcaption>
+              Figure 5: This chart shows the most dramatic of the speedups I saw
+              after randomly killing worker processes
+            </figcaption>
+          </figure>
+          <h1>Explanation of the Findings</h1>
+          <ol>
+            <li>
+              <b>Resource Contention: </b>With too many workers (small
+              granularity), the system experiences high competition for CPU,
+              memory, and network resources. Worker failures actually reduce
+              this contention. This pulls the optimal worker count down from
+              what was previously seen in section 5.
+            </li>
+            <li>
+              <b>Effective Fault Tolerance: </b>The implementation handles
+              failures gracefully through work reissuance with higher priorities
+              and redundant result elimination.
+            </li>
+            <li>
+              <b>Load Balancing Effect: </b>When some workers fail, work is
+              redistributed more optimally among remaining workers, which
+              potentially avoids stragglers that would bottleneck performance.
+            </li>
+          </ol>
+          <h2>
+            7. Conclusion: Important Visualizations and Brachistochrone Analysis
+          </h2>
+          <figure>
+            <img
+              src="images/bubbleChart.png"
+              alt="Bubble chart of performance"
+              style="width: 100%"
+            />
+            <figcaption>
+              Figure 6: This bubble plot shows the significant decrease in
+              overhead for most but not all instances of worker processes being
+              killed, suggesting that the optimal worker creation strategy may
+              involve intentionally under-generating workers but taking care to
+              replace workers that fail.
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/brachistochrone.png"
+              alt="Brachistochrone analysis of performance"
+              style="width: 100%"
+            />
+            <figcaption>
+              Figure 7: Following a lecture I attended given by Dr. Shi on 4/24,
+              I analyzed my results to see if the brachistochrone pattern that
+              was discussed was visible in my data. There is a lot of volatility
+              at low granularity (especially where worker processes randomly
+              being killed skews the efficiency) but overall, for a high number
+              of samples with 0% chance of random artificial worker process
+              termination, an approximation of the brachistochrone pattern
+              becomes visible with the optimal point at a granularity of 64.
+              <br /><br />
+              Note that this is partially due to the way I generated the graph
+              (each point is the normalized average for a given granularity, and
+              then a line is just drawn connecting them). In fact if I tried to
+              make it continuous rather than the above discrete visualization,
+              we would probably see the optimal position moderately
+              right-shifted because of the long tail and excessively inefficient
+              results at the lowest granularities.
+            </figcaption>
+          </figure>
+          <p>
+            There are a number of things that I have suggested throughout this
+            report which might improve the efficiency of the program overall:
+            some sort of shared memory space which can be accessed in parallel
+            by workers (different from tsh.c, meant to reduce total read/write
+            operations on tsh.c), a more efficient matrix master/worker setup
+            (including a different method of parallelization, more closely
+            approximating the tiled or stripped methods discussed in class), and
+            even the idea of moving the parallelization from matrix_master into
+            tsh.c, or at least introducing code to have that handle simultaneous
+            requests using some sort of semaphore system to try to get the
+            highest possible resource utilization. These are just thoughts,
+            possible ways that my implementation likely falls short of optimal
+            but ways in which it could perhaps be improved in the future. It
+            would also have been a better idea to make fuller use of regex
+            pattern matching for the work and row tuples that the workers are
+            getting. Kleene star would make OpGet(... *) for all rows of A or B
+            much more efficient and approachable.
+            <br /><br />
+            <span style="display: inline-block; width: 2em"></span>
+            The major point of pride I have in my implementation is the feature
+            for the master to programatically assess available CPUs and the size
+            of the matrices being multiplied and use min(matrixSize, CPUs) to
+            determine how many workers to spawn initially. This hugely
+            simplified testing for me, as I was able to use just 2 windows and
+            rely on my invocation of matrix_master to take care of all the
+            worker spawning that would occur through any given test. The
+            efficiency of this really shines in my test battery scripts, which
+            at the high end would run scores of tests with different matrix
+            sizes on one call to ./fault_tolerance_test.sh, for example.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+      <p>&copy; 2024 Nick Tagliamonte</p>
+    </footer>
+
+    <script src="js/mobileNavigation.js"></script>
+    <script src="js/darkMode.js"></script>
+  </body>
+</html>

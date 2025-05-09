@@ -1,489 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects | Nick Tagliamonte</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <script src="script.js" defer></script>
-    <script src="https://cdn.counter.dev/script.js" data-id="62e79f82-01f9-4983-bf0c-007d5a6acb15" data-utcoffset="-4"></script>
-</head>
+    <script
+      src="https://cdn.counter.dev/script.js"
+      data-id="62e79f82-01f9-4983-bf0c-007d5a6acb15"
+      data-utcoffset="-4"
+    ></script>
+  </head>
 
-<body id="top">
-
+  <body id="top">
     <!-- Header Section -->
     <header role="banner">
-        <div class="header-left">
-            <h1 role="heading" aria-level="1" class="home-link">
-                <a href="index.html">Nick Tagliamonte</a>
-            </h1>
-        </div>
-        <div class="dark-mode-toggle">
-            <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
-            <label class="toggle">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider"></span>
+      <div class="header-left">
+        <h1 role="heading" aria-level="1" class="home-link">
+          <a href="index.html">Nick Tagliamonte</a>
+        </h1>
+      </div>
+      <div class="dark-mode-toggle">
+        <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav class="navigation" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="about.html" role="link">About</a></li>
+          <li><a href="projects.html" role="link">Projects</a></li>
+          <li><a href="resume.html" role="link">Resume</a></li>
+          <li><a href="contact.html" role="link">Contact</a></li>
+          <li><a href="personal.html" role="link">Personal</a></li>
+          <li><a href="information.html" role="link">Information</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+      <div
+        id="mobile-menu-icon"
+        class="hamburger-menu"
+        aria-label="Open Navigation Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="overlay-menu">
+        <nav
+          class="overlay-navigation"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="information.html" role="link">Information</a></li>
+          </ul>
+          <!-- Dark mode toggle at the bottom -->
+          <div class="overlay-dark-mode-toggle">
+            <span class="overlay-sun-icon" role="img" aria-label="Sun"
+              >&#9728;</span
+            >
+            <label class="overlay-toggle">
+              <input type="checkbox" id="overlayDarkModeToggle" />
+              <span class="slider"></span>
             </label>
-        </div>
-        <nav class="navigation" role="navigation" aria-label="Main Navigation">
-            <ul>
-                <li><a href="about.html" role="link">About</a></li>
-                <li><a href="projects.html" role="link">Projects</a></li>
-                <li><a href="resume.html" role="link">Resume</a></li>
-                <li><a href="contact.html" role="link">Contact</a></li>
-                <li><a href="personal.html" role="link">Personal</a></li>
-                <li><a href="information.html" role="link">Information</a></li>
-            </ul>
+          </div>
         </nav>
-        <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
-        <div id="mobile-menu-icon" class="hamburger-menu" aria-label="Open Navigation Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div id="overlay-menu">
-            <nav class="overlay-navigation" role="navigation" aria-label="Mobile Navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="personal.html">Personal</a></li>
-                    <li><a href="information.html" role="link">Information</a></li>
-                </ul>
-                <!-- Dark mode toggle at the bottom -->
-                <div class="overlay-dark-mode-toggle">
-                    <span class="overlay-sun-icon" role="img" aria-label="Sun">&#9728;</span>
-                    <label class="overlay-toggle">
-                        <input type="checkbox" id="overlayDarkModeToggle">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </nav>
-        </div>
-
+      </div>
     </header>
 
     <!-- Special Section Below the Header -->
     <div class="projects-header">
-        <h1>Projects</h1>
-        <div>
-            <button id="clear-filters">Clear Filters</button>
-            <a href="#top">Finished</a>
-            <a href="#under-development">Under Development</a>
-            <a href="#planned-projects">Planned</a>
-        </div>
+      <h1>Projects</h1>
+      <div>
+        <button id="clear-filters">Clear Filters</button>
+        <a href="#top">Finished</a>
+        <a href="#under-development">Under Development</a>
+        <a href="#planned-projects">Planned</a>
+      </div>
     </div>
 
     <!-- Main Content -->
     <main>
-        <!-- Finished Projects Section -->
-        <section id="finished-projects">
-            <h2>Finished Projects</h2>
-            <div class="three-column-container">
-                <div class="column-1">
-                    <div class="project-card"
-                        onclick="window.open('https://github.com/nicktagliamonte/Portfolio-Website/tree/main', '_blank')"
-                        style="cursor: crosshair;">
-                        <h3>Portfolio Website</h3>
-                        <p>
-                            This website -- a first foray into web development and exercise in learning HTML
-                            and CSS.<br>
-                            Potential update: get a custom domain, incorporate a backend.
-                        </p>
-                        <span class="language-tag" data-language="HTML">HTML</span>
-                        <span class="language-tag" data-language="CSS">CSS</span>
-                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
-                    </div>
-                    <div class="project-card"
-                        onclick="window.open('https://github.com/nicktagliamonte/markdown-notes', '_blank')"
-                        style="cursor: crosshair;">
-                        <h3>Markdown Note Taking App</h3>
-                        <p>
-                            An application that allows users to write and save notes in Markdown format. The app will
-                            provide a preview of the formatted output
-                            in real-time, supporting common Markdown syntax.
-                        </p>
-                        <p>
-                            It's a simple web app that isn't actually hosted, but the project can be cloned and run
-                            locally.
-                        </p>
-                        <span class="language-tag" data-language="HTML">HTML</span>
-                        <span class="language-tag" data-language="CSS">CSS</span>
-                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
-                        <span class="language-tag" data-language="Node.js">Node.js</span>
-                    </div>
-                    <div class="project-card" onclick="window.open('https://github.com/nicktagliamonte/calculator', '_blank')"
-                        style="cursor: crosshair;">
-                        <h3>Scientific Calculator</h3>
-                        <p>
-                            A feature-rich scientific calculator inspired by the TI-30X IIS, reimagined with a 
-                            modern dark interface and enhanced functionality. This first release includes a pre-built 
-                            binary for Linux users.
-                        </p>
-                        <span class="language-tag" data-language="Python">Python</span>
-                        <span class="language-tag" data-language="PyQt">PyQt</span>
-                    </div>
-                </div>
-                <div class="column-2">
-                    <div class="project-card"
-                        onclick="window.open('https://github.com/nicktagliamonte/C-Final-Study-Tool', '_blank')"
-                        style="cursor: crosshair;">
-                        <h3>School Study Tool</h3>
-                        <p>
-                            For Temple CIS 2107 Computer Systems and Low Level Programming, I am responsible for knowing
-                            the following:
-                        <ul>
-                            <li>Hexadecimal arithmetic</li>
-                            <li>Hex to binary conversion</li>
-                            <li>Values for problems of the form 10<sup>x</sup> where (3 | x) ∧ (2 < x < 16)</li>
-                            <li>Approximate values for problems of the form 2<sup>x</sup> where (10 | x) ∧ (9 < x <
-                                    51)</li>
-                        </ul>
-                        So this program asks a series of questions which, depending on user preference, may fall into
-                        one or all of those categories.
-                        </p>
-                        <span class="language-tag" data-language="C">C</span>
-                    </div>
-                    <div class="project-card" onclick="window.open('https://github.com/nicktagliamonte/nickslibrary', '_blank')"
-                        style="cursor: crosshair;">
-                        <h3>Data Structure Library</h3>
-                        <p>
-                            A library that implements various data structures such as stacks, queues, linked lists,
-                            trees, and graphs in Java.
-                            This project focuses on the efficiency and usability of each data structure.
-                        </p>
-                        <span class="language-tag" data-language="Java">Java</span>
-                        <span class="language-tag" data-language="JUnit">JUnit</span>
-                    </div>
-                </div>
-                <div class="column-3">
-                    <div class="project-card"
-                        onclick="window.open('https://github.com/nicktagliamonte/In-the-City', '_blank')"
-                        style="cursor: crosshair;">
-                        <h3>Text-Based Game Engine</h3>
-                        <p>
-                            This is the engine of a text-based game. The github page has a releases section which
-                            includes an installer and instructions.
-                            The engine supports:
-                        <ul>
-                            <li>Quest-based story progression</li>
-                            <li>Save/Load functionality</li>
-                            <li>A dialogue system with branching paths and dynamic starting nodes based on story
-                                progression</li>
-                            <li>Combat</li>
-                            <li>Assorted advanced game mechanics including: hiding, theivery, puzzles of assorted types,
-                                lockpicking, bartering/trade with an economic system in place to make that consistent
-                                and scale with story progression, player leveling, and the ability to team up with NPCs
-                            </li>
-                        </ul>
-                        These features are packaged in a loose "proof-of-concept" style story. See <u>Under
-                            Development</u> for a card regarding an actual game built on this engine.
-                        </p>
-                        <span class="language-tag" data-language="Java">Java</span>
-                    </div>
-                </div>
+      <!-- Finished Projects Section -->
+      <section id="finished-projects">
+        <h2>Finished Projects</h2>
+        <div class="three-column-container">
+          <div class="column-1">
+            <div
+              class="project-card"
+              onclick="window.open('https://github.com/nicktagliamonte/Portfolio-Website/tree/main', '_blank')"
+              style="cursor: crosshair"
+            >
+              <h3>Portfolio Website</h3>
+              <p>
+                This website -- a first foray into web development and exercise
+                in learning HTML and CSS.<br />
+                Potential update: get a custom domain, incorporate a backend.
+              </p>
+              <span class="language-tag" data-language="HTML">HTML</span>
+              <span class="language-tag" data-language="CSS">CSS</span>
+              <span class="language-tag" data-language="JavaScript"
+                >JavaScript</span
+              >
             </div>
-        </section>
-
-        <!-- Under Development Projects Section -->
-        <section id="under-development">
-            <h2>Under Development</h2>
-            <div class="three-column-container">
-                <div class="column-1">
-                    <div class="project-card"
-                        onclick="window.open('https://github.com/nicktagliamonte/In-the-City', '_blank')"
-                        style="cursor: crosshair;">
-                        <h3>Text-Based Adventure Game</h3>
-                        <p>
-                            <i>Note: this is just a story to place on top of the game engine from <u>Finished</u></i>
-                        </p>
-                        <p>
-                            "In the City" is a text based adventure game inspired by D20's "The Unsleeping City" (and
-                            Vandermeer's "Annihilation" and Doublespeakgames' "a dark room",
-                            probably moreso those two than Unsleeping City) set in Philadelphia. Players navigate a
-                            narrative with interactive quests and a complex dialogue system. <br>
-                            All in, i'm expecting around 35 hours of gameplay with an ETA around Jan 2027.
-                        </p>
-                        <p>
-                            This card is a link to the GitHub page for the engine, which contains installation
-                            instructions. The story written, but its translation to JSON is a large undertaking which is
-                            only about 3% complete.
-                            That 3% is present in the resources folder, but is not yet present in the installed game
-                            which instead holds test data.
-                        </p>
-                        <span class="language-tag" data-language="Java">Java</span>
-                    </div>
-                </div>
-                <div class="column-2">
-                    <div class="project-card">
-                        <h3>Sorting Algorithm Visualizer</h3>
-                        <p>
-                            A web application that visually demonstrates how different sorting algorithms (like bubble
-                            sort, quicksort, and mergesort) work, allowing
-                            users to see the steps involved in the sorting process.
-                            demo through info section, make a new js file in this workspace with it
-                        </p>
-                        <p>
-                            I recognize that this is a painfully regurgitated project and that many things on this page
-                            are more exercises than "apps" but I want to
-                            take a crack at one of these visualizers myself, if for no other reason than to drill
-                            algorithms.
-                        </p>
-                        <span class="language-tag" data-language="HTML">HTML</span>
-                        <span class="language-tag" data-language="CSS">CSS</span>
-                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
-                        <span class="language-tag" data-language="D3.js">D3.js</span>
-                        <span class="language-tag" data-language="React">React</span>
-                    </div>
-                </div>
-                <div class="column-3">
-                    
-                </div>
+            <div
+              class="project-card"
+              onclick="window.open('https://github.com/nicktagliamonte/markdown-notes', '_blank')"
+              style="cursor: crosshair"
+            >
+              <h3>Markdown Note Taking App</h3>
+              <p>
+                An application that allows users to write and save notes in
+                Markdown format. The app will provide a preview of the formatted
+                output in real-time, supporting common Markdown syntax.
+              </p>
+              <p>
+                It's a simple web app that isn't actually hosted, but the
+                project can be cloned and run locally.
+              </p>
+              <span class="language-tag" data-language="HTML">HTML</span>
+              <span class="language-tag" data-language="CSS">CSS</span>
+              <span class="language-tag" data-language="JavaScript"
+                >JavaScript</span
+              >
+              <span class="language-tag" data-language="Node.js">Node.js</span>
             </div>
-
-        </section>
-
-        <!-- Planned Projects Section -->
-        <section id="planned-projects">
-            <h2>Planned Projects</h2>
-            <div class="three-column-container">
-                <div class="column-1">
-                    <div class="project-card">
-                        <h3>Dockerized Hello World</h3>
-                        <p>
-                            At the time of writing this I barely know what docker is, but I should. "Project" to learn
-                            that in the simplest way possible.
-                        </p>
-                        <p>
-                            It's unlikely that I'll actually keep this card once finished, I might not even publically
-                            move it to "under development" -- I might just
-                            delete it.
-                        </p>
-                        <span class="language-tag" data-language="Python (Flask)">Python (Flask)</span>
-                        <span class="language-tag" data-language="Docker">Docker</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>To Do List</h3>
-                        <p>
-                            The classic CS student project.
-                        </p>
-                        <p>
-                            A web app that allows users to create, manage, and categorize their tasks with features like
-                            deadlines, reminders, and progress tracking.
-                        </p>
-                        <span class="language-tag" data-language="Ruby on Rails">Ruby on Rails</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Movie Recommendation System</h3>
-                        <p>
-                            An application that suggests movies to users based on their preferences and ratings, using
-                            collaborative filtering techniques
-                            to analyze user behavior.
-                        </p>
-                        <span class="language-tag" data-language="Python (Flask)">Python (Flask)</span>
-                        <span class="language-tag" data-language="PostgreSQL">PostgreSQL</span>
-                        <span class="language-tag" data-language="SciKit-Learn">SciKit-Learn</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Basic Search Engine</h3>
-                        <p>
-                            A natural extension of the web browser project. Basic should be bold, highlighted, and all
-                            caps...
-                        </p>
-                        <p>
-                            A search engine that crawls a (pre-defined) set of web pages, indexes them, and allows users
-                            to perform keyword searches.
-                        </p>
-                        <span class="language-tag" data-language="Python (Flask)">Python (Flask)</span>
-                        <span class="language-tag" data-language="Elasticsearch">Elasticsearch</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Compiler</h3>
-                        <p>
-                            Another early interest that I wasn't able to do as an absolute novice. I think compilers are
-                            fascinating.
-                        </p>
-                        <p>
-                            A project to design and implement a compiler or interpreter for a custom programming
-                            language, focusing on parsing,
-                            syntax analysis, and basic code execution.
-                        </p>
-                        <span class="language-tag" data-language="C">C</span>
-                        <span class="language-tag" data-language="ANTLR">ANTLR</span>
-                        <span class="language-tag" data-language="LVVM">LVVM</span>
-                    </div>
-                </div>
-                <div class="column-2">
-                    <div class="project-card">
-                        <h3>Gym Program Creator</h3>
-                        <p>
-                            An application that takes user input such as fitness goals, current fitness level, available
-                            equipment, and preferred workout
-                            days, and generates a personalized exercise regimen.
-                        </p>
-                        <span class="language-tag" data-language="HTML">HTML</span>
-                        <span class="language-tag" data-language="CSS">CSS</span>
-                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
-                        <span class="language-tag" data-language="Python (Flask)">Python (Flask)</span>
-                        <span class="language-tag" data-language="SQLite">SQLite</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Pathfinding Algorithm Simulator</h3>
-                        <p>
-                            I promise not all of these are regurgitated homework assignments.
-                        </p>
-                        <p>
-                            A visual simulator that demonstrates how various pathfinding algorithms (like A* and
-                            Dijkstra's) work on a grid-based
-                            map, showing step-by-step movement and decision-making.
-                        </p>
-                        <span class="language-tag" data-language="HTML">HTML</span>
-                        <span class="language-tag" data-language="CSS">CSS</span>
-                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
-                        <span class="language-tag" data-language="D3.js">D3.js</span>
-                        <span class="language-tag" data-language="React">React</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Data Visualization Dashboard</h3>
-                        <p>
-                            A web dashboard that presents data through interactive charts and graphs, allowing users to
-                            explore trends and insights.
-                            This could be used for business analytics or personal projects.
-                        </p>
-                        <span class="language-tag" data-language="HTML">HTML</span>
-                        <span class="language-tag" data-language="CSS">CSS</span>
-                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
-                        <span class="language-tag" data-language="D3.js">D3.js</span>
-                        <span class="language-tag" data-language="React">React</span>
-                        <span class="language-tag" data-language="Node.js">Node.js</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Data Pipeline for Real Time Data Processing</h3>
-                        <p>
-                            A system that ingests, processes, and outputs streaming data in real-time. This project will
-                            involve using tools like
-                            Apache Kafka for data ingestion and Apache Spark for processing.
-                        </p>
-                        <span class="language-tag" data-language="Python">Python</span>
-                        <span class="language-tag" data-language="Apache Kafka">Apache Kafka</span>
-                        <span class="language-tag" data-language="Apache Spark">Apache Spark</span>
-                        <span class="language-tag" data-language="MongoDB">MongoDB</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Neural Network From Scratch</h3>
-                        <p>
-                            Why have fun or make money when I could instead do something gruelingly difficult.
-                        </p>
-                        <p>
-                            Building a neural network from the ground up, including implementing forward and backward
-                            propagation, activation functions,
-                            and optimization algorithms. This project focuses on deep learning fundamentals.
-                        </p>
-                        <span class="language-tag" data-language="Python">Python</span>
-                        <span class="language-tag" data-language="NumPy">NumPy</span>
-                        <span class="language-tag" data-language="PyTorch">PyTorch</span>
-                        <span class="language-tag" data-language="TensorFlow">TensorFlow</span>
-                    </div>
-                </div>
-                <div class="column-3">
-                    <div class="project-card">
-                        <h3>Duolingo but for Cooking</h3>
-                        <p>
-                            Probably the best idea I've ever had, and it's been done before
-                        </p>
-                        <p>
-                            An educational app that teaches cooking techniques and recipes through interactive lessons
-                            and quizzes. Users can learn cooking
-                            vocabulary, techniques, and recipes step by step.
-                        </p>
-                        <span class="language-tag" data-language="HTML">HTML</span>
-                        <span class="language-tag" data-language="CSS">CSS</span>
-                        <span class="language-tag" data-language="JavaScript">JavaScript</span>
-                        <span class="language-tag" data-language="Flutter">Flutter</span>
-                        <span class="language-tag" data-language="Node.js">Node.js</span>
-                        <span class="language-tag" data-language="MongoDB">MongoDB</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Exploratory Data Analysis on Public Dataset</h3>
-                        <p>
-                            Like docker, data science and data analysis are major blindspots of mine.
-                        </p>
-                        <p>
-                            Choose a public dataset (e.g., from Kaggle or UCI Machine Learning Repository) and perform
-                            exploratory data analysis
-                            on it. This project could include data cleaning, summarization, and visualization to find
-                            patterns.
-                        </p>
-                        <span class="language-tag" data-language="Python">Python</span>
-                        <span class="language-tag" data-language="Pandas">Pandas</span>
-                        <span class="language-tag" data-language="Matplotlib">Matplotlib</span>
-                        <span class="language-tag" data-language="Seaborn">Seaborn</span>
-                        <span class="language-tag" data-language="Jupyter">Jupyter</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Basic Web Browser</h3>
-                        <p>
-                            Project idea I had after taking an introductory CS class a few years ago, which I was
-                            obviously unable to
-                            do at the time.
-                        </p>
-                        <p>
-                            A simple web browser that can render HTML pages, handle basic navigation (back, forward),
-                            and manage bookmarks.
-                            Goal: understand the fundamentals of how browsers work.
-                        </p>
-                        <span class="language-tag" data-language="Java">Java</span>
-                        <span class="language-tag" data-language="JavaFX">JavaFX</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Custom Encryption System</h3>
-                        <p>
-                            Implements an asymmetric encryption algorithm from scratch including key generation,
-                            encryption, and decryption.
-                        </p>
-                        <p>
-                            NOTE: this will be an interesting project to tackle, but this will not wind up being secure
-                            or even efficient.
-                        </p>
-                        <span class="language-tag" data-language="C">C</span>
-                        <span class="language-tag" data-language="CUnit">CUnit</span>
-                    </div>
-                    <div class="project-card">
-                        <h3>Distributed Machine Learning System</h3>
-                        <p>
-                            See previous (simpler) project r/e doing something gruelingly difficult.
-                        </p>
-                        <p>
-                            A system that distributes machine learning tasks across multiple nodes to optimize training
-                            and processing time. This
-                            project may involve implementing distributed algorithms and using frameworks like TensorFlow
-                            or PyTorch.
-                        </p>
-                        <span class="language-tag" data-language="Python">Python</span>
-                        <span class="language-tag" data-language="TensorFlow">TensorFlow</span>
-                        <span class="language-tag" data-language="PyTorch">PyTorch</span>
-                        <span class="language-tag" data-language="Docker">Docker</span>
-                        <span class="language-tag" data-language="Kubernetes">Kubernetes</span>
-                    </div>
-                </div>
+            <div
+              class="project-card"
+              onclick="window.open('https://github.com/nicktagliamonte/calculator', '_blank')"
+              style="cursor: crosshair"
+            >
+              <h3>Scientific Calculator</h3>
+              <p>
+                A feature-rich scientific calculator inspired by the TI-30X IIS,
+                reimagined with a modern dark interface and enhanced
+                functionality. This first release includes a pre-built binary
+                for Linux users.
+              </p>
+              <span class="language-tag" data-language="Python">Python</span>
+              <span class="language-tag" data-language="PyQt">PyQt</span>
             </div>
-        </section>
+          </div>
+          <div class="column-2">
+            <div
+              class="project-card"
+              onclick="window.open('https://github.com/nicktagliamonte/C-Final-Study-Tool', '_blank')"
+              style="cursor: crosshair"
+            >
+              <h3>School Study Tool</h3>
+              <p>
+                For Temple CIS 2107 Computer Systems and Low Level Programming,
+                I am responsible for knowing the following:
+              </p>
+              <ul>
+                <li>Hexadecimal arithmetic</li>
+                <li>Hex to binary conversion</li>
+                <li>
+                  Values for problems of the form 10<sup>x</sup> where (3 | x) ∧
+                  (2 < x < 16)
+                </li>
+                <li>
+                  Approximate values for problems of the form 2<sup>x</sup>
+                  where (10 | x) ∧ (9 < x < 51)
+                </li>
+              </ul>
+              <p>
+                So this program asks a series of questions which, depending on
+                user preference, may fall into one or all of those categories.
+              </p>
+              <span class="language-tag" data-language="C">C</span>
+            </div>
+            <div
+              class="project-card"
+              onclick="window.open('https://github.com/nicktagliamonte/nickslibrary', '_blank')"
+              style="cursor: crosshair"
+            >
+              <h3>Data Structure Library</h3>
+              <p>
+                A library that implements various data structures such as
+                stacks, queues, linked lists, trees, and graphs in Java. This
+                project focuses on the efficiency and usability of each data
+                structure.
+              </p>
+              <span class="language-tag" data-language="Java">Java</span>
+              <span class="language-tag" data-language="JUnit">JUnit</span>
+            </div>
+          </div>
+          <div class="column-3">
+            <div
+              class="project-card"
+              onclick="window.open('https://github.com/nicktagliamonte/In-the-City', '_blank')"
+              style="cursor: crosshair"
+            >
+              <h3>Text-Based Game Engine</h3>
+              <p>
+                This is the engine of a text-based game. The github page has a
+                releases section which includes an installer and instructions.
+                The engine supports:
+              </p>
+              <ul>
+                <li>Quest-based story progression</li>
+                <li>Save/Load functionality</li>
+                <li>
+                  A dialogue system with branching paths and dynamic starting
+                  nodes based on story progression
+                </li>
+                <li>Combat</li>
+                <li>
+                  Assorted advanced game mechanics including: hiding, theivery,
+                  puzzles of assorted types, lockpicking, bartering/trade with
+                  an economic system in place to make that consistent and scale
+                  with story progression, player leveling, and the ability to
+                  team up with NPCs
+                </li>
+              </ul>
+              <p>
+                These features are packaged in a loose "proof-of-concept" style
+                story. See <u>Under Development</u> for a card regarding an
+                actual game built on this engine.
+              </p>
+              <span class="language-tag" data-language="Java">Java</span>
+            </div>
+            <div
+              class="project-card"
+              onclick="window.open('https://github.com/nicktagliamonte/parallel-matrix-tsh', '_blank')"
+              style="cursor: crosshair"
+            >
+              <h3>Parallel Matrix Multiplication</h3>
+              <p>
+                This project presents a parallel matrix multiplication framework
+                in C, built on a custom tuple space server (TSH) for distributed
+                coordination.
+                <br />
+                The primary goal is to demonstrate the performance benefits of
+                parallel processing in matrix operations, and so the project
+                includes extensive testing and benchmarking. Additionally, a
+                detailed analysis of the performance can be found
+                <a href="nicktagliamonte.github.io/matrix" target="_blank"
+                  >here</a
+                >.
+              </p>
+              <span class="language-tag" data-language="C">C</span>
+              <span class="language-tag" data-language="Python">Python</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Under Development Projects Section -->
+      <section id="under-development">
+        <h2>Under Development</h2>
+        <div class="three-column-container">
+          <div class="column-1">
+            <div
+              class="project-card"
+              onclick="window.open('https://github.com/nicktagliamonte/In-the-City', '_blank')"
+              style="cursor: crosshair"
+            >
+              <h3>Text-Based Adventure Game</h3>
+              <p>
+                <i
+                  >Note: this is just a story to place on top of the game engine
+                  from <u>Finished</u></i
+                >
+              </p>
+              <p>
+                "In the City" is a text based adventure game inspired by D20's
+                "The Unsleeping City" (and Vandermeer's "Annihilation" and
+                Doublespeakgames' "a dark room", probably moreso those two than
+                Unsleeping City) set in Philadelphia. Players navigate a
+                narrative with interactive quests and a complex dialogue system.
+                <br />
+                All in, i'm expecting around 35 hours of gameplay with an ETA
+                around Jan 2027.
+              </p>
+              <p>
+                This card is a link to the GitHub page for the engine, which
+                contains installation instructions. The story written, but its
+                translation to JSON is a large undertaking which is only about
+                3% complete. That 3% is present in the resources folder, but is
+                not yet present in the installed game which instead holds test
+                data.
+              </p>
+              <span class="language-tag" data-language="Java">Java</span>
+            </div>
+          </div>
+          <div class="column-2">
+            <div class="project-card">
+              <h3>Sorting Algorithm Visualizer</h3>
+              <p>
+                A web application that visually demonstrates how different
+                sorting algorithms (like bubble sort, quicksort, and mergesort)
+                work, allowing users to see the steps involved in the sorting
+                process. demo through info section, make a new js file in this
+                workspace with it
+              </p>
+              <p>
+                I recognize that this is a painfully regurgitated project and
+                that many things on this page are more exercises than "apps" but
+                I want to take a crack at one of these visualizers myself, if
+                for no other reason than to drill algorithms.
+              </p>
+              <span class="language-tag" data-language="HTML">HTML</span>
+              <span class="language-tag" data-language="CSS">CSS</span>
+              <span class="language-tag" data-language="JavaScript"
+                >JavaScript</span
+              >
+              <span class="language-tag" data-language="D3.js">D3.js</span>
+              <span class="language-tag" data-language="React">React</span>
+            </div>
+          </div>
+          <div class="column-3"></div>
+        </div>
+      </section>
+
+      <!-- Planned Projects Section -->
+      <section id="planned-projects">
+        <h2>Planned Projects</h2>
+        <div class="three-column-container">
+          <div class="column-1">
+            <div class="project-card">
+              <h3>Dockerized Hello World</h3>
+              <p>
+                At the time of writing this I barely know what docker is, but I
+                should. "Project" to learn that in the simplest way possible.
+              </p>
+              <p>
+                It's unlikely that I'll actually keep this card once finished, I
+                might not even publically move it to "under development" -- I
+                might just delete it.
+              </p>
+              <span class="language-tag" data-language="Python (Flask)"
+                >Python (Flask)</span
+              >
+              <span class="language-tag" data-language="Docker">Docker</span>
+            </div>
+            <div class="project-card">
+              <h3>To Do List</h3>
+              <p>The classic CS student project.</p>
+              <p>
+                A web app that allows users to create, manage, and categorize
+                their tasks with features like deadlines, reminders, and
+                progress tracking.
+              </p>
+              <span class="language-tag" data-language="Ruby on Rails"
+                >Ruby on Rails</span
+              >
+            </div>
+            <div class="project-card">
+              <h3>Movie Recommendation System</h3>
+              <p>
+                An application that suggests movies to users based on their
+                preferences and ratings, using collaborative filtering
+                techniques to analyze user behavior.
+              </p>
+              <span class="language-tag" data-language="Python (Flask)"
+                >Python (Flask)</span
+              >
+              <span class="language-tag" data-language="PostgreSQL"
+                >PostgreSQL</span
+              >
+              <span class="language-tag" data-language="SciKit-Learn"
+                >SciKit-Learn</span
+              >
+            </div>
+            <div class="project-card">
+              <h3>Basic Search Engine</h3>
+              <p>
+                A natural extension of the web browser project. Basic should be
+                bold, highlighted, and all caps...
+              </p>
+              <p>
+                A search engine that crawls a (pre-defined) set of web pages,
+                indexes them, and allows users to perform keyword searches.
+              </p>
+              <span class="language-tag" data-language="Python (Flask)"
+                >Python (Flask)</span
+              >
+              <span class="language-tag" data-language="Elasticsearch"
+                >Elasticsearch</span
+              >
+            </div>
+            <div class="project-card">
+              <h3>Compiler</h3>
+              <p>
+                Another early interest that I wasn't able to do as an absolute
+                novice. I think compilers are fascinating.
+              </p>
+              <p>
+                A project to design and implement a compiler or interpreter for
+                a custom programming language, focusing on parsing, syntax
+                analysis, and basic code execution.
+              </p>
+              <span class="language-tag" data-language="C">C</span>
+              <span class="language-tag" data-language="ANTLR">ANTLR</span>
+              <span class="language-tag" data-language="LVVM">LVVM</span>
+            </div>
+          </div>
+          <div class="column-2">
+            <div class="project-card">
+              <h3>Gym Program Creator</h3>
+              <p>
+                An application that takes user input such as fitness goals,
+                current fitness level, available equipment, and preferred
+                workout days, and generates a personalized exercise regimen.
+              </p>
+              <span class="language-tag" data-language="HTML">HTML</span>
+              <span class="language-tag" data-language="CSS">CSS</span>
+              <span class="language-tag" data-language="JavaScript"
+                >JavaScript</span
+              >
+              <span class="language-tag" data-language="Python (Flask)"
+                >Python (Flask)</span
+              >
+              <span class="language-tag" data-language="SQLite">SQLite</span>
+            </div>
+            <div class="project-card">
+              <h3>Pathfinding Algorithm Simulator</h3>
+              <p>
+                I promise not all of these are regurgitated homework
+                assignments.
+              </p>
+              <p>
+                A visual simulator that demonstrates how various pathfinding
+                algorithms (like A* and Dijkstra's) work on a grid-based map,
+                showing step-by-step movement and decision-making.
+              </p>
+              <span class="language-tag" data-language="HTML">HTML</span>
+              <span class="language-tag" data-language="CSS">CSS</span>
+              <span class="language-tag" data-language="JavaScript"
+                >JavaScript</span
+              >
+              <span class="language-tag" data-language="D3.js">D3.js</span>
+              <span class="language-tag" data-language="React">React</span>
+            </div>
+            <div class="project-card">
+              <h3>Data Visualization Dashboard</h3>
+              <p>
+                A web dashboard that presents data through interactive charts
+                and graphs, allowing users to explore trends and insights. This
+                could be used for business analytics or personal projects.
+              </p>
+              <span class="language-tag" data-language="HTML">HTML</span>
+              <span class="language-tag" data-language="CSS">CSS</span>
+              <span class="language-tag" data-language="JavaScript"
+                >JavaScript</span
+              >
+              <span class="language-tag" data-language="D3.js">D3.js</span>
+              <span class="language-tag" data-language="React">React</span>
+              <span class="language-tag" data-language="Node.js">Node.js</span>
+            </div>
+            <div class="project-card">
+              <h3>Data Pipeline for Real Time Data Processing</h3>
+              <p>
+                A system that ingests, processes, and outputs streaming data in
+                real-time. This project will involve using tools like Apache
+                Kafka for data ingestion and Apache Spark for processing.
+              </p>
+              <span class="language-tag" data-language="Python">Python</span>
+              <span class="language-tag" data-language="Apache Kafka"
+                >Apache Kafka</span
+              >
+              <span class="language-tag" data-language="Apache Spark"
+                >Apache Spark</span
+              >
+              <span class="language-tag" data-language="MongoDB">MongoDB</span>
+            </div>
+            <div class="project-card">
+              <h3>Neural Network From Scratch</h3>
+              <p>
+                Why have fun or make money when I could instead do something
+                gruelingly difficult.
+              </p>
+              <p>
+                Building a neural network from the ground up, including
+                implementing forward and backward propagation, activation
+                functions, and optimization algorithms. This project focuses on
+                deep learning fundamentals.
+              </p>
+              <span class="language-tag" data-language="Python">Python</span>
+              <span class="language-tag" data-language="NumPy">NumPy</span>
+              <span class="language-tag" data-language="PyTorch">PyTorch</span>
+              <span class="language-tag" data-language="TensorFlow"
+                >TensorFlow</span
+              >
+            </div>
+          </div>
+          <div class="column-3">
+            <div class="project-card">
+              <h3>Duolingo but for Cooking</h3>
+              <p>
+                Probably the best idea I've ever had, and it's been done before
+              </p>
+              <p>
+                An educational app that teaches cooking techniques and recipes
+                through interactive lessons and quizzes. Users can learn cooking
+                vocabulary, techniques, and recipes step by step.
+              </p>
+              <span class="language-tag" data-language="HTML">HTML</span>
+              <span class="language-tag" data-language="CSS">CSS</span>
+              <span class="language-tag" data-language="JavaScript"
+                >JavaScript</span
+              >
+              <span class="language-tag" data-language="Flutter">Flutter</span>
+              <span class="language-tag" data-language="Node.js">Node.js</span>
+              <span class="language-tag" data-language="MongoDB">MongoDB</span>
+            </div>
+            <div class="project-card">
+              <h3>Exploratory Data Analysis on Public Dataset</h3>
+              <p>
+                Like docker, data science and data analysis are major blindspots
+                of mine.
+              </p>
+              <p>
+                Choose a public dataset (e.g., from Kaggle or UCI Machine
+                Learning Repository) and perform exploratory data analysis on
+                it. This project could include data cleaning, summarization, and
+                visualization to find patterns.
+              </p>
+              <span class="language-tag" data-language="Python">Python</span>
+              <span class="language-tag" data-language="Pandas">Pandas</span>
+              <span class="language-tag" data-language="Matplotlib"
+                >Matplotlib</span
+              >
+              <span class="language-tag" data-language="Seaborn">Seaborn</span>
+              <span class="language-tag" data-language="Jupyter">Jupyter</span>
+            </div>
+            <div class="project-card">
+              <h3>Basic Web Browser</h3>
+              <p>
+                Project idea I had after taking an introductory CS class a few
+                years ago, which I was obviously unable to do at the time.
+              </p>
+              <p>
+                A simple web browser that can render HTML pages, handle basic
+                navigation (back, forward), and manage bookmarks. Goal:
+                understand the fundamentals of how browsers work.
+              </p>
+              <span class="language-tag" data-language="Java">Java</span>
+              <span class="language-tag" data-language="JavaFX">JavaFX</span>
+            </div>
+            <div class="project-card">
+              <h3>Custom Encryption System</h3>
+              <p>
+                Implements an asymmetric encryption algorithm from scratch
+                including key generation, encryption, and decryption.
+              </p>
+              <p>
+                NOTE: this will be an interesting project to tackle, but this
+                will not wind up being secure or even efficient.
+              </p>
+              <span class="language-tag" data-language="C">C</span>
+              <span class="language-tag" data-language="CUnit">CUnit</span>
+            </div>
+            <div class="project-card">
+              <h3>Distributed Machine Learning System</h3>
+              <p>
+                See previous (simpler) project r/e doing something gruelingly
+                difficult.
+              </p>
+              <p>
+                A system that distributes machine learning tasks across multiple
+                nodes to optimize training and processing time. This project may
+                involve implementing distributed algorithms and using frameworks
+                like TensorFlow or PyTorch.
+              </p>
+              <span class="language-tag" data-language="Python">Python</span>
+              <span class="language-tag" data-language="TensorFlow"
+                >TensorFlow</span
+              >
+              <span class="language-tag" data-language="PyTorch">PyTorch</span>
+              <span class="language-tag" data-language="Docker">Docker</span>
+              <span class="language-tag" data-language="Kubernetes"
+                >Kubernetes</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Nick Tagliamonte</p>
+      <p>&copy; 2024 Nick Tagliamonte</p>
     </footer>
     <script src="js/mobileNavigation.js"></script>
     <script src="js/cardLoadAnimation.js"></script>
     <script src="js/darkMode.js"></script>
     <script src="js/languageFilter.js"></script>
     <script src="js/scroll.js"></script>
-    <img src="https://counter.dev/track.svg?url=https://nicktagliamonte.github.io/projects.html" style="display:none;" referrerpolicy="no-referrer-when-downgrade" />
-</body>
-
+    <img
+      src="https://counter.dev/track.svg?url=https://nicktagliamonte.github.io/projects.html"
+      style="display: none"
+      referrerpolicy="no-referrer-when-downgrade"
+    />
+  </body>
 </html>

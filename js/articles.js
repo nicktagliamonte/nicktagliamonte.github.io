@@ -1,73 +1,88 @@
 const articlesData = [
   {
+    projectName: "Parallel Distributed Matrix Multiplication",
+    description:
+      "This project presents a parallel matrix multiplication framework in C, built on a custom tuple space server " + 
+      "(TSH) for distributed coordination. The primary goal is to demonstrate the performance benefits of parallel " + 
+      "processing in matrix operations, and so the project includes extensive testing and benchmarking. Addit...",
+    link: "matrix.html",
+  },
+  {
     projectName: "nicktagliamonte.github.io",
     description:
-      "This first project was completed months before I had the idea to do these further information sections, " + 
-      "so this is a somewhat distant retrospective on the process and won’t hold as much information as, for " + 
+      "This first project was completed months before I had the idea to do these further information sections, " +
+      "so this is a somewhat distant retrospective on the process and won’t hold as much information as, for " +
       "example, the game development project (which is a years-long underta...",
     link: "website.html",
   },
   {
     projectName: "School Study Tool",
     description:
-      "Note that this is a tiny program that serves a single tiny function adequately, and was written over the " + 
-      "course of like 2 hours. This project was not originally planned, and kind of came up organically " + 
+      "Note that this is a tiny program that serves a single tiny function adequately, and was written over the " +
+      "course of like 2 hours. This project was not originally planned, and kind of came up organically " +
       "while I was working on the final which it pertains to - I ju...",
     link: "studyTool.html",
   },
   {
     projectName: "Game Engine",
     description:
-    "This is by far the largest project I've ever attempted. It's at a semi-functional state, undergoing testing and " + 
-    "expansion as an active process, so this page will be somewhat regularly updated as I optimize and bugfix the game " + 
-    "engine (using some test data I've layered on top of the eng...",
+      "This is by far the largest project I've ever attempted. It's at a semi-functional state, undergoing testing and " +
+      "expansion as an active process, so this page will be somewhat regularly updated as I optimize and bugfix the game " +
+      "engine (using some test data I've layered on top of the eng...",
     link: "gameEngine.html",
-  },{
+  },
+  {
     projectName: "Markdown Note Taking App",
     description:
-    "The process here was simple: I wanted a web app which would just record notes that I wrote, have the option to view " + 
-    "those notes formatted in markdown, and give me the option for multiple tabs. Basically the Windows 11 notes app but " + 
-    "online and with a markdo...",
+      "The process here was simple: I wanted a web app which would just record notes that I wrote, have the option to view " +
+      "those notes formatted in markdown, and give me the option for multiple tabs. Basically the Windows 11 notes app but " +
+      "online and with a markdo...",
     link: "markdownNotes.html",
-  },{
+  },
+  {
     projectName: "In the City",
     description:
-    "I'll offer a brief overview of the story, but I don't want to go into exhaustive detail because there is quite a bit " + 
-    "of content. Players begin in the northeast, around St. Jeromes (where I went to elementary school. Most of the game " + 
-    "occurs across locations fami...",
+      "I'll offer a brief overview of the story, but I don't want to go into exhaustive detail because there is quite a bit " +
+      "of content. Players begin in the northeast, around St. Jeromes (where I went to elementary school. Most of the game " +
+      "occurs across locations fami...",
     link: "game.html",
-  },{
+  },
+  {
     projectName: "Data Structure Library",
     description:
-    "A library implementing common (and some uncommon but interesting) data structures in java. The idea here is largely " + 
-    "to drill data structures in a way that will hopefully improve performance in technical interviews, in addition to " + 
-    "testing with JUnit, which is a prac...",
+      "A library implementing common (and some uncommon but interesting) data structures in java. The idea here is largely " +
+      "to drill data structures in a way that will hopefully improve performance in technical interviews, in addition to " +
+      "testing with JUnit, which is a prac...",
     link: "library.html",
-  },{
+  },
+  {
     projectName: "Calculator",
     description:
-    "Initially, this was a locally runnable GUI application which replicates as closely as possible the TI-30X IIS. " + 
-    "It still covers the bases of that calculator, but has grown into something specialized in number theoretic functions.",
+      "Initially, this was a locally runnable GUI application which replicates as closely as possible the TI-30X IIS. " +
+      "It still covers the bases of that calculator, but has grown into something specialized in number theoretic functions.",
     link: "calculator.html",
-  },{
+  },
+  {
     projectName: "Sorting Visualizer",
     description:
-    "This is a simple sorting visualizer, which allows you to visualize the process of sorting an array of numbers. " +
-    "It gives the option to sort the array using 25 different algorithms, and can be demo'd from within this article. " +
-    "The algorithms are all implemented in JavaScript, and the visuali...",
+      "This is a simple sorting visualizer, which allows you to visualize the process of sorting an array of numbers. " +
+      "It gives the option to sort the array using 25 different algorithms, and can be demo'd from within this article. " +
+      "The algorithms are all implemented in JavaScript, and the visuali...",
     link: "visualizer.html",
-  }
+  },
 ];
 
 let currentPage = 1;
 let articlesPerPage = 5; // Default to 5 articles per page
 
 // Add event listener to update articles per page when dropdown is changed
-document.getElementById("articlesPerPage").addEventListener("change", function () {
-  articlesPerPage = parseInt(this.value);
-  currentPage = 1; // Reset to first page when articles per page change
-  renderArticles(articlesData, currentPage, articlesPerPage);
-});
+document
+  .getElementById("articlesPerPage")
+  .addEventListener("change", function () {
+    articlesPerPage = parseInt(this.value);
+    currentPage = 1; // Reset to first page when articles per page change
+    renderArticles(articlesData, currentPage, articlesPerPage);
+  });
 
 function paginateArticles(data, currentPage, articlesPerPage) {
   const startIndex = (currentPage - 1) * articlesPerPage;
@@ -168,7 +183,8 @@ function renderPagination(data, currentPage, articlesPerPage) {
 // Populate the Quick Select Dropdown
 function populateQuickSelect(data) {
   const quickSelect = document.getElementById("quickSelect");
-  quickSelect.innerHTML = '<option value="" disabled selected>Select a project</option>'; // Reset dropdown
+  quickSelect.innerHTML =
+    '<option value="" disabled selected>Select a project</option>'; // Reset dropdown
 
   data.forEach((item) => {
     const option = document.createElement("option");

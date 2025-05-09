@@ -478,6 +478,10 @@ h3 {
   color: #3a3a3a;
 }
 
+.dark-mode code {
+  color: #3a3a3a;
+}
+
 .profile-pic {
   width: 150px;
   height: 150px;
