@@ -97,14 +97,71 @@
     <main role="main" class="about-container">
       <section class="left-content">
         <!-- Article Section -->
-         <br />
+        <br />
         <iframe
           src="https://nicktagliamonte.github.io/sorting-visualizer"
           width="100%"
-          height="600px"
+          height="650px"
           style="border: none"
         ></iframe>
-        <section id="information"></section>
+        <section id="information">
+          <h2>Sorting Visualizer</h2>
+          <p>
+            This is a fairly basic sorting visualizer, a pretty
+            classic-if-outdated CS beginner undertaking but the major advantage
+            of the project is that I can put it in an iframe and show a demo
+            here on this site, rather than linking to a separate page or
+            resorting to screenshots.
+          </p>
+          <p>
+            You can interact with the visualizer by selecting different sorting
+            algorithms and adjusting the speed. The 'step' button allows you to
+            step through the sorting process one step at a time, which is
+            achieved by having a set of yield statements in the code.
+          </p>
+          <h2>Algorithm List</h2>
+          <ul>
+            <li>Bubble Sort</li>
+            <li>Bitonic Sort</li>
+            <li>Bogo Sort</li>
+            <li>Bozo Sort</li>
+            <li>Bucket Sort</li>
+            <li>Cocktail Shaker Sort</li>
+            <li>Comb Sort</li>
+            <li>Counting Sort</li>
+            <li>Flash Sort</li>
+            <li>Gnome Sort</li>
+            <li>Heap Sort</li>
+            <li>Insertion Sort</li>
+            <li>Merge Sort</li>
+            <li>Odd-Even Sort</li>
+            <li>Pancake Sort</li>
+            <li>Patience Sort</li>
+            <li>Quick Sort</li>
+            <li>Radix Sort</li>
+            <li>Selection Sort</li>
+            <li>Shell Sort</li>
+            <li>Sleep Sort</li>
+            <li>Spaghetti Sort</li>
+            <li>Stooge Sort</li>
+            <li>Tim Sort</li>
+          </ul>
+          <p>
+            There are details about the efficiency and explainations of each
+            algorithm visible when that algorithm is selectable. This is a
+            shorter writeup, becaues the demonstration is the meat of this
+            project. The yield statements and adjustable speed block this from
+            being a speed or efficiency focused project and so there is not
+            benchmarking included for that reason.
+          </p>
+          <p>
+            A great deal of this project involved textbook implementation of
+            existing sorting algorithms. The major learning curve was figuring
+            out the yield operation. The basic idea is that the visualizer is a
+            generator, and the yield statements are used to pause the execution
+            of the generator function.
+          </p>
+        </section>
       </section>
     </main>
 
