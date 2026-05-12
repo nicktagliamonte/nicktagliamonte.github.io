@@ -93,18 +93,20 @@
             <hr>
 
             <p><strong>Objective</strong><br>
-                Motivated computer science student with a background in IT support and software development. 
-                Extensive problem-solving abilities with a solutions focused independent and team-based mindset.
-                Seeking an internship to apply technical skills in a practical setting while contributing to innovative projects. 
-                Long-term goals include pursuing graduate studies and research.</p>
-
+                Undergraduate researcher and systems engineer specializing in distributed systems, 
+                peer-to-peer architecture, and reliable storage systems. Experience designing and 
+                implementing fault-tolerant infrastructure in Go, with research spanning decentralized 
+                storage, formal reasoning, and large-scale system reliability.</p>
             <hr>
 
             <p><strong>Education</strong></p>
+            <p><strong>Master of Science in Computer Science</strong><br>
+                Northeastern University, Boston, MA<br>
+                Expected Graduation: May 2028</p>
             <p><strong>Bachelor of Science in Computer Science</strong><br>
                 Minor in Mathematics<br>
                 Temple University, Philadelphia, PA<br>
-                Anticipated Graduation: May 2026</p>
+                Graduation: May 2026, GPA: 3.96</p>
 
             <p><strong>Associate of Science in Computer Science</strong><br>
                 Bucks County Community College, Newtown, PA<br>
@@ -116,79 +118,105 @@
 
             <hr>
 
-            <p><strong>Skills</strong></p>
+            <p><strong>Research and Publications</strong><br></p>
+            <p><strong>Vn-IPFS: Re-engineering IPFS using von Neumann's Reliable Organism Synthesis Principles</strong><br>
+            <i>Second Author; Submitted to IEEE SRDS 2026</i></p>
+            <p>Designed and architected a distributed file system derived from IPFS improving reliability via decoupling
+                of data and provider metadata. Led end-to-end system development including design, implementation, and
+                experimental evaluation; proposed and guided key architectural decisions. Contributed to formal verification
+                and analysis. Co-authored with Prof. Justin Y. Shi et al.</p>
+
+            <p><strong>Probabilistic Decentralized Storage via Provider-Data Decoupling</strong><br>
+            <i>Patent Pending; Co-Inventor, 2026</i></p>
+            <p>Co-invented a distributed file system architecture based on IPFS with an enforced replication model. Con-
+                tributed core system design and theoretical foundations.</p>
+
+            <hr>
+
+            <p><strong>Work Experience</strong></p>
+            <p><strong>Teaching Assistant - CIS 3308</strong><br>
+                Temple University, Philadelphia, PA<br>
+                August 2025 - May 2026</p>
             <ul>
-                <li>Programming: Python, Java, JavaScript, HTML, CSS, JSON</li>
-                <li>Cloud Platforms: Azure, AWS</li>
-                <li>Other: Active Directory, Microsoft Office 365</li>
+                <li>Led labs and office hours for approx. 70 students for 2 semesters covering React, SQL, and Spring Boot.</li>
+                <li>Helped students debug apps, understand software design concepts, and improve development workflows.</li>
+                <li>Nominated for Temple University Outstanding Undergraduate Teaching Assistant Award (2026).</li>
+            </ul>
+
+            <p><strong>Software Developer Intern</strong><br>
+                iPipeline, King of Prussia, PA<br>
+                June 2025 - August 2025</p>
+            <ul>
+                <li>Migrated CI/CD pipelines for 4 client-facing development teams from Jenkins to GitHub Actions, standardizing deployment workflows and reducing maintenance overhead across projects.</li>
+                <li>Created PowerShell automation tools reducing UI test cycles by $\sim90$ s per screen; adopted company-wide.</li>
+                <li>Implemented front-end features, PDF mapping logic, and XML integrations for client-facing systems.</li>
+                <li>Supported AWS serverless migration (Terraform/Terragrunt configuration and unit tests).</li>
+            </ul>
+
+            <p><strong>IT Service Desk Regional Lead</strong><br>
+                Victrex, Conshohocken, PA<br>
+                December 2023 - September 2024</p>
+            <ul>
+                <li>Led regional IT operations supporting 2,000 employees across North America, managing \$60k operational budget.</li>
+                <li>Directed network cutover project and coordinated vendor operations across multiple vendors.</li>
+            </ul>
+
+            <p><strong>Global IT Helpdesk Analyst</strong><br>
+                Victrex, Conshohocken, PA<br>
+                July 2022 - January 2024</p>
+            <ul>
+                <li>Provided first-line IT support with $\sim70\%$ first-call resolution; maintained internal knowledge base and supported Azure AD environments.</li>
             </ul>
 
             <hr>
 
             <p><strong>Projects</strong></p>
-            <p><strong>Website Development</strong><br>
-                Developed a personal website featuring a portfolio, resume, and project showcase using HTML, CSS, and
-                JavaScript. Implemented responsive design for mobile compatibility and included dark mode functionality.
-            </p>
+            <p><strong>Managed AI Infrastructure Platform</strong>&emsp;
+            <a href="https://github.com/Caleb-Hageman/ai-infra" target="_blank" class="social-link" role="link"
+                aria-label="AI Infrastructure Platform" style="text-decoration: none; color: inherit;">GitHub</a></p>
+            <p>Architected a managed RAG API using FastAPI, vLLM, and Pgvector on GCP to provide centralized vector 
+                search and LLM capabilities for multiple student development teams. Engineered asynchronous ingestion 
+                pipeline for document processing, reducing upload latency by ~20x and eliminating timeout failures 
+                for files >1 MiB.</p>
 
-            <p><strong>Onboarding Tool Development</strong><br>
-                Created a Java application to streamline the onboarding process for new employees at ISS Solutions.</p>
+            <p><strong>Parallel Distributed Matrix Multiplication</strong>&emsp;
+            <a href="https://github.com/nicktagliamonte/parallel-matrix-tsh" target="_blank" class="social-link" role="link"
+                aria-label="Parallel Distributed Matrix Multiplication" style="text-decoration: none; color: inherit;">GitHub</a></p>
+            <p>A fault-tolerant parallel matrix multiplication framework in C using a custom tuple space server (TSH) 
+                for distributed coordination. Includes fault-tolerant execution under worker failure, dynamic worker 
+                spawning, tunable task granularity, and benchmarking scripts.</p>
 
-            <hr>
-
-            <p><strong>Experience</strong></p>
-            <p><strong>IT Service Desk Regional Lead</strong><br>
-                Victrex<br>
-                Dec 2023 - Sept 2024</p>
-            <ul>
-                <li>Serve as the primary contact for IT-related issues and requests, ensuring efficient resolution of incidents for 2,000 employees.</li>
-                <li>Led a network cutover project during office renovation involving planning and vendor communication for the move of a server rack containing a demarcation point and the layout of computing resources in the new space.</li>
-                <li>Log all service desk calls and deliver first-contact resolution through effective triaging.</li>
-                <li>Manage IT consumables and device availability, overseeing a budget of approximately £60k per annum.
-                </li>
-                <li>Collaborate with global IT teams on service improvement initiatives and support local cybersecurity
-                    efforts.</li>
-            </ul>
-
-            <p><strong>Global IT Helpdesk Analyst</strong><br>
-                Victrex<br>
-                Jul 2022 - Jan 2024</p>
-            <ul>
-                <li>Provided first-tier support for IT incidents, maintaining a first-call resolution rate of over 70%.
-                </li>
-                <li>Developed and maintained a knowledge base of support articles for team use.</li>
-                <li>Supported remote desktop environments and managed Azure Active Directory.</li>
-            </ul>
-
-            <p><strong>Help Desk Analyst</strong><br>
-                ISS Solutions<br>
-                Jul 2020 - Jul 2022</p>
-            <ul>
-                <li>Managed user inquiries and resolved issues for a helpdesk serving 4,000 customers.</li>
-                <li>Nominated for the HDI Help Desk Analyst of the Year award for exceptional performance.</li>
-                <li>Independently led a project from conceptualization to implementation to create a bespoke Java application to automate routine tasks essential for daily company operations improving workflow efficiency and accuracy.</li>
-            </ul>
+            <p><strong>Number Theory Calculator</strong>&emsp;
+            <a href="https://github.com/nicktagliamonte/calculator" target="_blank" class="social-link" role="link"
+                aria-label="Calculator" style="text-decoration: none; color: inherit;">GitHub</a></p>
+            <p>Originally designed as a GUI replica of the TI-30X IIS, expanded into a cross-platform scientific 
+                and number-theoretic calculator. Implements modular arithmetic, factorization, totient and Carmichael 
+                functions, generator and residue tests, discrete log estimation, and related tools. Features 
+                customizable insert mode, improved statistical input, detailed error handling, and platform-specific 
+                save/load logic.</p>
 
             <hr>
 
-            <p><strong>Certifications</strong></p>
-            <ul>
-                <li>CompTIA A+, CompTIA Network+, AWS Cloud Practitioner</li>
-            </ul>
-
-            <hr>
-
-            <p><strong>Extracurricular Activities</strong></p>
-            <ul>
-                <li>Member: TUDev Club, Member: Temple Association for Computing Machinery</li>
-            </ul>
-
-            <hr>
-
-            <p><strong>Awards</strong></p>
-            <ul>
-                <li>Nominated for HDI Service Desk Analyst of the Year, 2022</li>
-            </ul>
+            <p><strong>Skills</strong></p>
+            <table>
+                <tr>
+                    <td><strong>Languages</strong></td>
+                    <td>Go, C, Python, Java, JavaScript, SQL, HTML/CSS</td>
+                </tr>
+                <tr>
+                    <td><strong>Frameworks & Libraries</strong></td>
+                    <td>React, FastAPI, GitHub Actions, libp2p, Boxo, Bitswap</td>
+                </tr>
+                <tr>
+                    <td><strong>Cloud & Infrastructure</strong></td>
+                    <td>GCP, AWS, Azure, CI/CD, Docker, Terraform, Git</td>
+                </tr>
+                <tr>
+                    <td><strong>Tools</strong></td>
+                    <td>PowerShell, Linux, LaTeX</td>
+                </tr>
+            </table>
+            
             <hr>
 
             <p>

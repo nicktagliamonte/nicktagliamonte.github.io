@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Infra | Nick Tagliamonte</title>
+    <meta
+      name="description"
+      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, optimization, and web development."
+    />
+    <meta
+      name="keywords"
+      content="Nick Tagliamonte, about me, computer science, software development, personal interests, skills"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdn.counter.dev/script.js" data-id="62e79f82-01f9-4983-bf0c-007d5a6acb15" data-utcoffset="-4"></script>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header role="banner">
+      <div class="header-left">
+        <h1 role="heading" aria-level="1" class="home-link">
+          <a href="index.html">Nick Tagliamonte</a>
+        </h1>
+      </div>
+      <div class="dark-mode-toggle">
+        <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
+        <label class="toggle">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <nav class="navigation" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="information.html" role="link">Information</a></li>
+        </ul>
+      </nav>
+      <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
+      <div
+        id="mobile-menu-icon"
+        class="hamburger-menu"
+        aria-label="Open Navigation Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="overlay-menu">
+        <nav
+          class="overlay-navigation"
+          role="navigation"
+          aria-label="Mobile Navigation"
+        >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="information.html" role="link">Information</a></li>
+          </ul>
+          <!-- Dark mode toggle at the bottom -->
+          <div class="overlay-dark-mode-toggle">
+            <button
+              class="overlay-sun-icon"
+              role="img"
+              aria-label="Sun"
+              id="overlayDarkModeToggle"
+            >
+              &#9728;
+            </button>
+            <label class="overlay-toggle">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main role="main" class="about-container">
+      <section class="left-content">
+        <!-- Article Section -->
+        <section id="information">
+          <p>
+            <small>Note: This project was developed as a team effort for completion of Temple CIS 4398 Projects in Computer Science. 
+                Information presented below is modified for general readership.<br>
+                My primary contributions are the networking, document ingestion pipeline, and warmup endpoint.
+            </small>
+          </p>
+          <h2>
+            Project Name:
+            <a
+              href="https://github.com/Caleb-Hageman/ai-infra"
+              target="_blank"
+              >Managed AI Infrastructure Platform</a
+            >
+          </h2>
+          <hr />
+          <h3>Networking</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Workloads ran inside a VPC on GCP, with traffic handled by a
+            Google Cloud load balancer. The deployment was intentionally
+            scoped to three project teams that built separate frontends: each
+            team deployed VMs on GCP and routed traffic through this VPC layout
+            to reach our API. Custom subnetting and VPC peering were used along
+            with API keys to secure access.
+          </p>
+          <h3>Functionality</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            A product team could provision a project against our API, open a
+            chat session, and send user-entered prompts to the hosted LLM
+            (vLLM) via the chat endpoint. The stack was pure
+            retrieval-augmented generation, with an optional system prompt.
+            Teams could upload documents stored and partitioned such that model
+            answers were constrained to that team’s own uploaded material.
+          </p>
+          <h3>Optimizations and Metrics</h3>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            My largest individual contribution here was asynchronous document
+            ingest. The original synchronous path fused upload, chunking, and
+            embedding into one blocking operation; the async redesign let
+            those stages run concurrently. Legacy synchronous ingest timed out on
+            any document larger than about one megabyte, whereas async ingest
+            accepted larger documents and, on successful runs, averaged about
+            thirty-one times faster.
+          </p>
+          <figure>
+            <img
+              src="images/aiInfra/uploadLatencyChart.png"
+              alt="upload latency chart"
+              style="width: 100%"
+            />
+            <figcaption>Figure 1: Upload latency chart</figcaption>
+          </figure>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            vLLM startup was costly, but minimum instances stayed at zero to
+            protect budget. A warmup endpoint shifted part of that cold-start
+            cost into project setup instead of first user-facing requests.
+            Trials showed mean cold-start latency around 501,326 milliseconds
+            versus about 1,199 milliseconds once warm. Much of that gap traces
+            to running on free-tier class micro instances; stronger hardware would
+            narrow latency substantially.
+          </p>
+          <figure>
+            <img
+              src="images/aiInfra/coldStartLatency.png"
+              alt="cold start latency chart"
+              style="width: 100%"
+            />
+            <figcaption>Figure 2: Cold start latency</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/aiInfra/warmStartLatency.png"
+              alt="warm start latency chart"
+              style="width: 100%"
+            />
+            <figcaption>Figure 3: Warm start latency</figcaption>
+          </figure>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Query retrieval averaged about 404 milliseconds, with spikes to a
+            worst case near 891 milliseconds in the charted run. Timing was end
+            to end to HTTP 200 - not time to first byte or a server-only
+            stopwatch - so the numbers approximate what a user waits for in the
+            slow path while staying under roughly one second at the tail.
+          </p>
+          <figure>
+            <img
+              src="images/aiInfra/queryLatency.png"
+              alt="query latency chart"
+              style="width: 100%"
+            />
+            <figcaption>Figure 4: Query latency</figcaption>
+          </figure>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Mean reciprocal rank against live indexed chunks was a custom check
+            on API quality: pick a gold chunk, derive a query from its text,
+            POST to <code>/query</code>, and verify that chunk appears in the
+            top-<em>k</em> sources the model surfaced. Across all trials and gold
+            chunks, MRR was 1.0.
+          </p>
+          <p>
+            <span style="display: inline-block; width: 2em"></span>
+            Gross cost by service landed at $174.27 - about fifty-eight percent
+            of the overall budget - for the February 14 through April 23 window.
+          </p>
+          <figure>
+            <img
+              src="images/aiInfra/costBreakdown.png"
+              alt="cost breakdown chart"
+              style="width: 100%"
+            />
+            <figcaption>Figure 5: Cost breakdown</figcaption>
+          </figure>
+        </section>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+      <p>&copy; 2024 Nick Tagliamonte</p>
+    </footer>
+
+    <script src="js/mobileNavigation.js"></script>
+    <script src="js/darkMode.js"></script>
+    <img src="https://counter.dev/track.svg?url=https://nicktagliamonte.github.io/studyTool.html" style="display:none;" referrerpolicy="no-referrer-when-downgrade" />
+  </body>
+</html>

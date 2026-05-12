@@ -1,5 +1,13 @@
 const articlesData = [
   {
+    projectName: "Managed AI Infrastructure Platform",
+    description:
+      "A managed RAG API using FastAPI, vLLM, and Pgvector on GCP to provide centralized vector search and LLM " +
+      "capabilities for multiple student development teams. Developed as a team effort, my role was to set up our " +
+      "API's chat endpoint, configure VPC peering for secure networking, and to engineer the asynchronous inges...",
+    link: "aiInfra.html",
+  },
+  {
     projectName: "Parallel Distributed Matrix Multiplication",
     description:
       "This project presents a parallel matrix multiplication framework in C, built on a custom tuple space server " + 
