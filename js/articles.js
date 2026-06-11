@@ -19,7 +19,7 @@ const articlesData = [
     projectName: "nicktagliamonte.github.io",
     description:
       "This first project was completed months before I had the idea to do these further information sections, " +
-      "so this is a somewhat distant retrospective on the process and won’t hold as much information as, for " +
+      "so this is a somewhat distant retrospective on the process and won't hold as much information as, for " +
       "example, the game development project (which is a years-long underta...",
     link: "website.html",
   },

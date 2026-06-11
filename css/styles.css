@@ -6,10 +6,12 @@ body {
   padding: 0;
 }
 
+/* Reserve space for the fixed header so content doesn't jump under it */
 main {
   margin-top: 120px;
 }
 
+/* Header layout: pin to top, fixed height, center children vertically */
 .dark-mode-toggle,
 header {
   top: 0;
@@ -167,7 +169,9 @@ input:checked + .slider:before {
 }
 
 .social-link:hover,
-#information a:hover {
+#information a:hover,
+#books-controls a:hover,
+#books a:hover {
   background-color: #dae7da;
   border-radius: 3px;
   cursor: crosshair;
@@ -904,16 +908,211 @@ section,
   text-align: justify;
 }
 
-#photos-container,
 #books-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
+  width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
   padding: 20px 10px 10px;
 }
 
+#books-container .books-table {
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+  font-size: 14px;
+  line-height: 1.45;
+  border: 1px solid #d4dfd4;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0000000f;
+  background-color: #fefefe;
+}
+
+#books-container .books-table thead {
+  position: sticky;
+  z-index: 60;
+}
+
+#books-container .books-table thead th {
+  position: relative;
+  z-index: 70;
+  padding: 12px 44px 12px 18px; /* increased right padding so header text doesn't collide with menu */
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #505050;
+  background-color: #dae7da;
+  border-bottom: 2px solid #a7c7a7;
+}
+
+/* header-label inline block keeps label from collapsing so the arrow won't be alone on a line */
+.books-table thead th .header-label {
+  display: inline-block;
+  min-width: 6ch;
+  vertical-align: middle;
+}
+
+/* Centered search control above books table */
+.books-controls {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+.books-controls input[type=search] {
+  width: 60%;
+  max-width: 640px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #cfcfcf;
+}
+
+/* Header dropdown trigger + menu */
+.col-menu {
+  position: absolute; /* position relative to the TH */
+  right: 12px; /* nudge a bit inward so it doesn't collide with header text */
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+}
+.col-menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+.col-menu .col-menu-panel {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 8px;
+  display: none;
+  z-index: 200;
+  min-width: 180px;
+  max-height: 52vh; /* keep the panel bounded and independently scrollable */
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.col-menu.open-up .col-menu-panel { top: auto; bottom: 100%; }
+.col-menu.show .col-menu-panel { display: block; }
+.col-menu .col-menu-panel label { display:flex; align-items:center; gap:8px; margin:4px 0; }
+
+.dark-mode .col-menu .col-menu-panel { background: #3a3a3a; color:#eaeaea; border-color:#4b4b4b; }
+
+/* page-link: reuse site link visual style for inline 'here' link on books page */
+.page-link {
+  color: #505050;
+  text-decoration: none;
+  padding: 2px 4px 2px 0;
+  transition: background-color 0.3s ease;
+}
+.page-link:hover { background-color: #dae7da; cursor: crosshair; }
+.dark-mode .page-link { color: #e0e0e0; }
+.dark-mode .page-link:hover { background-color: #4b6f4b; }
+
+#books-container .books-table thead th:not(:last-child),
+#books-container .books-table tbody td:not(:last-child) {
+  border-right: 1px solid #e4ece4;
+}
+
+#books-container .books-table tbody td {
+  padding: 12px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #ecefec;
+  color: #505050;
+  /* allow long titles to wrap and avoid touching neighboring cells */
+  white-space: normal;
+  word-break: break-word;
+}
+
+#books-container .books-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+#books-container .books-table tbody tr:nth-child(even) {
+  background-color: #f7faf7;
+}
+
+#books-container .books-table tbody tr:hover {
+  background-color: #eef5ee;
+}
+
+#books-container .books-table tbody td:first-child {
+  font-weight: 600;
+  color: #454545;
+}
+
+#books-container .books-table tbody td:nth-child(3),
+#books-container .books-table tbody td:nth-child(6) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#books-container .books-table tbody td:nth-child(5),
+#books-container .books-table tbody td:nth-child(7) {
+  white-space: nowrap;
+}
+
+#books-container .books-table thead th:nth-child(3),
+#books-container .books-table thead th:nth-child(6) {
+  text-align: right;
+}
+
+#books-container .books-table thead th:nth-child(5),
+#books-container .books-table thead th:nth-child(7) {
+  text-align: center;
+}
+
+#books-container .books-table tbody td:nth-child(7) {
+  text-align: center;
+}
+
+.dark-mode #books-container .books-table {
+  background-color: #323232;
+  border-color: #4b6f4b;
+  box-shadow: 0 2px 10px #00000040;
+}
+
+.dark-mode #books-container .books-table thead th {
+  color: #e8e8e8;
+  background-color: #3d523d;
+  border-bottom-color: #4b6f4b;
+}
+
+.dark-mode #books-container .books-table thead th:not(:last-child),
+.dark-mode #books-container .books-table tbody td:not(:last-child) {
+  border-right-color: #454545;
+}
+/*
+
+.dark-mode #books-container .books-table tbody td {
+  color: #d8d8d8;
+  border-bottom-color: #404040;
+}
+
+.dark-mode #books-container .books-table tbody tr:nth-child(even) {
+  background-color: #383838;
+}
+
+.dark-mode #books-container .books-table tbody tr:hover {
+  background-color: #424f42;
+}
+
+.dark-mode #books-container .books-table tbody td:first-child {
+  color: #ececec;
+}
+*/
 #articles a {
   color: #6b6b6b;
   padding: 2px 4px 2px 0;

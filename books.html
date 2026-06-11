@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Nick Tagliamonte showcasing personal photos and books I enjoy."
+      content="Portfolio of Nick Tagliamonte showcasing a long term book reading project."
     />
     <meta
       name="keywords"
-      content="Nick Tagliamonte, portfolio, personal photos, book recommendations, photography"
+      content="Nick Tagliamonte, portfolio, book recommendations, reading project"
     />
     <meta name="author" content="Nick Tagliamonte" />
-    <title>Personal | Nick Tagliamonte</title>
+    <title>Books | Nick Tagliamonte</title>
     <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/year-colors.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -38,11 +39,10 @@
       </div>
       <nav class="navigation" role="navigation" aria-label="Main Navigation">
         <ul>
-          <li><a href="about.html" role="link">About</a></li>
           <li><a href="projects.html" role="link">Projects</a></li>
           <li><a href="resume.html" role="link">Resume</a></li>
           <li><a href="contact.html" role="link">Contact</a></li>
-          <li><a href="personal.html" role="link">Personal</a></li>
+          <li><a href="books.html" role="link">Books</a></li>
           <li><a href="information.html" role="link">Information</a></li>
         </ul>
       </nav>
@@ -64,11 +64,10 @@
         >
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="personal.html">Personal</a></li>
+            <li><a href="books.html">Books</a></li>
             <li><a href="information.html" role="link">Information</a></li>
           </ul>
           <!-- Dark mode toggle at the bottom -->
@@ -86,43 +85,53 @@
     </header>
 
     <main role="main">
-      <section id="personal">
-        <div id="photos">
-          <h2 role="heading" aria-level="2">Photos</h2>
-          <p>
-            Intermittently updated selection of pictures documenting events in
-            my personal life.
-          </p>
-          <hr class="separator" />
-          <div id="photos-container">
-            <!-- Photos loaded by javascript -->
-          </div>
-        </div>
-
+      <section id="books">
         <div id="books">
           <h2 role="heading" aria-level="2">Books</h2>
           <p>
-            Books I've read and liked recently, in no particular order. It's
-            not...ALL dense unapproachable sci-fi.
+            An extremely long term project to read through a list of books.
+            <br><br>
+            The list describes itself better than I could in a short paragraph, 
+            but the central question is one of language and expressibility: 
+            what can be expressed via symbols, what are the limits of this expression, 
+            and why does meaning arise from them at all?
+            <br><br>
+            Try filtering by category to get a sense of general thru-lines. They contain the major 
+            rabbit-holes this project explores, as well as the deviations from the central question 
+            which I'm willing to tolerate (the chess books, for example, because I like to play. 
+            Or the items which deal less with the thesis of this project and look more like 
+            r/TrueLit's generic top-40).
+            <br><br>
+            More information can be found 
+            <a class="page-link" 
+            href="https://app.thestorygraph.com/profile/nick_tagliamonte" target="_blank">
+            here.
+            </a>
           </p>
           <hr class="separator" />
+          <div id="books-controls" class="books-controls">
+            <input id="books-search" type="search" placeholder="Search title or author" />
+          </div>
           <div id="books-container">
-            <!-- Books loaded by javascript -->
+            <table class="books-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Pages</th>
+                  <th>Category</th>
+                  <th>Anticipated Start Date</th>
+                  <th>Rating</th>
+                  <th>Completed</th>
+                </tr>
+              </thead>
+              <tbody id="books-table-body"></tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
     </main>
-
-    <div id="slideshow-modal" class="modal">
-      <span class="close">&times;</span>
-      <div class="modal-content">
-        <img class="slideshow-image" src="" alt="Slideshow Image" />
-        <div class="photo-navigation">
-          <button class="prev">❮</button>
-          <button class="next">❯</button>
-        </div>
-      </div>
-    </div>
 
     <!-- Footer Section -->
     <footer role="contentinfo">
@@ -132,8 +141,19 @@
     <script src="js/mobileNavigation.js"></script>
     <script src="js/books.js"></script>
     <script src="js/darkMode.js"></script>
-    <script src="js/photos.js"></script>
-    <img src="https://counter.dev/track.svg?url=https://nicktagliamonte.github.io/personal.html" style="display:none;" referrerpolicy="no-referrer-when-downgrade" />
+    <!-- Dev debug: confirm this books.html is the active file and check year-colors.css presence -->
+    <script>
+      try {
+        console.log('books.html (dev) loaded.');
+        const link = document.querySelector('link[href="css/year-colors.css"]');
+        console.log('year-colors.css link element present?', !!link, link && link.href);
+        console.log('Loaded stylesheets:', Array.from(document.styleSheets).map(s=>s.href).filter(Boolean));
+        console.log('Script tags present:', Array.from(document.scripts).map(s=>s.src).filter(Boolean));
+      } catch (e) {
+        console.error('books.html dev check failed', e);
+      }
+    </script>
+    <img src="https://counter.dev/track.svg?url=https://nicktagliamonte.github.io/books.html" style="display:none;" referrerpolicy="no-referrer-when-downgrade" />
 
     <script type="application/ld+json">
       {
