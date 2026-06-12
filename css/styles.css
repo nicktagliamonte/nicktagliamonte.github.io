@@ -972,6 +972,48 @@ section,
   border: 1px solid #cfcfcf;
 }
 
+/* Desktop CSV control container (placed next to search) */
+.books-controls .books-controls-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 12px;
+  align-items: center;
+}
+.books-controls .books-controls-actions .books-copy-csv,
+.books-controls .books-controls-actions .books-toggle-csv {
+  background: #dae7da;
+  border: 1px solid #cfcfcf;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Tab buttons: center on the page and match the CSV button appearance */
+.books-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0 18px; /* space under the controls */
+}
+.books-tab {
+  background: #dae7da;
+  border: 1px solid #cfcfcf;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+}
+.books-tab.active {
+  background: #4b6f4b;
+  color: #fff;
+  border-color: #4b6f4b;
+}
+.books-tab:focus {
+  outline: 2px solid #a4c8a8;
+  outline-offset: 2px;
+}
+.dark-mode .books-tab { background: #4b6f4b; color: #e0e0e0; border-color: #4b6f4b; }
+
 /* Header dropdown trigger + menu */
 .col-menu {
   position: absolute; /* position relative to the TH */
@@ -1053,10 +1095,28 @@ section,
   color: #454545;
 }
 
+/* Narrow and right-align the Num column (leftmost) */
+/* Make Num column narrower and right-aligned */
+#books-container .books-table thead th:first-child {
+  width: 44px; /* narrower visual width for numbering */
+  max-width: 44px;
+  /* center the header label visually */
+  text-align: center;
+  padding: 12px 8px 12px 8px;
+}
+#books-container .books-table tbody td:first-child {
+  text-align: right;
+  width: 44px;
+  max-width: 44px;
+  padding-right: 8px;
+}
+
+/* Mobile parseable block: hidden on wide viewports, shown in media query */
+.books-mobile { display: none; }
+
 #books-container .books-table tbody td:nth-child(3),
 #books-container .books-table tbody td:nth-child(6) {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
+  text-align: left;
 }
 
 #books-container .books-table tbody td:nth-child(5),
@@ -1066,7 +1126,8 @@ section,
 
 #books-container .books-table thead th:nth-child(3),
 #books-container .books-table thead th:nth-child(6) {
-  text-align: right;
+  /* Keep header labels centered while data cells for these columns are left-aligned */
+  text-align: center;
 }
 
 #books-container .books-table thead th:nth-child(5),
@@ -1113,6 +1174,34 @@ section,
   color: #ececec;
 }
 */
+/* Dark-mode: improved coloration for the Completed table specifically */
+.dark-mode #books-table-completed {
+  background-color: #272f27; /* slightly warm dark green */
+  border-color: #334233;
+  box-shadow: 0 2px 8px #00000060;
+}
+.dark-mode #books-table-completed thead th {
+  background-color: #2f4530; /* richer header green */
+  color: #eef9ee; /* light header text */
+  border-bottom-color: #47614a;
+}
+.dark-mode #books-table-completed tbody tr {
+  background-color: transparent; /* allow subtle striping via nth-child */
+  color: #dbeedb; /* readable body text */
+}
+.dark-mode #books-table-completed tbody tr:nth-child(even) {
+  background-color: #243025; /* subtle darker stripe for even rows */
+}
+.dark-mode #books-table-completed tbody tr:hover {
+  background-color: #3a5a3a; /* stronger hover so row is visible */
+}
+.dark-mode #books-table-completed tbody td {
+  border-bottom-color: #2f3e34;
+  color: #d6ebd6;
+}
+.dark-mode #books-table-completed tbody td:first-child {
+  color: #f0f0f0;
+}
 #articles a {
   color: #6b6b6b;
   padding: 2px 4px 2px 0;
@@ -1225,6 +1314,90 @@ select option {
 code {
   font-size: large;
   background-color: #f0f0f0;
+}
+
+#books p {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+@media(max-width: 1400px) {
+  /* Mobile parseable books view: hide large table and show compact list */
+  #books-container .books-table { display: none; }
+  /* Use the ID selector here so it overrides the default #books-mobile { display: none; } rule */
+  #books-mobile { display: block; background: #fff; padding: 12px; border-radius: 8px; box-shadow: 0 2px 5px #0000001a; }
+  .books-mobile-controls { display:flex; gap:8px; margin-bottom:8px; }
+  .books-mobile button { background:#dae7da; border:1px solid #cfcfcf; padding:6px 8px; border-radius:4px; cursor:pointer; }
+  .books-mobile-list [role="listitem"] { border-bottom:1px solid #eee; padding:8px 4px; }
+  .books-mobile-csv { background: #f7f7f7; padding: 8px; border-radius: 4px; }
+
+  /* Improved mobile list item styling */
+  .books-mobile { display:block; }
+  .books-mobile-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    transition: background 0.18s ease, transform 0.12s ease;
+  }
+  /* subtle pale-green striping for odd rows to enhance readability */
+  /* list items are the elements with role="listitem" and also have the .books-mobile-item class */
+  .books-mobile-list [role="listitem"]:nth-child(odd) {
+    background: #f0f6f0; /* pale green tint */
+  }
+  .books-mobile-item:hover {
+    background: #eef7ee;
+    transform: translateY(-1px);
+  }
+  .books-mobile-num {
+    min-width: 38px;
+    text-align: right;
+    font-weight: 700;
+    color: #444;
+    font-variant-numeric: tabular-nums;
+  }
+  .books-mobile-content {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .books-mobile-title {
+    font-weight: 700;
+    color: #213d21; /* slightly deeper green-ish title color */
+    margin-bottom: 4px;
+    /* allow wrapping so long titles flow to additional lines on small screens */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.25;
+  }
+  .books-mobile-author {
+    color: #666;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .books-mobile-meta {
+    color: #6b6b6b;
+    font-size: 0.85rem;
+  }
+
+  /* Dark mode variants for mobile list */
+  body.dark-mode #books-mobile { background: #2f3b2f; }
+  body.dark-mode .books-mobile-item { background: #333833; box-shadow: none; }
+  /* dark-mode odd-row striping (apply to the listitem itself) */
+  body.dark-mode .books-mobile-list [role="listitem"]:nth-child(odd) { background: #364036; }
+  body.dark-mode .books-mobile-item:hover { background: #3b463b; }
+  body.dark-mode .books-mobile-title { color: #dfefe0; }
+  body.dark-mode .books-mobile-author { color: #cfcfcf; }
+  body.dark-mode .books-mobile-meta { color: #bdbdbd; }
+  /* make the left-side number clearer in dark mode */
+  body.dark-mode .books-mobile-num { color: #ffffff; font-weight: 800; }
 }
 
 @media (max-width: 768px) {

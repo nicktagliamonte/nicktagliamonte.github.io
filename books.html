@@ -92,15 +92,24 @@
             An extremely long term project to read through a list of books.
             <br><br>
             The list describes itself better than I could in a short paragraph, 
-            but the central question is one of language and expressibility: 
-            what can be expressed via symbols, what are the limits of this expression, 
-            and why does meaning arise from them at all?
+            but the central question is one of language and expressibility. That 
+            doesn't fully capture the nature or spirit of the project though, and 
+            largely it's just a very long list of a set of rabbit holes i'd like to go down. 
+            A better core thesis is probably "if I have been curious about it then I added a book 
+            or 10 that covers it."
             <br><br>
             Try filtering by category to get a sense of general thru-lines. They contain the major 
-            rabbit-holes this project explores, as well as the deviations from the central question 
-            which I'm willing to tolerate (the chess books, for example, because I like to play. 
-            Or the items which deal less with the thesis of this project and look more like 
-            r/TrueLit's generic top-40).
+            areas this project explores, as well as the deviations from the central question 
+            which I'm willing to tolerate (the chess books, for example, because I like to play).
+            <br><br>
+            The fiction is mostly sci fi, Greg Egan's bibliography is almost all on the list 
+            (the only items that aren't are the ones I read before I made the list). It deviates 
+            pretty hard into "r/TrueLit's top-40" because of a sort of feedback loop: 
+            the though of "ok, if i'm gonna read 150 books i might as well include some of these top 10 books of western lit." 
+            "ok, now it's 200 books. I guess I can afford the top 25." and so on and so forth up to the monstrosity below.
+            <br><br>
+            It's a living project which I pretty strongly suspect will go unfinished; for every book 
+            I finish it seems like I add five more.
             <br><br>
             More information can be found 
             <a class="page-link" 
@@ -111,22 +120,58 @@
           <hr class="separator" />
           <div id="books-controls" class="books-controls">
             <input id="books-search" type="search" placeholder="Search title or author" />
+            <!-- Desktop-visible CSV controls (also used for active tab) -->
+            <div class="books-controls-actions">
+              <button id="books-copy-csv-desktop" class="books-copy-csv" type="button">Copy CSV</button>
+              <button id="books-toggle-csv-desktop" class="books-toggle-csv" type="button">Show CSV</button>
+            </div>
+          </div>
+          <!-- Tab buttons: centered on the page and placed under the search/CSV controls -->
+          <div class="books-tabs" role="tablist" aria-label="Books Tabs">
+            <button id="books-tab-inprogress" class="books-tab active" type="button" role="tab" aria-selected="true">In progress / Planned</button>
+            <button id="books-tab-completed" class="books-tab" type="button" role="tab" aria-selected="false">Completed</button>
           </div>
           <div id="books-container">
-            <table class="books-table">
+            <!-- In-progress table (visible by default) -->
+            <table id="books-table-inprogress" class="books-table">
               <thead>
                 <tr>
+                  <th>Num</th>
                   <th>Title</th>
                   <th>Author</th>
                   <th>Pages</th>
                   <th>Category</th>
                   <th>Anticipated Start Date</th>
-                  <th>Rating</th>
-                  <th>Completed</th>
                 </tr>
               </thead>
-              <tbody id="books-table-body"></tbody>
-              </table>
+              <tbody id="books-table-body-inprogress"></tbody>
+            </table>
+
+            <!-- Completed table (hidden until selected) -->
+            <table id="books-table-completed" class="books-table" style="display:none;">
+              <thead>
+                <tr>
+                  <th>Num</th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Pages</th>
+                  <th>Category</th>
+                  <th>Completed Date</th>
+                  <th>Rating</th>
+                </tr>
+              </thead>
+              <tbody id="books-table-body-completed"></tbody>
+            </table>
+
+            <!-- Mobile-friendly parseable views: one per tab -->
+            <div id="books-mobile-inprogress" class="books-mobile" aria-live="polite">
+              <div id="books-mobile-list-inprogress" class="books-mobile-list" role="list"></div>
+              <pre id="books-mobile-csv-inprogress" class="books-mobile-csv" style="display:none; white-space: pre-wrap; overflow-x:auto;"></pre>
+            </div>
+            <div id="books-mobile-completed" class="books-mobile" aria-live="polite" style="display:none;">
+              <div id="books-mobile-list-completed" class="books-mobile-list" role="list"></div>
+              <pre id="books-mobile-csv-completed" class="books-mobile-csv" style="display:none; white-space: pre-wrap; overflow-x:auto;"></pre>
+            </div>
             </div>
           </div>
         </div>
@@ -141,18 +186,7 @@
     <script src="js/mobileNavigation.js"></script>
     <script src="js/books.js"></script>
     <script src="js/darkMode.js"></script>
-    <!-- Dev debug: confirm this books.html is the active file and check year-colors.css presence -->
-    <script>
-      try {
-        console.log('books.html (dev) loaded.');
-        const link = document.querySelector('link[href="css/year-colors.css"]');
-        console.log('year-colors.css link element present?', !!link, link && link.href);
-        console.log('Loaded stylesheets:', Array.from(document.styleSheets).map(s=>s.href).filter(Boolean));
-        console.log('Script tags present:', Array.from(document.scripts).map(s=>s.src).filter(Boolean));
-      } catch (e) {
-        console.error('books.html dev check failed', e);
-      }
-    </script>
+    
     <img src="https://counter.dev/track.svg?url=https://nicktagliamonte.github.io/books.html" style="display:none;" referrerpolicy="no-referrer-when-downgrade" />
 
     <script type="application/ld+json">
