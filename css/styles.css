@@ -1012,7 +1012,17 @@ section,
   outline: 2px solid #a4c8a8;
   outline-offset: 2px;
 }
-.dark-mode .books-tab { background: #4b6f4b; color: #e0e0e0; border-color: #4b6f4b; }
+.dark-mode .books-tab {
+  background: #334a33;
+  color: #d8e2d8;
+  border-color: #456145;
+}
+.dark-mode .books-tab.active {
+  background: #dceadb;
+  color: #243424;
+  border-color: #dceadb;
+  font-weight: 700;
+}
 
 /* Header dropdown trigger + menu */
 .col-menu {

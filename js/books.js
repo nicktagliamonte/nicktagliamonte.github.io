@@ -564,7 +564,6 @@ function attachBooksControls() {
   const sortDir = document.getElementById('books-sort-dir');
   // CSV controls (desktop buttons placed next to search).
   const copyBtnDesktop = document.getElementById('books-copy-csv-desktop');
-  const toggleBtnDesktop = document.getElementById('books-toggle-csv-desktop');
   const tabInBtn = document.getElementById('books-tab-inprogress');
   const tabCompBtn = document.getElementById('books-tab-completed');
   if (search) {
@@ -597,25 +596,14 @@ function attachBooksControls() {
     }catch(e){ console.error('copy failed', e); alert('Copy failed: '+e); }
   };
 
-  const doToggleCsv = () => {
-    const active = BOOKS_STATE.ui.activeTab || 'inprogress';
-    const csvPre = document.getElementById(active === 'completed' ? 'books-mobile-csv-completed' : 'books-mobile-csv-inprogress');
-    if(!csvPre) return;
-    csvPre.style.display = csvPre.style.display === 'none' ? 'block' : 'none';
-    const showing = csvPre.style.display !== 'none';
-    if (toggleBtnDesktop) toggleBtnDesktop.textContent = showing ? 'Hide CSV' : 'Show CSV';
-  };
-
   if (copyBtnDesktop) copyBtnDesktop.addEventListener('click', doCopyCsv);
-  if (toggleBtnDesktop) toggleBtnDesktop.addEventListener('click', doToggleCsv);
 
   // Tab button handlers
   const setActiveTab = (tab) => {
     BOOKS_STATE.ui.activeTab = tab;
     if(tabInBtn) tabInBtn.classList.toggle('active', tab==='inprogress');
     if(tabCompBtn) tabCompBtn.classList.toggle('active', tab==='completed');
-    // reset CSV toggle label and hide both csv prese
-    if(toggleBtnDesktop) toggleBtnDesktop.textContent = 'Show CSV';
+  // keep CSV previews hidden (copy functionality remains available)
     const pre1 = document.getElementById('books-mobile-csv-inprogress');
     const pre2 = document.getElementById('books-mobile-csv-completed');
     if(pre1) pre1.style.display = 'none';
