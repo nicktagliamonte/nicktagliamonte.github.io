@@ -1,238 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume | Nick Tagliamonte</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.counter.dev/script.js" data-id="62e79f82-01f9-4983-bf0c-007d5a6acb15" data-utcoffset="-4"></script>
-</head>
-
-<body>
-    <!-- Header Section -->
-    <header role="banner">
-        <div class="header-left">
-            <h1 role="heading" aria-level="1" class="home-link">
-                <a href="index.html">Nick Tagliamonte</a>
-            </h1>
-        </div>
-        <div class="dark-mode-toggle">
-            <span class="sun-icon" role="img" aria-label="Sun">&#9728;</span>
-            <label class="toggle">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider"></span>
-            </label>
-        </div>
-        <nav class="navigation" role="navigation" aria-label="Main Navigation">
-            <ul>
-                <li><a href="projects.html" role="link">Projects</a></li>
-                <li><a href="resume.html" role="link">Resume</a></li>
-                <li><a href="contact.html" role="link">Contact</a></li>
-                <li><a href="books.html" role="link">Books</a></li>
-                <li><a href="information.html" role="link">Information</a></li>
-            </ul>
-        </nav>
-        <!-- Hamburger Menu Icon - only visible on screens smaller than 768px -->
-        <div id="mobile-menu-icon" class="hamburger-menu" aria-label="Open Navigation Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div id="overlay-menu">
-            <nav class="overlay-navigation" role="navigation" aria-label="Mobile Navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="books.html">Books</a></li>
-                    <li><a href="information.html" role="link">Information</a></li>
-                </ul>
-                <!-- Dark mode toggle at the bottom -->
-                <div class="overlay-dark-mode-toggle">
-                    <span class="overlay-sun-icon" role="img" aria-label="Sun">&#9728;</span>
-                    <label class="overlay-toggle">
-                        <input type="checkbox" id="overlayDarkModeToggle">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </nav>
-        </div>        
-        
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Résumé of Nick Tagliamonte, software developer and distributed systems researcher." />
+    <title>Résumé — Nick Tagliamonte</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <script src="js/site.js" defer></script>
+  </head>
+  <body class="resume-page">
+    <a class="skip-link" href="#resume">Skip to résumé</a>
+    <header class="site-header">
+      <a class="home-link" href="index.html">Nick Tagliamonte</a>
+      <nav aria-label="Main navigation"><a href="index.html#research">Research</a><a href="index.html#projects">Projects</a><a href="resume.html" aria-current="page">Résumé</a><a href="index.html#elsewhere">Elsewhere</a></nav>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme">☼</button>
     </header>
+    <main id="resume" class="resume">
+      <header class="resume-intro">
+        <div><p class="eyebrow">Résumé</p><h1>Nick Tagliamonte</h1><p class="resume-summary">Software developer and systems researcher working across enterprise applications, information retrieval, and reliable distributed storage.</p></div>
+        <address><a href="mailto:ntagliamonte28@gmail.com">ntagliamonte28@gmail.com</a><a href="https://github.com/nicktagliamonte">github.com/nicktagliamonte</a><a href="https://www.linkedin.com/in/nick-tagliamonte-b44129241/">LinkedIn</a><span>Philadelphia</span></address>
+      </header>
 
-    <!-- Main Content Section -->
-    <main role="main">
-        <section id="resume" role="complementary">
-            <p>
-                <a href="documents/Nick%20Tagliamonte%20Resume.pdf" download="Nick Tagliamonte Resume.pdf"
-                    class="download-button">Download Resume</a>
-            </p>
+      <section class="resume-section" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+        <div class="resume-items">
+          <article class="resume-item"><div class="resume-meta"><p>Jun 2026—present</p><p>King of Prussia, PA</p></div><div><h3>Software Developer <span>· iPipeline</span></h3><ul><li>Designed, proposed, and implemented a document-versioning system backed by a Merkle DAG, giving document history a content-addressed structure with explicit relationships between versions.</li><li>Researched and integrated BM25 into an existing vector-retrieval pipeline, creating hybrid search that improved result reliability where semantic similarity alone was insufficient.</li><li>Implemented a geometric input-field detection algorithm that increased bounding-box placement accuracy from 34% to 92.66%.</li><li>Develop and maintain enterprise application features and services, contribute to technical design, review code, and investigate production reliability and performance issues.</li></ul></div></article>
+          <article class="resume-item"><div class="resume-meta"><p>Aug 2025—May 2026</p><p>Philadelphia, PA</p></div><div><h3>Teaching Assistant, CIS 3308 <span>· Temple University</span></h3><ul><li>Led labs and office hours for approximately 70 students across two semesters, covering React, SQL, Spring Boot, debugging, and software design.</li><li>Nominated for Temple University’s Outstanding Undergraduate Teaching Assistant Award.</li></ul></div></article>
+          <article class="resume-item"><div class="resume-meta"><p>Jun—Aug 2025</p><p>King of Prussia, PA</p></div><div><h3>Software Developer Intern <span>· iPipeline</span></h3><ul><li>Migrated CI/CD pipelines for four client-facing teams from Jenkins to GitHub Actions and built PowerShell automation adopted across the company.</li><li>Implemented front-end features, PDF mapping logic, XML integrations, and tests for an AWS serverless migration.</li></ul></div></article>
+          <article class="resume-item"><div class="resume-meta"><p>Jul 2022—Sep 2024</p><p>Conshohocken, PA</p></div><div><h3>IT Service Desk Regional Lead / Analyst <span>· Victrex</span></h3><ul><li>Led North American IT operations supporting a global workforce of 2,000, managed a $60K operational budget, and coordinated a network cutover and vendor work.</li></ul></div></article>
+        </div>
+      </section>
 
-            <hr>
+      <section class="resume-section" aria-labelledby="research-title">
+        <h2 id="research-title">Research</h2>
+        <div class="resume-items">
+          <article class="resume-item"><div class="resume-meta"><p>Accepted</p><p>ICICT 2027</p></div><div><h3>Tarsus: Latency-Optimal Policy-Decoupled Distributed Storage</h3><p class="authors">Nick Tagliamonte, Justin Y. Shi, Garrett Stoll</p><p>Designed and implemented a policy-decoupled distributed storage system and developed its experimental evaluation. The architecture separates changing reliability policy from the data path while targeting latency-optimal operation.</p></div></article>
+          <article class="resume-item"><div class="resume-meta"><p>Patent pending</p></div><div><h3>Probabilistic Decentralized Storage via Provider-Data Decoupling</h3><p>Co-invented a distributed storage architecture with enforced replication and decoupled provider metadata; contributed core system design and theoretical foundations.</p></div></article>
+        </div>
+      </section>
 
-            <h2 role="heading" aria-level="2">My Resume</h2>
+      <section class="resume-section" aria-labelledby="education-title">
+        <h2 id="education-title">Education</h2>
+        <div class="resume-items compact-items">
+          <article class="resume-item"><div class="resume-meta"><p>Expected 2028</p></div><div><h3>M.S. Computer Science <span>· University of Pennsylvania</span></h3></div></article>
+          <article class="resume-item"><div class="resume-meta"><p>2026</p></div><div><h3>B.S. Computer Science, Mathematics minor <span>· Temple University</span></h3><p>With distinction · GPA 3.96</p></div></article>
+          <article class="resume-item"><div class="resume-meta"><p>2023–2024</p></div><div><h3>A.S. Computer Science and A.S. Mathematics <span>· Bucks County Community College</span></h3><p>GPA 4.0</p></div></article>
+        </div>
+      </section>
 
-            <address>
-                <strong>Nick Tagliamonte</strong><br>
-                Phone: 215-869-7300<br>
-                Email: <a href="mailto:tug35742@temple.edu" style="cursor: crosshair;">tug35742@temple.edu</a> | 
-                    <a href="mailto:ntagliamonte28@gmail.com" style="cursor: crosshair;">ntagliamonte28@gmail.com</a><br>
-
-                <a href="https://www.linkedin.com/in/nick-tagliamonte-b44129241/" target="_blank" class="social-link"
-                    role="link" aria-label="LinkedIn Profile"
-                    style="text-decoration: none; color: inherit;">LinkedIn</a><br>
-                <a href="https://github.com/nicktagliamonte" target="_blank" class="social-link" role="link"
-                    aria-label="Github Profile" style="text-decoration: none; color: inherit;">Github</a></p>
-            </address>
-
-            <hr>
-
-            <p><strong>Objective</strong><br>
-                Researcher and systems engineer specializing in distributed systems, 
-                peer-to-peer architecture, and reliable storage systems. Experience designing and 
-                implementing fault-tolerant infrastructure in Go, with research spanning decentralized 
-                storage, formal reasoning, and large-scale system reliability.</p>
-            <hr>
-
-            <p><strong>Education</strong></p>
-            <p><strong>Master of Science in Computer Science</strong><br>
-                Northeastern University, Boston, MA<br>
-                Expected Graduation: May 2028</p>
-            <p><strong>Bachelor of Science in Computer Science</strong><br>
-                Minor in Mathematics<br>
-                Temple University, Philadelphia, PA<br>
-                Graduated: May 2026, GPA: 3.96</p>
-
-            <p><strong>Associate of Science in Computer Science</strong><br>
-                Bucks County Community College, Newtown, PA<br>
-                Graduation: May 2024, GPA: 4.0</p>
-
-            <p><strong>Associate of Science in Mathematics</strong><br>
-                Bucks County Community College, Newtown, PA<br>
-                Graduation: December 2023, GPA: 4.0</p>
-
-            <hr>
-
-            <p><strong>Research and Publications</strong><br></p>
-            <p><strong>Vn-IPFS: Re-engineering IPFS using von Neumann's Reliable Organism Synthesis Principles</strong><br>
-            <i>Second Author; Submitted to IEEE SRDS 2026</i></p>
-            <p>Designed and architected a distributed file system derived from IPFS improving reliability via decoupling
-                of data and provider metadata. Led end-to-end system development including design, implementation, and
-                experimental evaluation; proposed and guided key architectural decisions. Contributed to formal verification
-                and analysis. Co-authored with Prof. Justin Y. Shi et al.</p>
-
-            <p><strong>Probabilistic Decentralized Storage via Provider-Data Decoupling</strong><br>
-            <i>Patent Pending; Co-Inventor, 2026</i></p>
-            <p>Co-invented a distributed file system architecture based on IPFS with an enforced replication model. Con-
-                tributed core system design and theoretical foundations.</p>
-
-            <hr>
-
-            <p><strong>Work Experience</strong></p>
-            <p><strong>Teaching Assistant - CIS 3308</strong><br>
-                Temple University, Philadelphia, PA<br>
-                August 2025 - May 2026</p>
-            <ul>
-                <li>Led labs and office hours for approx. 70 students for 2 semesters covering React, SQL, and Spring Boot.</li>
-                <li>Helped students debug apps, understand software design concepts, and improve development workflows.</li>
-                <li>Nominated for Temple University Outstanding Undergraduate Teaching Assistant Award (2026).</li>
-            </ul>
-
-            <p><strong>Software Developer Intern</strong><br>
-                iPipeline, King of Prussia, PA<br>
-                June 2025 - August 2025</p>
-            <ul>
-                <li>Migrated CI/CD pipelines for 4 client-facing development teams from Jenkins to GitHub Actions, standardizing deployment workflows and reducing maintenance overhead across projects.</li>
-                <li>Created PowerShell automation tools reducing UI test cycles by $\sim90$ s per screen; adopted company-wide.</li>
-                <li>Implemented front-end features, PDF mapping logic, and XML integrations for client-facing systems.</li>
-                <li>Supported AWS serverless migration (Terraform/Terragrunt configuration and unit tests).</li>
-            </ul>
-
-            <p><strong>IT Service Desk Regional Lead</strong><br>
-                Victrex, Conshohocken, PA<br>
-                December 2023 - September 2024</p>
-            <ul>
-                <li>Led regional IT operations supporting 2,000 employees across North America, managing \$60k operational budget.</li>
-                <li>Directed network cutover project and coordinated vendor operations across multiple vendors.</li>
-            </ul>
-
-            <p><strong>Global IT Helpdesk Analyst</strong><br>
-                Victrex, Conshohocken, PA<br>
-                July 2022 - January 2024</p>
-            <ul>
-                <li>Provided first-line IT support with $\sim70\%$ first-call resolution; maintained internal knowledge base and supported Azure AD environments.</li>
-            </ul>
-
-            <hr>
-
-            <p><strong>Projects</strong></p>
-            <p><strong>Managed AI Infrastructure Platform</strong>&emsp;
-            <a href="https://github.com/Caleb-Hageman/ai-infra" target="_blank" class="social-link" role="link"
-                aria-label="AI Infrastructure Platform" style="text-decoration: none; color: inherit;">GitHub</a></p>
-            <p>Architected a managed RAG API using FastAPI, vLLM, and Pgvector on GCP to provide centralized vector 
-                search and LLM capabilities for multiple student development teams. Engineered asynchronous ingestion 
-                pipeline for document processing, reducing upload latency by ~20x and eliminating timeout failures 
-                for files >1 MiB.</p>
-
-            <p><strong>Parallel Distributed Matrix Multiplication</strong>&emsp;
-            <a href="https://github.com/nicktagliamonte/parallel-matrix-tsh" target="_blank" class="social-link" role="link"
-                aria-label="Parallel Distributed Matrix Multiplication" style="text-decoration: none; color: inherit;">GitHub</a></p>
-            <p>A fault-tolerant parallel matrix multiplication framework in C using a custom tuple space server (TSH) 
-                for distributed coordination. Includes fault-tolerant execution under worker failure, dynamic worker 
-                spawning, tunable task granularity, and benchmarking scripts.</p>
-
-            <p><strong>Number Theory Calculator</strong>&emsp;
-            <a href="https://github.com/nicktagliamonte/calculator" target="_blank" class="social-link" role="link"
-                aria-label="Calculator" style="text-decoration: none; color: inherit;">GitHub</a></p>
-            <p>Originally designed as a GUI replica of the TI-30X IIS, expanded into a cross-platform scientific 
-                and number-theoretic calculator. Implements modular arithmetic, factorization, totient and Carmichael 
-                functions, generator and residue tests, discrete log estimation, and related tools. Features 
-                customizable insert mode, improved statistical input, detailed error handling, and platform-specific 
-                save/load logic.</p>
-
-            <hr>
-
-            <p><strong>Skills</strong></p>
-            <table>
-                <tr>
-                    <td><strong>Languages</strong></td>
-                    <td>Go, C, Python, Java, JavaScript, SQL, HTML/CSS</td>
-                </tr>
-                <tr>
-                    <td><strong>Frameworks & Libraries</strong></td>
-                    <td>React, FastAPI, GitHub Actions, libp2p, Boxo, Bitswap</td>
-                </tr>
-                <tr>
-                    <td><strong>Cloud & Infrastructure</strong></td>
-                    <td>GCP, AWS, Azure, CI/CD, Docker, Terraform, Git</td>
-                </tr>
-                <tr>
-                    <td><strong>Tools</strong></td>
-                    <td>PowerShell, Linux, LaTeX</td>
-                </tr>
-            </table>
-            
-            <hr>
-
-            <p>
-                <a href="documents/Nick%20Tagliamonte%20Resume%20PDF.pdf" download="Nick Tagliamonte Resume PDF.pdf"
-                    class="download-button">Download Resume</a>
-            </p>
-        </section>
+      <section class="resume-section skills" aria-labelledby="skills-title"><h2 id="skills-title">Tools</h2><div><p><strong>Languages</strong> Go, C, Python, Java, JavaScript, SQL</p><p><strong>Systems &amp; infrastructure</strong> libp2p, Boxo, Bitswap, AWS, GCP, Docker, Terraform, GitHub Actions</p><p><strong>Applications &amp; data</strong> React, FastAPI, PostgreSQL, vector search, BM25, RAG</p></div></section>
     </main>
-
-
-    <!-- Footer Section -->
-    <footer role="contentinfo">
-        <p>&copy; 2024 Nick Tagliamonte</p>
-    </footer>
-
-    <script src="js/mobileNavigation.js"></script>
-    <script src="js/darkMode.js"></script>
-    <img src="https://counter.dev/track.svg?url=https://nicktagliamonte.github.io/resume.html" style="display:none;" referrerpolicy="no-referrer-when-downgrade" />
-</body>
-
+    <footer><p>Nick Tagliamonte <span>© <span id="year">2026</span></span></p><div><a href="index.html">Home</a><a href="mailto:ntagliamonte28@gmail.com">Email</a><a href="documents/Nick%20Tagliamonte%20Resume%20PDF.pdf" download>Download PDF</a><a href="#resume" onclick="window.print(); return false;">Print</a></div></footer>
+  </body>
 </html>

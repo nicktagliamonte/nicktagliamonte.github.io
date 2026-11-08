@@ -1,0 +1,217 @@
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip}
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.92]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%table width used by the experience and project sections
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}
+
+%CV Sections inspired by:
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Nicholas Tagliamonte} \\[7.5pt]
+\href{https://github.com/nicktagliamonte}{GitHub} \ $|$ \
+\href{https://www.linkedin.com/in/nick-tagliamonte-b44129241/}{LinkedIn} \ $|$ \
+\href{https://nicktagliamonte.github.io}{Website} \ $|$ \
+\href{mailto:ntagliamonte28@gmail.com}{ntagliamonte28@gmail.com} \ $|$ \
+\href{tel:+12158697300}{+1.215.869.7300} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% Summary
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+Software developer and systems researcher working across enterprise applications, information retrieval, and reliable distributed storage. Experience designing and implementing distributed infrastructure in Go and production software spanning document management, hybrid search, and geometric PDF analysis.
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2028 & M.S., Computer Science, \textbf{University of Pennsylvania} \hfill \normalsize (Admitted) \\
+
+2026 & B.S. with Distinction, Computer Science, Mathematics Minor, \textbf{Temple University} \hfill \normalsize (GPA: 3.9/4.0) \\
+
+2024 & A.S., Computer Science; A.S., Mathematics, \textbf{Bucks County CC } \hfill (GPA: 4.0/4.0) \\
+\end{tabularx}
+\\
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+\section{Research and Publications}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Tarsus: Latency-Optimal Policy-Decoupled Distributed Storage} \\
+\multicolumn{2}{@{}X@{}}{\textit{First Author; Accepted at ICICT 2027}} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Designed and implemented a policy-decoupled distributed storage system and developed its experimental evaluation. The architecture separates changing reliability policy from the data path while targeting latency-optimal operation. Co-authored with Justin Y. Shi and Garrett Stoll.} \\
+\\
+\textbf{Probabilistic Decentralized Storage via Provider-Data Decoupling} \\
+\multicolumn{2}{@{}X@{}}{\textit{Patent Pending; Co-Inventor, 2026}} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Co-invented a distributed file system architecture based on IPFS with an enforced replication model. Contributed core system design and theoretical foundations.} \\
+\end{tabularx}
+\\
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+%Experience
+\section{Work Experience}
+
+\begin{joblong}{Software Developer - iPipeline}{Jun 2026 - Present}
+\item Designed, proposed, and implemented a document-versioning system backed by a Merkle DAG.
+\item Researched and integrated BM25 into an existing vector-retrieval pipeline, creating hybrid search that improved retrieval reliability.
+\item Implemented a geometric input-field detection algorithm that increased bounding-box placement accuracy from 34\% to 92.66\%.
+\item Develop and maintain enterprise application features and services; contribute to technical design, code review, reliability, and performance work.
+\end{joblong}
+
+\begin{joblong}{Teaching Assistant - CIS 3308, Temple University}{Aug 2025 - May 2026}
+\item Led labs and office hours for approx. 70 students for 2 semesters covering React, SQL, and Spring Boot.
+\item Helped students debug apps, understand software design concepts, and improve development workflows.
+\item Nominated for Temple University Outstanding Undergraduate Teaching Assistant Award (2026).
+\end{joblong}
+
+\begin{joblong}{Software Developer Intern - iPipeline}{Jun 2025 - Aug 2025}
+\item Migrated CI/CD pipelines for 4 client-facing development teams from Jenkins to GitHub Actions, standardizing deployment workflows and reducing maintenance overhead across projects.
+\item Created PowerShell automation tools reducing UI test cycles by $\sim90$ s per screen; adopted company-wide.
+\item Implemented front-end features, PDF mapping logic, and XML integrations for client-facing systems.
+\item Supported AWS serverless migration (Terraform/Terragrunt configuration and unit tests).
+\end{joblong}
+
+\begin{joblong}{IT Service Desk Regional Lead - Victrex}{Dec 2023 - Sep 2024}
+\item Led regional IT operations supporting 2,000 employees across North America, managing \$60k operational budget.
+\item Directed network cutover project and coordinated vendor operations across multiple vendors.
+\end{joblong}
+
+\begin{joblong}{Global IT Helpdesk Analyst - Victrex}{Jul 2022 - Jan 2024}
+\item Provided first-line IT support with $>$70\% first-call resolution; maintained internal knowledge base and supported Azure AD environments.
+\end{joblong}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\textbf{Managed AI Infrastructure Platform}
+    & \href{https://github.com/Caleb-Hageman/ai-infra}{\textit{Link}} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Architected a managed RAG API using FastAPI, vLLM, and Pgvector on GCP to provide centralized vector search and LLM capabilities for multiple student development teams. Engineered asynchronous ingestion pipeline for document processing, reducing upload latency by $\sim20$× and eliminating timeout failures for files $>$1 MiB.
+} \\ \\
+
+\textbf{Parallel Distributed Matrix Multiplication}
+    & \href{https://github.com/nicktagliamonte/parallel-matrix-tsh}{\textit{Link}} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+A fault-tolerant parallel matrix multiplication framework in C using a custom tuple space server (TSH) for distributed coordination. Includes fault-tolerant execution under worker failure, dynamic worker spawning, tunable task granularity, and benchmarking scripts.
+} \\ \\
+
+\textbf{Number Theory Calculator}
+    & \href{https://github.com/nicktagliamonte/calculator}{\textit{Link}} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Originally designed as a GUI replica of the TI-30X IIS, expanded into a cross-platform scientific and number-theoretic calculator. Implements modular arithmetic, factorization, totient and Carmichael functions, generator and residue tests, discrete log estimation, and related tools. Features customizable insert mode, improved statistical input, detailed error handling, and platform-specific save/load logic.
+} \\
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Skills}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+
+Languages &
+Go, C, Python, Java, JavaScript, SQL, HTML/CSS
+\\
+
+Frameworks \& Libraries &
+React, FastAPI, Terraform, GitHub Actions, libp2p, Boxo, Bitswap
+\\
+
+Cloud \& Infrastructure &
+AWS, GCP, Azure, CI/CD, Docker, Git
+\\
+
+Tools &
+PowerShell, Linux, LaTeX
+\\
+
+\end{tabularx}
+
+\end{document}
