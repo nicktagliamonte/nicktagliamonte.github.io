@@ -6,11 +6,11 @@
     <title>Game Engine | Nick Tagliamonte</title>
     <meta
       name="description"
-      content="Learn more about Nick Tagliamonte, a Computer Science student with a passion for software development, optimization, and web development."
+      content="A retrospective on the Java engine behind In the City, a text adventure by Nick Tagliamonte."
     />
     <meta
       name="keywords"
-      content="Nick Tagliamonte, about me, computer science, software development, personal interests, skills"
+      content="Nick Tagliamonte, In the City, Java, game engine, text adventure"
     />
     <link rel="stylesheet" href="css/site.css" />
     <script src="js/site.js" defer></script>
@@ -43,15 +43,7 @@
             >
           </h2>
           <hr />
-          <h3>Information</h3>
-          <p>
-            <span style="display: inline-block; width: 2em"></span>
-            This is by far the largest project I've ever attempted. It's at a
-            semi-functional state, undergoing testing and expansion as an active
-            process, so this page will be somewhat regularly updated as I
-            optimize and bugfix the game engine (using some test data I've
-            layered on top of the engine itself).
-          </p>
+          <p>The story built on top of the engine has <a href="game.html">its own writeup</a>.</p>
           <h3>History</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span>
@@ -122,34 +114,14 @@
             pitfall of my design going into the project. I had written almost
             everything (including a story) by the time I got to persistence, so
             I was not prepared to go back and re-write the room system to use
-            flattened data. In the future I'll understand to maintain a concept
-            of what the minimum required data is to build a gameState from, but
-            in this go around I wound up writing a function toSerializableFormat
+            flattened data. In this go around I wound up writing a function
+            toSerializableFormat
             in each of my files which contains that object's custom
             serialization format. Then the main gameEngine file just combines
             those various JSON data into a single master list, and writes that
             to disk. Reading is easy as a consequence, because the data being
             read is unique to the objects which created that data.
           </p>
-          <h3>Future Expansion</h3>
-          <p>
-            <span style="display: inline-block; width: 2em"></span>
-            It's difficult to keep this section focused on the game
-            <em>engine</em> and not the
-            <u
-              ><a href="game.html" style="text-decoration: none; color: inherit"
-                >game itself</a
-              ></u
-            >, because the game is still an ongoing process (and will be for
-            probably the next 3 years). Currently, I'm working on having the
-            game tested by people who didn't write it; I was surprised by how
-            many potential problems I miss by knowing that I have to type “Enter
-            the chamber” “talk to milo” at exactly the right time. So the
-            expansions I have in mind are largely bug fix oriented, I'm not sure
-            there are any significant things left that I want to add in terms of
-            expansions.
-          </p>
-
           <h3>Critique</h3>
           <p>
             <span style="display: inline-block; width: 2em"></span>
