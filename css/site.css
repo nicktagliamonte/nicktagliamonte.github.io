@@ -29,6 +29,7 @@ button:hover { cursor: crosshair; }
 .home-main { width: min(1080px, calc(100% - 24px)); margin: 0 auto; }
 .resume { width: min(1000px, calc(100% - 40px)); margin: 0 auto; }
 .card { background: var(--card); border: 1px solid color-mix(in srgb, var(--line) 70%, transparent); border-top: 4px solid var(--header); border-radius: 5px; box-shadow: var(--shadow); }
+.card, .resume-intro, .legacy-page #information { transition: transform .18s ease, box-shadow .18s ease; }
 .home-main .card { background: color-mix(in srgb, var(--card) 82%, var(--header)); border-top-color: var(--accent); }
 .intro { display: grid; grid-template-columns: 1fr 175px; gap: 4rem; align-items: center; margin-top: 5rem; padding: 3.25rem; }
 .intro h1 { margin: .15rem 0 1.35rem; color: var(--heading); font-size: clamp(2.3rem, 5vw, 3.65rem); line-height: 1.05; letter-spacing: -.035em; }
@@ -47,12 +48,12 @@ button:hover { cursor: crosshair; }
 .authors, .subtle { color: var(--muted); font-size: .85rem; }
 .current-card { display: grid; grid-template-columns: .75fr 1.5fr; gap: 4rem; padding: 2.75rem 3rem; border-top-color: #a7c7a7; }
 .current-card h3 { margin: 0; color: var(--heading); }
+.role-context { display: block; }
 .current-card ul { margin: 0; padding-left: 1.2rem; }
 .current-card li + li { margin-top: .8rem; }
 .current-resume-link { margin: 1.25rem 0 0; font-size: .82rem; }
 .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-.project-card { min-height: 280px; display: flex; flex-direction: column; padding: 1.8rem; border-top-color: #a7c7a7; transition: transform .18s ease, box-shadow .18s ease; }
-.project-card:hover { transform: translateY(-3px); box-shadow: 0 7px 18px #00000016; }
+.project-card { min-height: 280px; display: flex; flex-direction: column; padding: 1.8rem; border-top-color: #a7c7a7; }
 .project-card h3 { margin: 0 0 .8rem; color: var(--heading); font-size: 1.05rem; }
 .project-card p { font-size: .9rem; }
 .project-card a { width: max-content; margin-top: auto; font-size: .82rem; }
@@ -111,7 +112,13 @@ footer div { display: flex; flex-wrap: wrap; gap: 1.25rem; }
   footer { margin-top: 3.5rem; }
 }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (hover: hover) {
+  .card:hover, .resume-intro:hover, .legacy-page #information:hover { transform: translateY(-3px); box-shadow: 0 7px 18px #00000016; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card, .resume-intro, .legacy-page #information { transition: none; }
+}
 @media print {
   :root { --page:#fff; --card:#fff; --text:#111; --heading:#111; --muted:#444; --line:#bbb; }
   .site-header, .resume-page>footer, .skip-link { display:none; }
